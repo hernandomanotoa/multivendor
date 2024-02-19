@@ -81,7 +81,7 @@ class CouponsController extends Controller
 
         if ($id == '') { // if there's no $id is passed in the route/URL parameters (Optional Parameters {id?}), this means 'Add a new Coupon'
             // Add a new Coupon
-            $title = 'Add Coupon';
+            $title = __('Add Coupon');
             $coupon = new Coupon;
             // dd($coupon);
 
@@ -93,7 +93,7 @@ class CouponsController extends Controller
 
         } else { // if the $id is passed in the route/URL parameters (Optional Parameters {id?}), this means 'Edit/Update the Coupon'
             // Edit/Update the Coupon
-            $title = 'Edit Coupon';
+            $title = __('Edit Coupon');
             $coupon = Coupon::find($id);
             // dd($coupon);
 

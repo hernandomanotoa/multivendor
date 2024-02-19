@@ -31,12 +31,12 @@
                     <ul class="nav flex-column sub-menu" style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'update_personal_details') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/update-vendor-details/personal') }}">{{ __('Personal') }}
-                                Details</a></li>
+                                class="nav-link" href="{{ url('admin/update-vendor-details/personal') }}">{{ __('Personal Details') }}
+                                </a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'update_business_details') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/update-vendor-details/business') }}">{{ __('Business') }}
-                                Details</a></li>
+                                class="nav-link" href="{{ url('admin/update-vendor-details/business') }}">{{ __('Business Details') }}
+                                </a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'update_bank_details') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
                                 class="nav-link" href="{{ url('admin/update-vendor-details/bank') }}">{{ __('Bank Details') }}</a>

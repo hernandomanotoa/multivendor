@@ -9,7 +9,7 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                            <h4 class="card-title">Coupons</h4>
+                            <h4 class="card-title">{{ __('Coupons') }}</h4>
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
@@ -85,12 +85,12 @@
 
                                 @if (empty($coupon['coupon_code'])) {{-- In case of 'Add a new Coupon' --}}
                                     <div class="form-group">
-                                        <label for="coupon_option">Coupon Option:</label><br>
-                                        <span><input type="radio" id="AutomaticCoupon" name="coupon_option" value="Automatic" checked>&nbsp;Automatic&nbsp;&nbsp;</span>
-                                        <span><input type="radio" id="ManualCoupon"    name="coupon_option" value="Manual"           >&nbsp;Manual&nbsp;&nbsp;</span>
+                                        <label for="coupon_option">{{ __('Coupon Option') }}:</label><br>
+                                        <span><input type="radio" id="AutomaticCoupon" name="coupon_option" value="Automatic" checked>&nbsp;{{ __('Automatic') }}&nbsp;&nbsp;</span>
+                                        <span><input type="radio" id="ManualCoupon"    name="coupon_option" value="Manual"           >&nbsp;{{ __('Manual') }}&nbsp;&nbsp;</span>
                                     </div>
                                     <div class="form-group" style="display: none" id="couponField"> {{-- We used style="display: none" and created that id="couponField" to be used as handle in jQuery to show/hide that field depending on the previous checked Coupon Option, chekc admin/js/custom.js --}}
-                                        <label for="coupon_code">Coupon Code:</label>
+                                        <label for="coupon_code">{{ __('Coupon Code') }}:</label>
                                         <input type="text" class="form-control" placeholder="Enter Coupon Code" name="coupon_code">
                                     </div>
                                 @else {{-- In case of 'Update the Coupon' --}}
@@ -98,31 +98,31 @@
                                     <input type="hidden" name="coupon_code"   value="{{ $coupon['coupon_code'] }}">
 
                                     <div class="form-group">
-                                        <label for="coupon_code">Coupon Code:</label>
+                                        <label for="coupon_code">{{ __('Coupon Code') }}:</label>
                                         <span style="color: green; font-weight: bold">{{ $coupon['coupon_code'] }}</span>
                                     </div>
                                 @endif
 
 
                                 <div class="form-group">
-                                    <label for="coupon_type">Coupon Type:</label><br>
-                                    <span><input type="radio" name="coupon_type" value="Multiple Times"  @if (isset($coupon['coupon_type']) && $coupon['coupon_type'] == 'Multiple Times') checked @endif>&nbsp;Multiple Times&nbsp;&nbsp;</span>
-                                    <span><input type="radio" name="coupon_type" value="Single Time"     @if (isset($coupon['coupon_type']) && $coupon['coupon_type'] == 'Single Time')    checked @endif>&nbsp;Single Time&nbsp;&nbsp;</span>
+                                    <label for="coupon_type">{{ __('Coupon Type') }}:</label><br>
+                                    <span><input type="radio" name="coupon_type" value="Multiple Times"  @if (isset($coupon['coupon_type']) && $coupon['coupon_type'] == 'Multiple Times') checked @endif>&nbsp;{{ __('Multiple Times') }}&nbsp;&nbsp;</span>
+                                    <span><input type="radio" name="coupon_type" value="Single Time"     @if (isset($coupon['coupon_type']) && $coupon['coupon_type'] == 'Single Time')    checked @endif>&nbsp;{{ __('Single Time') }}&nbsp;&nbsp;</span>
                                 </div>                                
                                 <div class="form-group">
-                                    <label for="amount_type">Amount Type:</label><br>
-                                    <span><input type="radio" name="amount_type" value="Percentage"  @if (isset($coupon['amount_type']) && $coupon['amount_type'] == 'Percentage') checked @endif>&nbsp;Percentage&nbsp;(in %)&nbsp;</span>
-                                    <span><input type="radio" name="amount_type" value="Fixed"       @if (isset($coupon['amount_type']) && $coupon['amount_type'] == 'Fixed')      checked @endif>&nbsp;Fixed&nbsp;(in INR or USD)</span>
+                                    <label for="amount_type">{{ __('Amount Type') }}:</label><br>
+                                    <span><input type="radio" name="amount_type" value="Percentage"  @if (isset($coupon['amount_type']) && $coupon['amount_type'] == 'Percentage') checked @endif>&nbsp;{{ __('Percentage&nbsp;(in') }} %)&nbsp;</span>
+                                    <span><input type="radio" name="amount_type" value="Fixed"       @if (isset($coupon['amount_type']) && $coupon['amount_type'] == 'Fixed')      checked @endif>&nbsp;{{ __('Fixed&nbsp;(in INR or USD)') }}</span>
                                 </div>                                
                                 <div class="form-group">
-                                    <label for="amount">Amount:</label>
+                                    <label for="amount">{{ __('Amount') }}:</label>
                                     <input type="text" class="form-control" id="amount" placeholder="Enter Coupon Amount" name="amount"  @if (isset($coupon['amount'])) value="{{ $coupon['amount'] }}" @else value="{{ old('amount') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 
 
                                 
                                 <div class="form-group">
-                                    <label for="categories">Select Category:</label>
+                                    <label for="categories">{{ __('Select Category') }}:</label>
                                     <select name="categories[]" class="form-control text-dark" multiple> {{-- "multiple" HTML attribute: https://www.w3schools.com/tags/att_multiple.asp --}} {{-- We used the Square Brackets [] in name="categories[]" is an array because we used the "multiple" HTML attribute to be able to choose multiple categories (more than one category) at the same time --}}
                                         @foreach ($categories as $section) {{-- $categories are ALL the `sections` with their related 'parent' categories (if any (if exist)) and their subcategories or `child` categories (if any (if exist)) --}} {{-- Check CouponsController.php --}}
                                             <optgroup label="{{ $section['name'] }}"> {{-- sections --}}
@@ -142,7 +142,7 @@
 
 
                                 <div class="form-group">
-                                    <label for="brands">Select Brand:</label>
+                                    <label for="brands">{{ __('Select Brand') }}:</label>
                                     <select name="brands[]" class="form-control text-dark" multiple> {{-- "multiple" HTML attribute: https://www.w3schools.com/tags/att_multiple.asp --}} {{-- We used the Square Brackets [] in name="brands[]" is an array because we used the "multiple" HTML attribute to be able to choose multiple brands (more than one brand) at the same time --}}
                                         @foreach ($brands as $brand)
                                             <option value="{{ $brand['id'] }}" @if (in_array($brand['id'], $selBrands)) selected @endif>{{ $brand['name'] }}</option>
@@ -150,7 +150,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="users">Select User (by email):</label>
+                                    <label for="users">{{ __('Select User (by email)') }}:</label>
                                     <select name="users[]" class="form-control text-dark" multiple> {{-- "multiple" HTML attribute: https://www.w3schools.com/tags/att_multiple.asp --}} {{-- We used the Square Brackets [] in name="users[]" is an array because we used the "multiple" HTML attribute to be able to choose multiple users (more than one user) at the same time --}}
                                         @foreach ($users as $user)
                                             <option value="{{ $user['email'] }}"  @if (in_array($user['email'], $selUsers)) selected @endif>{{ $user['email'] }}</option>
@@ -158,13 +158,13 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="expiry_date">Expiry Date:</label> {{-- Coupon Expiry Date --}}
+                                    <label for="expiry_date">{{ __('Expiry Date') }}:</label> {{-- Coupon Expiry Date --}}
                                     <input type="date" class="form-control" id="expiry_date" placeholder="Enter Expiry Date" name="expiry_date"  @if (isset($coupon['expiry_date'])) value="{{ $coupon['expiry_date'] }}" @else value="{{ old('expiry_date') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
 
 
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button type="reset"  class="btn btn-light">Cancel</button>
+                                <button type="submit" class="btn btn-primary mr-2">{{ __('Submit') }}</button>
+                                <button type="reset"  class="btn btn-light">{{ __('Cancel') }}</button>
                             </form>
                         </div>
                     </div>
