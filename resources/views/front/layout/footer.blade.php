@@ -143,7 +143,7 @@
                 </ul>
             </div>
             <p class="copyright-text">Copyright &copy; 2022
-                <a target="_blank" rel="nofollow" href="#">Multi-vendor E-commerce Application</a> | All Right Reserved
+                <a target="_blank" rel="nofollow" href="#">E-commerce MBA</a> | All Right Reserved
             </p>
         </div>
     </div>

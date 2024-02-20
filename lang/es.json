@@ -90,6 +90,29 @@
     "Amount": "Cantidad",
     "Select User (by email)": "Seleccionar Usuario (por correo electrónico)",
     "Coupon Option": "Opcion de cupón",
+    "View Filter Values": "Ver valores de filtro",
+    "Add Filter Column": "Agregar columna de filtro",
+    "Filter Name": "Nombre del filtro",
+    "Filter Column": "Columna de filtro",
+    "View Filters": "Ver filtros",
+    "Add Filter Value": "Agregar valor de filtro",
+    "Filter ID": "ID de filtro",
+    "Filter Value": "Valor de filtro",
+    "Add Brand": "Agregar Marca",
+    "Name": "Nombre",
+    "Add Category": "Añadir Categoría",
+    "Success": "Éxito",
+    "Category Name": "Nombre de la categoría",
+    "Parent Category": "Categoría Padre",
+    "Parent Section": "Sección Padre",
+    "URL": "URL",
+
+
+
+
+
+
+
     "Link Languaje": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",
     "Welcome": "Bienvenido",
     "All systems are running smoothly!": "¡Todos los sistemas funcionan sin problemas!",
