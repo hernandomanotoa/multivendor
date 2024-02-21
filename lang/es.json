@@ -107,13 +107,18 @@
     "Parent Section": "Sección Padre",
     "URL": "URL",
     "Product Attributes have been updated successfully!": "¡Los atributos del producto se han actualizado correctamente!",
+    "Admin Settings": "Configuración de administrador",
+    "Admin Username/Email": "Nombre de usuario/correo electrónico del administrador",
+    "Admin Type": "Tipo de administrador",
+    "Current Password": "Contraseña actual",
+    "New Password": "Nueva contraseña",
+    "Confirm Password": "confirmar Contraseña",
+    "Mobile": "Móvil",
+    "Admin Photo": "Foto de administrador",
+    "View Image": "Ver imagen",
 
 
-
-
-
-
-
+    
     "Link Languaje": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",
     "Welcome": "Bienvenido",
     "All systems are running smoothly!": "¡Todos los sistemas funcionan sin problemas!",
