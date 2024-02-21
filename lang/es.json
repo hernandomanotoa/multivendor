@@ -116,9 +116,48 @@
     "Mobile": "Móvil",
     "Admin Photo": "Foto de administrador",
     "View Image": "Ver imagen",
+    "Type": "Tipo",
+    "Image": "Imagen",
+    "Back to Vendors": "Volver a Proveedores",
+    "Personal Information": "Informacion personal",
+    "Email": "Correo electrónico",
+    "Address": "DIRECCIÓN",
+    "City": "Ciudad",
+    "Country": "País",
+    "Pincode": "Código PIN",
+    "Admin ID": "ID",
+    "Vendor Photo": "Foto del vendedor",
+    "Business Information": "Información de negocios",
+    "Shop Name": "Nombre de tienda",
+    "Shop Address": "Dirección de la tienda",
+    "Shop City": "Tienda de la ciudad",
+    "Shop State": "Estado de la tienda",
+    "Shop Country": "País de la tienda",
+    "Shop Pincode": "Código PIN de la tienda",
+    "Shop Mobile": "Comprar Móvil",
+    "Shop Website": "Sitio web de la tienda",
+    "Shop Email": "Correo electrónico de la tienda",
+    "Business License Number": "Número de licencia comercial",
+    "GST Number": "Número de IVA",
+    "PAN Number": "Número PAN",
+    "Address Proof": "Verificación de domicilio",
+    "Address Proof Image": "Imagen de prueba de dirección",
+    "Bank Information": "Información bancaria",
+    "Account Holder Name": "nombre del titular de la cuenta",
+    "Bank Name": "Nombre del banco",
+    "Account Number": "Número de cuenta",
+    "Bank IFSC Code": "Código IFSC del banco",
+    "Commission Information": "Información de la comisión",
+    "Commission per order item": "Comisión por artículo de pedido",
+    "All Admins/Subadmins/Vendors": "Todos los administradores/subadministradores/proveedores",
 
 
-    
+
+
+
+
+
+
     "Link Languaje": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",
     "Welcome": "Bienvenido",
     "All systems are running smoothly!": "¡Todos los sistemas funcionan sin problemas!",

@@ -8,19 +8,19 @@
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">{{ $title }}</h4>
+                            <h4 class="card-title">{{ __($title) }}</h4>
                             <div class="table-responsive pt-3">
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Admin ID</th>
-                                            <th>Name</th>
-                                            <th>Type</th>
-                                            <th>Mobile</th>
-                                            <th>Email</th>
-                                            <th>Image</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
+                                            <th>{{ __('Admin ID') }}</th>
+                                            <th>{{ __('Name') }}</th>
+                                            <th>{{ __('Type') }}</th>
+                                            <th>{{ __('Mobile') }}</th>
+                                            <th>{{ __('Email') }}</th>
+                                            <th>{{ __('Image') }}</th>
+                                            <th>{{ __('Status') }}</th>
+                                            <th>{{ __('Actions') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
