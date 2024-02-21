@@ -480,7 +480,7 @@ class AdminController extends Controller
             Vendor::where('id', $data['vendor_id'])->update(['commission' => $data['commission']]);
 
 
-            return redirect()->back()->with('success_message', 'Vendor commission updated successfully!');
+            return redirect()->back()->with('success_message', __('Vendor commission updated successfully!'));
         }
     }
 
