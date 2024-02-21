@@ -88,10 +88,10 @@ class CategoryController extends Controller
             ];
 
             $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
-                'category_name.required' => 'Category Name is required',
-                'category_name.regex'    => 'Valid Category Name is required',
-                'section_id.required'    => 'Section is required',
-                'url.required'           => 'Category URL is required',
+                'category_name.required' => __('Category Name is required'),
+                'category_name.regex'    => __('Valid Category Name is required'),
+                'section_id.required'    => __('Section is required'),
+                'url.required'           => __('Category URL is required'),
             ];
 
             $this->validate($request, $rules, $customMessages);

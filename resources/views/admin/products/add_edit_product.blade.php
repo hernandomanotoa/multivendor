@@ -34,7 +34,7 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">{{ $title }}</h4>
+                            <h4 class="card-title">{{ __($title) }}</h4>
 
 
                             {{-- Our Bootstrap error code in case of wrong current password or the new password and confirm password are not matching: --}}

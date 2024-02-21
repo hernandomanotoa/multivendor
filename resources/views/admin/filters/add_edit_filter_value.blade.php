@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
 
-                            <h4 class="card-title">Filter Values</h4>
+                            <h4 class="card-title">{{ __('Filter Values') }}</h4>
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
@@ -33,7 +33,7 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">{{ $title }}</h4>
+                            <h4 class="card-title">{{ __($title) }}</h4>
 
 
                             {{-- Our Bootstrap error code in case of wrong current password or the new password and confirm password are not matching: --}}
@@ -85,20 +85,20 @@
                                 <div class="form-group">
 
                                     {{-- Note: Dynamic Filters are applied to `categories` (parent categories and subcategories (child categories)), and not `sections`! --}}
-                                    <label for="filter_id">Select Filter</label>
+                                    <label for="filter_id">{{ __('Select Filter') }}</label>
                                     <select name="filter_id" id="filter_id" class="form-control text-dark"> {{-- We used the Square Brackets [] in name="cat_ids[]" is an array because we used the "multiple" HTML attribute to be able to choose multiple categories at the same time --}}
-                                        <option value="">Select Filter</option>
+                                        <option value="">{{ __('Select Filter') }}</option>
                                         @foreach ($filters as $filter) {{-- subcategories or child categories --}} {{-- Check FilterController.php --}}
                                             <option value="{{ $filter['id'] }}">{{ $filter['filter_name'] }}</option> {{-- subcategories or child categories --}}
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="filter_value">Filter Value</label>
-                                    <input type="text" class="form-control" id="filter_value" placeholder="Enter Filter Value" name="filter_value"  @if (!empty($filter['filter_value'])) value="{{ $filter['filter_value'] }}" @else value="{{ old('filter_value') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
+                                    <label for="filter_value">{{ __('Filter Value') }}</label>
+                                    <input type="text" class="form-control" id="filter_value" placeholder="{{ __('Enter Filter Value') }}" name="filter_value"  @if (!empty($filter['filter_value'])) value="{{ $filter['filter_value'] }}" @else value="{{ old('filter_value') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button type="reset"  class="btn btn-light">Cancel</button>
+                                <button type="submit" class="btn btn-primary mr-2">{{ __('Submit') }}</button>
+                                <button type="reset"  class="btn btn-light">{{ __('Cancel') }}</button>
                             </form>
                         </div>
                     </div>

@@ -90,13 +90,13 @@ class FilterController extends Controller
 
         // FIRSTLY, IF THE REQUEST METHOS IS 'GET', THEN RENDER THE add_edit_filter.blade.php PAGE:
         if ($id == '') { // if there's no $id passed in the route/URL parameters, this means 'Add a new Filter'
-            $title   = 'Add Filter Columns';
+            $title   = __('Add Filter Columns');
             $filter  = new ProductsFilter;
-            $message = 'Filter added successfully!';
+            $message = __('Filter added successfully!');
         } else { // if the $id is passed in the route/URL parameter, this means Edit (Update) the Filter
-            $title   = 'Edit Filter Columns';
+            $title   = __('Edit Filter Columns');
             $filter  = ProductsFilter::find($id);
-            $message = 'Filter updated successfully!';
+            $message = __('Filter updated successfully!');
         }
 
 
@@ -144,11 +144,11 @@ class FilterController extends Controller
         if ($id == '') { // if there's no $id passed in the route/URL parameters, this means 'Add a new Filter'
             $title   = 'Add Filter Value';
             $filter  = new ProductsFiltersValue;
-            $message = 'Filter Value added successfully!';
+            $message = __('Filter Value added successfully!');
         } else { // if the $id is passed in the route/URL parameter, this means Edit (Update) the Filter
             $title   = 'Edit Filter Value';
             $filter  = ProductsFiltersValue::find($id);
-            $message = 'Filter Value updated successfully!';
+            $message = __('Filter Value updated successfully!');
         }
 
 

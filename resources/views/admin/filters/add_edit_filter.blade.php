@@ -8,7 +8,7 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                            <h4 class="card-title">Filters</h4>
+                            <h4 class="card-title">{{ __('Filters') }}</h4>
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
@@ -32,7 +32,7 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">{{ $title }}</h4>
+                            <h4 class="card-title">{{ __($title) }}</h4>
 
 
                             {{-- Our Bootstrap error code in case of wrong current password or the new password and confirm password are not matching: --}}
@@ -69,7 +69,7 @@
                             {{-- Our Bootstrap success message in case of updating admin password is successful: --}}
                             @if (Session::has('success_message')) <!-- Check AdminController.php, updateAdminPassword() method -->
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Success:</strong> {{ Session::get('success_message') }}
+                                    <strong>{{ __('Success') }}:</strong> {{ Session::get('success_message') }}
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -84,9 +84,9 @@
                                 <div class="form-group">
 
                                     {{-- Note: Dynamic Filters are applied to `categories` (parent categories and subcategories (child categories)), and not `sections`! --}}
-                                    <label for="cat_ids">Select Category</label>
+                                    <label for="cat_ids">{{ __('Select Category') }}</label>
                                     <select name="cat_ids[]" id="cat_ids" class="form-control text-dark" multiple style="height: 200px"> {{-- We used the Square Brackets [] in name="cat_ids[]" is an array because we used the "multiple" HTML attribute to be able to choose multiple categories at the same time --}}
-                                        <option value="">Select Category</option>
+                                        <option value="">{{ __('Select Category') }}</option>
                                         @foreach ($categories as $section) {{-- $categories are ALL the `sections` with their related 'parent' categories (if any (if exist)) and subcategories or `child` categories (if any (if exist)) --}} {{-- Check FilterController.php --}}
                                             <optgroup label="{{ $section['name'] }}"> {{-- sections --}}
                                                 @foreach ($section['categories'] as $category) {{-- parent categories --}} {{-- Check FilterController.php --}}
@@ -100,15 +100,15 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="filter_name">Filter Name</label>
-                                    <input type="text" class="form-control" id="filter_name" placeholder="Enter Filter Name" name="filter_name"  @if (!empty($filter['filter_name'])) value="{{ $filter['filter_name'] }}" @else value="{{ old('filter_name') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
+                                    <label for="filter_name">{{ __('Filter Name') }}</label>
+                                    <input type="text" class="form-control" id="filter_name" placeholder="{{ __('Enter Filter Name') }}" name="filter_name"  @if (!empty($filter['filter_name'])) value="{{ $filter['filter_name'] }}" @else value="{{ old('filter_name') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
-                                    <label for="filter_column">Filter Column (small letters only and use underscores/no spaces)</label>
-                                    <input type="text" class="form-control" id="filter_column" placeholder="Enter Filter Column" name="filter_column"  @if (!empty($filter['filter_column'])) value="{{ $filter['filter_column'] }}" @else value="{{ old('filter_column') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
+                                    <label for="filter_column">{{ __('Filter Column (small letters only and use underscores/no spaces)') }}</label>
+                                    <input type="text" class="form-control" id="filter_column" placeholder="{{ __('Enter Filter Column') }}" name="filter_column"  @if (!empty($filter['filter_column'])) value="{{ $filter['filter_column'] }}" @else value="{{ old('filter_column') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button type="reset"  class="btn btn-light">Cancel</button>
+                                <button type="submit" class="btn btn-primary mr-2">{{ __('Submit') }}</button>
+                                <button type="reset"  class="btn btn-light">{{ __('Cancel') }}</button>
                             </form>
                         </div>
                     </div>

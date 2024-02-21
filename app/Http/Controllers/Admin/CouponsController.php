@@ -123,14 +123,14 @@ class CouponsController extends Controller
             ];
 
             $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
-                'categories.required'    => 'Select Categories',
-                'brands.required'        => 'Select Brands',
-                'coupon_option.required' => 'Select Coupon Option',
-                'coupon_type.required'   => 'Select Coupon Type',
-                'amount_type.required'   => 'Select Amount Type',
-                'amount.required'        => 'Enter Amount',
-                'amount.numeric'         => 'Enter Valid Amount',
-                'expiry_date.required'   => 'Enter Expiry Date',
+                'categories.required'    => __('Select Categories'),
+                'brands.required'        => __('Select Brands'),
+                'coupon_option.required' => __('Select Coupon Option'),
+                'coupon_type.required'   => __('Select Coupon Type'),
+                'amount_type.required'   => __('Select Amount Type'),
+                'amount.required'        => __('Enter Amount'),
+                'amount.numeric'         => __('Enter Valid Amount'),
+                'expiry_date.required'   => __('Enter Expiry Date'),
             ];
 
             $this->validate($request, $rules, $customMessages);

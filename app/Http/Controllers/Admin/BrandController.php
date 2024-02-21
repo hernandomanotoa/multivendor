@@ -81,8 +81,8 @@ class BrandController extends Controller
             ];
 
             $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
-                'brand_name.required' => 'Brand Name is required',
-                'brand_name.regex'    => 'Valid Brand Name is required',
+                'brand_name.required' => __('Brand Name is required'),
+                'brand_name.regex'    => __('Valid Brand Name is required'),
             ];
 
             $this->validate($request, $rules, $customMessages);

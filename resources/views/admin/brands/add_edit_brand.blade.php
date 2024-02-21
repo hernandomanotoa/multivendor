@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
 
-                            <h4 class="card-title">Brands</h4>
+                            <h4 class="card-title">{{  __('Brands') }}</h4>
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
@@ -33,7 +33,7 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">{{ $title }}</h4>
+                            <h4 class="card-title">{{ __($title) }}</h4>
 
 
                             {{-- Our Bootstrap error code in case of wrong current password or the new password and confirm password are not matching: --}}
@@ -87,11 +87,11 @@
                                 @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
                                 <div class="form-group">
-                                    <label for="brand_name">Brand Name</label>
-                                    <input type="text" class="form-control" id="brand_name" placeholder="Enter Brand Name" name="brand_name" @if (!empty($brand['name'])) value="{{ $brand['name'] }}" @else value="{{ old('brand_name') }}" @endif> 
+                                    <label for="brand_name">{{  __('Brand Name') }}</label>
+                                    <input type="text" class="form-control" id="brand_name" placeholder="{{ __('Enter Brand Name') }}" name="brand_name" @if (!empty($brand['name'])) value="{{ $brand['name'] }}" @else value="{{ old('brand_name') }}" @endif> 
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button type="reset"  class="btn btn-light">Cancel</button>
+                                <button type="submit" class="btn btn-primary mr-2">{{  __('Submit') }}</button>
+                                <button type="reset"  class="btn btn-light">{{  __('Cancel') }}</button>
                             </form>
                         </div>
                     </div>

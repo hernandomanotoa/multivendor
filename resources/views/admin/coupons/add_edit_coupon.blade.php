@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="form-group" style="display: none" id="couponField"> {{-- We used style="display: none" and created that id="couponField" to be used as handle in jQuery to show/hide that field depending on the previous checked Coupon Option, chekc admin/js/custom.js --}}
                                         <label for="coupon_code">{{ __('Coupon Code') }}:</label>
-                                        <input type="text" class="form-control" placeholder="Enter Coupon Code" name="coupon_code">
+                                        <input type="text" class="form-control" placeholder="{{ __('Enter Coupon Code') }}" name="coupon_code">
                                     </div>
                                 @else {{-- In case of 'Update the Coupon' --}}
                                     <input type="hidden" name="coupon_option" value="{{ $coupon['coupon_option'] }}">
@@ -116,7 +116,7 @@
                                 </div>                                
                                 <div class="form-group">
                                     <label for="amount">{{ __('Amount') }}:</label>
-                                    <input type="text" class="form-control" id="amount" placeholder="Enter Coupon Amount" name="amount"  @if (isset($coupon['amount'])) value="{{ $coupon['amount'] }}" @else value="{{ old('amount') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
+                                    <input type="text" class="form-control" id="amount" placeholder="{{ __('Enter Coupon Amount') }}" name="amount"  @if (isset($coupon['amount'])) value="{{ $coupon['amount'] }}" @else value="{{ old('amount') }}" @endif>  {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 
 

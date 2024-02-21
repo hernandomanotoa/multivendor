@@ -8,7 +8,7 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                            <h4 class="card-title">Categories</h4>
+                            <h4 class="card-title">{{ __('Categories')}}</h4>
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
@@ -32,7 +32,7 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">{{ $title }}</h4>
+                            <h4 class="card-title">{{ __($title) }}</h4>
 
 
                             {{-- Our Bootstrap error code in case of wrong current password or the new password and confirm password are not matching: --}}
@@ -80,15 +80,15 @@
                             
                             <form class="forms-sample"   @if (empty($category['id'])) action="{{ url('admin/add-edit-category') }}" @else action="{{ url('admin/add-edit-category/' . $category['id']) }}" @endif   method="post" enctype="multipart/form-data"> @csrf  <!-- If the id is not passed in from the route, this measn 'Add a new Category', but if the id is passed in from the route, this means 'Edit the Category' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                 <div class="form-group">
-                                    <label for="category_name">Category Name</label>
-                                    <input type="text" class="form-control" id="category_name" placeholder="Enter Category Name" name="category_name" @if (!empty($category['category_name'])) value="{{ $category['category_name'] }}" @else value="{{ old('category_name') }}" @endif> 
+                                    <label for="category_name">{{ __('Category Name')}}</label>
+                                    <input type="text" class="form-control" id="category_name" placeholder="{{ __('Enter Category Name')}}" name="category_name" @if (!empty($category['category_name'])) value="{{ $category['category_name'] }}" @else value="{{ old('category_name') }}" @endif> 
                                 </div>
 
                                 
                                 <div class="form-group">
-                                    <label for="section_id">Select Section</label>
+                                    <label for="section_id">{{ __('Select Section')}}</label>
                                     <select name="section_id" id="section_id" class="form-control" style="color: #000">
-                                        <option value="">Select Section</option>
+                                        <option value="">{{ __('Select Section')}}</option>
                                         @foreach ($getSections as $section)
                                             <option value="{{ $section['id'] }}"  @if (!empty($category['section_id']) && $category['section_id'] == $section['id']) selected @endif >{{ $section['name'] }}</option>
                                         @endforeach
@@ -104,7 +104,7 @@
 
 
                                 <div class="form-group">
-                                    <label for="category_image">Category Image</label>
+                                    <label for="category_image">{{ __('Category Image')}}</label>
                                     <input type="file" class="form-control" id="category_image" name="category_image">
                                     {{-- Show the admin image if exists --}}
                                         <a target="_blank" href="{{ url('admin/images/photos/' . Auth::guard('admin')->user()->image) }}">View Image</a> <!-- We used    target="_blank"    to open the image in another separate page --> {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}}
@@ -118,32 +118,32 @@
                                     @endif
                                 </div>
                                 <div class="form-group">
-                                    <label for="category_discount">Category Discount</label>
-                                    <input type="text" class="form-control" id="category_discount" placeholder="Enter Category Discount" name="category_discount"   @if (!empty($category['category_discount'])) value="{{ $category['category_discount'] }}" @else value="{{ old('category_discount') }}" @endif > 
+                                    <label for="category_discount">{{ __('Category Discount')}}</label>
+                                    <input type="text" class="form-control" id="category_discount" placeholder="{{ __('Enter Category Discount')}}" name="category_discount"   @if (!empty($category['category_discount'])) value="{{ $category['category_discount'] }}" @else value="{{ old('category_discount') }}" @endif > 
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Category Description</label>
-                                    {{-- <input type="text" class="form-control" id="category_discount" placeholder="Enter Category Description" name="category_discount"   @if (!empty($category['category_discount'])) value="{{ $category['category_discount'] }}" @else value="{{ old('category_discount') }}" @endif >  --}}
+                                    {{-- <input type="text" class="form-control" id="category_discount" placeholder="{{ __('Enter Category Description')}}" name="category_discount"   @if (!empty($category['category_discount'])) value="{{ $category['category_discount'] }}" @else value="{{ old('category_discount') }}" @endif >  --}}
                                     <textarea name="description" id="description" class="form-control" rows="3">{{ $category['description'] }}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="url">Category URL</label>
-                                    <input type="text" class="form-control" id="url" placeholder="Enter Category URL" name="url"   @if (!empty($category['url'])) value="{{ $category['url'] }}" @else value="{{ old('url') }}" @endif > 
+                                    <label for="url">{{ __('Category URL')}}</label>
+                                    <input type="text" class="form-control" id="url" placeholder="{{ __('Enter Category URL')}}" name="url"   @if (!empty($category['url'])) value="{{ $category['url'] }}" @else value="{{ old('url') }}" @endif > 
                                 </div>
                                 <div class="form-group">
-                                    <label for="meta_title">Meta Title</label>
-                                    <input type="text" class="form-control" id="meta_title" placeholder="Enter Meta Title" name="meta_title"   @if (!empty($category['meta_title'])) value="{{ $category['meta_title'] }}" @else value="{{ old('meta_title') }}" @endif > 
+                                    <label for="meta_title">{{ __('Meta Title')}}</label>
+                                    <input type="text" class="form-control" id="meta_title" placeholder="{{ __('Enter Meta Title')}}" name="meta_title"   @if (!empty($category['meta_title'])) value="{{ $category['meta_title'] }}" @else value="{{ old('meta_title') }}" @endif > 
                                 </div>
                                 <div class="form-group">
-                                    <label for="meta_description">Meta Description</label>
-                                    <input type="text" class="form-control" id="meta_description" placeholder="Enter Meta Description" name="meta_description"   @if (!empty($category['meta_description'])) value="{{ $category['meta_description'] }}" @else value="{{ old('meta_description') }}" @endif > 
+                                    <label for="meta_description">{{ __('Meta Description')}}</label>
+                                    <input type="text" class="form-control" id="meta_description" placeholder="{{ __('Enter Meta Description')}}" name="meta_description"   @if (!empty($category['meta_description'])) value="{{ $category['meta_description'] }}" @else value="{{ old('meta_description') }}" @endif > 
                                 </div>
                                 <div class="form-group">
-                                    <label for="meta_keywords">Meta Keywords</label>
-                                    <input type="text" class="form-control" id="meta_keywords" placeholder="Enter Meta Keywords" name="meta_keywords"   @if (!empty($category['meta_keywords'])) value="{{ $category['meta_keywords'] }}" @else value="{{ old('meta_keywords') }}" @endif > 
+                                    <label for="meta_keywords">{{ __('Meta Keywords')}}</label>
+                                    <input type="text" class="form-control" id="meta_keywords" placeholder="{{ __('Enter Meta Keywords')}}" name="meta_keywords"   @if (!empty($category['meta_keywords'])) value="{{ $category['meta_keywords'] }}" @else value="{{ old('meta_keywords') }}" @endif > 
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button type="reset"  class="btn btn-light">Cancel</button>
+                                <button type="submit" class="btn btn-primary mr-2">{{ __('Submit')}}</button>
+                                <button type="reset"  class="btn btn-light">{{ __('Cancel')}}</button>
                             </form>
                         </div>
                     </div>
