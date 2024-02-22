@@ -98,14 +98,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="admin_name">{{ __('Name') }}</label>
-                                    <input type="text" class="form-control" id="admin_name" placeholder="Enter Name"
+                                    <input type="text" class="form-control" id="admin_name" placeholder="{{ __('Enter Name') }}"
                                         name="admin_name" value="{{ Auth::guard('admin')->user()->name }}">
                                     {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}}
                                 </div>
                                 <div class="form-group">
                                     <label for="admin_mobile">{{ __('Mobile') }}</label>
                                     <input type="text" class="form-control" id="admin_mobile"
-                                        placeholder="Enter 10 Digit Mobile Number" name="admin_mobile"
+                                        placeholder="{{ __('Enter 10 Digit Mobile Number') }}" name="admin_mobile"
                                         value="{{ Auth::guard('admin')->user()->mobile }}" maxlength="10" minlength="10">
                                     {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}}
                                 </div>

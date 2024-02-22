@@ -9,7 +9,7 @@
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Ratings</h4>
+                            <h4 class="card-title">{{ __('Ratings') }}</h4>
                         
                             
 
@@ -18,7 +18,7 @@
                             {{-- Our Bootstrap success message in case of updating admin password is successful: --}}
                             @if (Session::has('success_message')) <!-- Check AdminController.php, updateAdminPassword() method -->
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Success:</strong> {{ Session::get('success_message') }}
+                                    <strong>{{ __('Success') }}:</strong> {{ Session::get('success_message') }}
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -32,12 +32,12 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Product Name</th>
-                                            <th>User Email</th>
-                                            <th>Review</th>
-                                            <th>Rating</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
+                                            <th>{{ __('Product Name') }}</th>
+                                            <th>{{ __('User Email') }}</th>
+                                            <th>{{ __('Review') }}</th>
+                                            <th>{{ __('Rating') }}</th>
+                                            <th>{{ __('Status') }}</th>
+                                            <th>{{ __('Actions') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -96,3 +96,13 @@
         <!-- partial -->
     </div>
 @endsection
+
+@push('other-scripts')
+    <script>
+        $('#ratings').DataTable({
+            "language": {
+                "url": "{{ __('Link Languaje') }}"
+            }
+        });
+    </script>
+@endpush

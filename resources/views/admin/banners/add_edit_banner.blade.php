@@ -8,7 +8,7 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                            <h4 class="card-title">Home Page Banners</h4>
+                            <h4 class="card-title">{{ __('Home Page Banners')}}</h4>
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
@@ -69,7 +69,7 @@
                             {{-- Our Bootstrap success message in case of updating admin password is successful: --}}
                             @if (Session::has('success_message')) <!-- Check AdminController.php, updateAdminPassword() method -->
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Success:</strong> {{ Session::get('success_message') }}
+                                    <strong>{{ __('Success')}}:</strong> {{ Session::get('success_message') }}
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -82,40 +82,40 @@
                                 @csrf
 
                                 <div class="form-group"> 
-                                    <label for="type">Banner Type</label>
+                                    <label for="type">{{ __('Banner Type')}}</label>
                                     <select class="form-control" id="type" name="type" required>
                                         <option value="">Select</option>
-                                        <option  @if (!empty($banner['type']) && $banner['type'] == 'Slider') selected @endif  value="Slider">Slider</option>
-                                        <option  @if (!empty($banner['type']) && $banner['type'] == 'Fix')    selected @endif  value="Fix">Fix</option>
+                                        <option  @if (!empty($banner['type']) && $banner['type'] == 'Slider') selected @endif  value="Slider">{{ __('Slider')}}</option>
+                                        <option  @if (!empty($banner['type']) && $banner['type'] == 'Fix')    selected @endif  value="Fix">{{ __('Fix')}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="image">Banner Image</label>
+                                    <label for="image">{{ __('Banner Image')}}</label>
                                     <input type="file" class="form-control" id="image" name="image">
                                     {{-- Show the admin image if exists --}}
-                                        <a target="_blank" href="{{ url('admin/images/photos/' . Auth::guard('admin')->user()->image) }}">View Image</a> {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}} <!-- We used    target="_blank"    to open the image in another separate page -->
+                                        <a target="_blank" href="{{ url('admin/images/photos/' . Auth::guard('admin')->user()->image) }}">{{ __('View Image')}}</a> {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}} <!-- We used    target="_blank"    to open the image in another separate page -->
                                         <input type="hidden" name="current_banner_image" value="{{ Auth::guard('admin')->user()->image }}"> <!-- to send the current admin image url all the time with all the requests --> {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}}
 
 
                                     {{-- Show the banner image, if any (if exits) --}}
                                     @if (!empty($banner['image']))
-                                        <a target="_blank" href="{{ url('front/images/banner_images/' . $banner['image']) }}">View Banner Image</a>
+                                        <a target="_blank" href="{{ url('front/images/banner_images/' . $banner['image']) }}">{{ __('View Banner Image')}}</a>
                                     @endif
                                 </div>
                                 <div class="form-group">
-                                    <label for="link">Banner Link</label>
-                                    <input type="text" class="form-control" id="link" placeholder="Enter Banner Link" name="link" @if (!empty($banner['link'])) value="{{ $banner['link'] }}" @else value="{{ old('link') }}" @endif> 
+                                    <label for="link">{{ __('Banner Link')}}</label>
+                                    <input type="text" class="form-control" id="link" placeholder="{{ __('Enter Banner Link')}}" name="link" @if (!empty($banner['link'])) value="{{ $banner['link'] }}" @else value="{{ old('link') }}" @endif> 
                                 </div>
                                 <div class="form-group">
-                                    <label for="title">Banner Title</label>
-                                    <input type="text" class="form-control" id="title" placeholder="Enter Banner Title" name="title" @if (!empty($banner['title'])) value="{{ $banner['title'] }}" @else value="{{ old('title') }}" @endif> 
+                                    <label for="title">{{ __('Banner Title')}}</label>
+                                    <input type="text" class="form-control" id="title" placeholder="{{ __('Enter Banner Title')}}" name="title" @if (!empty($banner['title'])) value="{{ $banner['title'] }}" @else value="{{ old('title') }}" @endif> 
                                 </div>
                                 <div class="form-group">
-                                    <label for="alt">Banner Alternate Text (Alt for SEO)</label>
-                                    <input type="text" class="form-control" id="alt" placeholder="Enter Banner Alternate Text" name="alt" @if (!empty($banner['alt'])) value="{{ $banner['alt'] }}" @else value="{{ old('alt') }}" @endif> 
+                                    <label for="alt">{{ __('Banner Alternate Text (Alt for SEO)')}}</label>
+                                    <input type="text" class="form-control" id="alt" placeholder="{{ __('Enter Banner Alternate Text')}}" name="alt" @if (!empty($banner['alt'])) value="{{ $banner['alt'] }}" @else value="{{ old('alt') }}" @endif> 
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button type="reset"  class="btn btn-light">Cancel</button>
+                                <button type="submit" class="btn btn-primary mr-2">{{ __('Submit')}}</button>
+                                <button type="reset"  class="btn btn-light">{{ __('Cancel')}}</button>
                             </form>
                         </div>
                     </div>

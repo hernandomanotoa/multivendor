@@ -9,7 +9,7 @@
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Shipping Charges</h4>
+                            <h4 class="card-title">{{ __('Shipping Charges') }}</h4>
 
 
 
@@ -19,7 +19,7 @@
                             @if (Session::has('success_message'))
                                 <!-- Check AdminController.php, updateAdminPassword() method -->
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Success:</strong> {{ Session::get('success_message') }}
+                                    <strong>{{ __('Success') }}:</strong> {{ Session::get('success_message') }}
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -33,14 +33,14 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Country</th>
-                                            <th>Rate (0g to 500g)</th>
-                                            <th>Rate (501g to 1000g)</th>
-                                            <th>Rate (1001g to 2000g)</th>
-                                            <th>Rate (2001g to 5000g)</th>
-                                            <th>Rate (Above 5000g)</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
+                                            <th>{{ __('Country') }}</th>
+                                            <th>{{ __('Rate (0g to 500g)') }}</th>
+                                            <th>{{ __('Rate (501g to 1000g)') }}</th>
+                                            <th>{{ __('Rate (1001g to 2000g)') }}</th>
+                                            <th>{{ __('Rate (2001g to 5000g)') }}</th>
+                                            <th>{{ __('Rate (Above 5000g)') }}</th>
+                                            <th>{{ __('Status') }}</th>
+                                            <th>{{ __('Actions') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -108,3 +108,13 @@
         <!-- partial -->
     </div>
 @endsection
+
+@push('other-scripts')
+    <script>
+        $('#shipping').DataTable({
+            "language": {
+                "url": "{{ __('Link Languaje') }}"
+            }
+        });
+    </script>
+@endpush

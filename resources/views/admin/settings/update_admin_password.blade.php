@@ -85,19 +85,19 @@
                                 <div class="form-group">
                                     <label for="current_password">{{ __('Current Password') }}</label>
                                     <input type="password" class="form-control" id="current_password"
-                                        placeholder="Enter Current Password" name="current_password" required>
+                                        placeholder="{{ __('Enter Current Password') }}" name="current_password" required>
                                     <span id="check_password"></span>
                                     <!-- We'll use it in the AJAX call in admin/js/custom.js to show if the password is correct or not -->
                                 </div>
                                 <div class="form-group">
                                     <label for="new_password">{{ __('New Password') }}</label>
                                     <input type="password" class="form-control" id="new_password"
-                                        placeholder="Enter New Password" name="new_password" required>
+                                        placeholder="{{ __('Enter New Password') }}" name="new_password" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="confirm_password">{{ __('Confirm Password') }}</label>
                                     <input type="password" class="form-control" id="confirm_password"
-                                        placeholder="Confirm Password" name="confirm_password" required>
+                                        placeholder="{{ __('Confirm Password') }}" name="confirm_password" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">{{ __('Submit') }}</button>
                                 <button type="reset" class="btn btn-light">{{ __('Cancel') }}</button>

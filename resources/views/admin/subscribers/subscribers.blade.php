@@ -9,7 +9,7 @@
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Subscribers</h4>
+                            <h4 class="card-title">{{ __('Subscribers') }}</h4>
                             
 
                             {{-- Export Subscribers (the `newsletter_subscribers` database table) as an Excel file Button --}} 
@@ -22,7 +22,7 @@
                             {{-- Our Bootstrap success message in case of updating admin password is successful: --}}
                             @if (Session::has('success_message')) <!-- Check AdminController.php, updateAdminPassword() method -->
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Success:</strong> {{ Session::get('success_message') }}
+                                    <strong>{{ __('Success') }}:</strong> {{ Session::get('success_message') }}
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -36,10 +36,10 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Email</th>
-                                            <th>Subscribed on</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
+                                            <th>{{ __('Email') }}</th>
+                                            <th>{{ __('Subscribed on') }}</th>
+                                            <th>{{ __('Status') }}</th>
+                                            <th>{{ __('Actions') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -99,3 +99,13 @@
         <!-- partial -->
     </div>
 @endsection
+
+@push('other-scripts')
+    <script>
+        $('#subscribers').DataTable({
+            "language": {
+                "url": "{{ __('Link Languaje') }}"
+            }
+        });
+    </script>
+@endpush

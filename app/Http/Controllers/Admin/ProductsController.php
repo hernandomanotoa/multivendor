@@ -115,15 +115,15 @@ class ProductsController extends Controller
             ];
 
             $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
-                'category_id.required'   => 'Category is required',
-                'product_name.required'  => 'Product Name is required',
-                'product_name.regex'     => 'Valid Product Name is required',
-                'product_code.required'  => 'Product Code is required',
-                'product_code.regex'     => 'Valid Product Code is required',
-                'product_price.required' => 'Product Price is required',
-                'product_price.numeric'  => 'Valid Product Price is required',
-                'product_color.required' => 'Product Color is required',
-                'product_color.regex'    => 'Valid Product Color is required',
+                'category_id.required'   => __('Category is required'),
+                'product_name.required'  => __('Product Name is required'),
+                'product_name.regex'     => __('Valid Product Name is required'),
+                'product_code.required'  => __('Product Code is required'),
+                'product_code.regex'     => __('Valid Product Code is required'),
+                'product_price.required' => __('Product Price is required'),
+                'product_price.numeric'  => __('Valid Product Price is required'),
+                'product_color.required' => __('Product Color is required'),
+                'product_color.regex'    => __('Valid Product Color is required'),
 
             ];
 

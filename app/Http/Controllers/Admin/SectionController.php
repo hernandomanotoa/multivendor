@@ -79,8 +79,8 @@ class SectionController extends Controller
             ];
 
             $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
-                'section_name.required' => 'Section Name is required',
-                'section_name.regex'    => 'Valid Section Name is required',
+                'section_name.required' => __('Section Name is required'),
+                'section_name.regex'    => __('Valid Section Name is required'),
             ];
 
             $this->validate($request, $rules, $customMessages);

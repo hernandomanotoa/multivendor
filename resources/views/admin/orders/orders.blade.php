@@ -9,7 +9,7 @@
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Orders</h4>
+                            <h4 class="card-title">{{ __('Orders') }}</h4>
                             
 
 
@@ -18,15 +18,15 @@
                                 <table id="orders" class="table table-bordered"> {{-- using the id here for the DataTable --}}
                                     <thead>
                                         <tr>
-                                            <th>Order ID</th>
-                                            <th>Order Date</th>
-                                            <th>Customer Name</th>
-                                            <th>Customer Email</th>
-                                            <th>Ordered Products</th>
-                                            <th>Order Amount</th>
-                                            <th>Order Status</th>
-                                            <th>Payment Method</th>
-                                            <th>Actions</th>
+                                            <th>{{ __('Order ID') }}</th>
+                                            <th>{{ __('Order Date') }}</th>
+                                            <th>{{ __('Customer Name') }}</th>
+                                            <th>{{ __('Customer Email') }}</th>
+                                            <th>{{ __('Ordered Products') }}</th>
+                                            <th>{{ __('Order Amount') }}</th>
+                                            <th>{{ __('Order Status') }}</th>
+                                            <th>{{ __('Payment Method') }}</th>
+                                            <th>{{ __('Actions') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -87,3 +87,13 @@
         <!-- partial -->
     </div>
 @endsection
+
+@push('other-scripts')
+    <script>
+        $('#orders').DataTable({
+            "language": {
+                "url": "{{ __('Link Languaje') }}"
+            }
+        });
+    </script>
+@endpush
