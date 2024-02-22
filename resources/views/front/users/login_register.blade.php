@@ -7,14 +7,14 @@
     <div class="page-style-a">
         <div class="container">
             <div class="page-intro">
-                <h2>Account</h2>
+                <h2>{{ __('Account') }}</h2>
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">{{ __('Home') }}</a>
                     </li>
                     <li class="is-marked">
-                        <a href="account.html">Account</a>
+                        <a href="account.html">{{ __('Account') }}</a>
                     </li>
                 </ul>
             </div>
@@ -64,8 +64,8 @@
                 <!-- Login -->
                 <div class="col-lg-6">
                     <div class="login-wrapper">
-                        <h2 class="account-h2 u-s-m-b-20">Login</h2>
-                        <h6 class="account-h6 u-s-m-b-30">Welcome back! Sign in to your account.</h6>
+                        <h2 class="account-h2 u-s-m-b-20">{{ __('Login') }}</h2>
+                        <h6 class="account-h6 u-s-m-b-30">{{ __('Welcome back! Sign in to your account.') }}</h6>
 
 
                         
@@ -77,14 +77,14 @@
 
 
                             <div class="u-s-m-b-30">
-                                <label for="user-email">Email
+                                <label for="user-email">{{ __('Email') }}
                                     <span class="astk">*</span>
                                 </label>
                                 <input type="email" name="email" id="users-email" class="text-field" placeholder="Email" name="email">
                                 <p id="login-email"></p> {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                             </div>
                             <div class="u-s-m-b-30">
-                                <label for="user-password">Password
+                                <label for="user-password">{{ __('Password') }}
                                     <span class="astk">*</span>
                                 </label>
                                 <input type="password" name="password" id="users-password" class="text-field" placeholder="Password" name="password">
@@ -98,7 +98,7 @@
                                 {{-- Remember Me Functionality --}}
                                 {{-- <div class="group-1">
                                     <input type="checkbox" class="check-box" id="remember-me-token">
-                                    <label class="label-text" for="remember-me-token">Remember me</label>
+                                    <label class="label-text" for="remember-me-token">{{ __('Remember me') }}</label>
                                 </div> --}}
 
 
@@ -106,7 +106,7 @@
                                 <div class="group-2 text-right">
                                     <div class="page-anchor">
                                         <a href="{{ url('user/forgot-password') }}">
-                                            <i class="fas fa-circle-o-notch u-s-m-r-9"></i>Lost your password?
+                                            <i class="fas fa-circle-o-notch u-s-m-r-9"></i>{{ __('Lost your password?') }}
                                         </a>
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
 
 
                             <div class="m-b-45">
-                                <button class="button button-outline-secondary w-100">Login</button>
+                                <button class="button button-outline-secondary w-100">{{ __('Login') }}</button>
                             </div>
                         </form>
                     </div>
@@ -127,8 +127,8 @@
                 <!-- Register -->
                 <div class="col-lg-6">
                     <div class="reg-wrapper">
-                        <h2 class="account-h2 u-s-m-b-20">Register</h2>
-                        <h6 class="account-h6 u-s-m-b-30">Registering for this site allows you to access your order status and history.</h6>
+                        <h2 class="account-h2 u-s-m-b-20">{{ __('Register') }}</h2>
+                        <h6 class="account-h6 u-s-m-b-30">{{ __('Registering for this site allows you to access your order status and history.') }}</h6>
 
 
 
@@ -144,7 +144,7 @@
 
 
                             <div class="u-s-m-b-30">
-                                <label for="username">Name
+                                <label for="username">{{ __('Name') }}
                                     <span class="astk">*</span>
                                 </label>
                                 <input type="text" id="user-name" class="text-field" placeholder="User Name" name="name">
@@ -152,40 +152,40 @@
                                 <p id="register-name"></p> {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                             </div>
                             <div class="u-s-m-b-30">
-                                <label for="usermobile">Mobile
+                                <label for="usermobile">{{ __('Mobile') }}
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="text" id="user-mobile" class="text-field" placeholder="User Mobile" name="mobile">
+                                <input type="text" id="user-mobile" class="text-field" placeholder="{{ __('User Mobile') }}" name="mobile">
                                 {{-- <p id="register-mobile" style="color: red"></p> --}} {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                                 <p id="register-mobile"></p> {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                             </div>
                             <div class="u-s-m-b-30">
-                                <label for="useremail">Email
+                                <label for="useremail">{{ __('Email') }}
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="email" id="user-email" class="text-field" placeholder="User Email" name="email">
+                                <input type="email" id="user-email" class="text-field" placeholder="{{ __('User Email') }}" name="email">
                                 {{-- <p id="register-email" style="color: red"></p> --}} {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                                 <p id="register-email"></p> {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                             </div>
                             <div class="u-s-m-b-30">
-                                <label for="userpassword">Password
+                                <label for="userpassword">{{ __('Password') }}
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="password" id="user-password" class="text-field" placeholder="User Password" name="password">
+                                <input type="password" id="user-password" class="text-field" placeholder="{{ __('User Password') }}" name="password">
                                 {{-- <p id="register-password" style="color: red"></p> --}} {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                                 <p id="register-password"></p> {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                             </div>
                             <div class="u-s-m-b-30"> {{-- "I've read and accept the terms & conditions" Checkbox --}}
                                 <input type="checkbox" class="check-box" id="accept" name="accept">
-                                <label class="label-text no-color" for="accept">I’ve read and accept the
-                                    <a href="terms-and-conditions.html" class="u-c-brand">terms & conditions</a>
+                                <label class="label-text no-color" for="accept">{{ __('I’ve read and accept the') }}
+                                    <a href="terms-and-conditions.html" class="u-c-brand">{{ __('terms & conditions') }}</a>
                                 </label>
                                 {{-- <p id="register-accept" style="color: red"></p> --}} {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                                 <p id="register-accept"></p> {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                             </div>
 
                             <div class="u-s-m-b-45">
-                                <button class="button button-primary w-100">Register</button>
+                                <button class="button button-primary w-100">{{ __('Register') }}</button>
                             </div>
                         </form>
                     </div>

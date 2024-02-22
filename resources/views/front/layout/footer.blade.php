@@ -4,13 +4,13 @@
         <!-- Outer-Footer -->
         <div class="outer-footer-wrapper u-s-p-y-80">
             <h6>
-                For special offers and other discount information
+                {{ __('For special offers and other discount information') }}
             </h6>
             <h1>
-                Subscribe to our Newsletter
+                {{ __('Subscribe to our Newsletter') }}
             </h1>
             <p>
-                Subscribe to the mailing list to receive updates on promotions, new arrivals, discount and coupons.
+                {{ __('Subscribe to the mailing list to receive updates on promotions, new arrivals, discount and coupons.') }}
             </p>
 
 
@@ -45,7 +45,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
+                <!-- <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="footer-list">
                         <h6>COLLECTION</h6>
                         <ul>
@@ -60,23 +60,23 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="footer-list">
-                        <h6>ACCOUNT</h6>
+                        <h6>{{ __('ACCOUNT') }}</h6>
                         <ul>
                             <li>
-                                <a href="{{ url('user/account') }}">My Account</a>
+                                <a href="{{ url('user/account') }}">{{ __('My Account') }}</a>
                             </li>
                             <li>
-                                <a href="{{ url('user/orders') }}">My Orders</a>
+                                <a href="{{ url('user/orders') }}">{{ __('My Orders') }}</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="footer-list">
-                        <h6>Contact</h6>
+                        <h6>{{ __('Contact') }}</h6>
                         <ul>
                             <li>
                                 <i class="fas fa-location-arrow u-s-m-r-9"></i>
@@ -142,8 +142,8 @@
                     </li>
                 </ul>
             </div>
-            <p class="copyright-text">Copyright &copy; 2022
-                <a target="_blank" rel="nofollow" href="#">E-commerce MBA</a> | All Right Reserved
+            <p class="copyright-text">Copyright &copy; 2024
+                <a target="_blank" rel="nofollow" href="#">E-commerce MBA</a> | {{ __('All Right Reserved') }}
             </p>
         </div>
     </div>

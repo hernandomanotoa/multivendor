@@ -16,12 +16,12 @@ $sections = \App\Models\Section::sections();
                     <li>
                         <a href="tel:+201255845857">
                         <i class="fas fa-phone u-c-brand u-s-m-r-9"></i>
-                        Telephone: +201255845857</a>
+                        {{ __('Telephone') }}: +201255845857</a>
                     </li>
                     <li>
                         <a href="mailto:info@multi-vendore-commerce.com">
                         <i class="fas fa-envelope u-c-brand u-s-m-r-9"></i>
-                        E-mail: info@multi-vendore-commerce.com
+                        {{ __('E-mail') }}: info@multi-vendore-commerce.com
                         </a>
                     </li>
                 </ul>
@@ -35,9 +35,9 @@ $sections = \App\Models\Section::sections();
                         <a>
                             {{-- If the user is authenticated/logged in, show 'My Account', if not, show 'Login/Register' --}} 
                             @if (\Illuminate\Support\Facades\Auth::check()) {{-- Determining If The Current User Is Authenticated: https://laravel.com/docs/9.x/authentication#determining-if-the-current-user-is-authenticated --}}
-                                My Account
+                                {{ __('My Account') }}
                             @else
-                                Login/Register
+                                {{ __('Login/Register') }}
                             @endif
 
                             <i class="fas fa-chevron-down u-s-m-l-9"></i>
@@ -46,12 +46,12 @@ $sections = \App\Models\Section::sections();
                             <li>
                                 <a href="{{ url('cart') }}">
                                 <i class="fas fa-cog u-s-m-r-9"></i>
-                                My Cart</a>
+                                {{ __('My Cart') }}</a>
                             </li>
                             <li>
                                 <a href="{{ url('checkout') }}">
                                 <i class="far fa-check-circle u-s-m-r-9"></i>
-                                Checkout</a>
+                                {{ __('Checkout') }}</a>
                             </li>
 
 
@@ -61,7 +61,7 @@ $sections = \App\Models\Section::sections();
                                 <li>
                                     <a href="{{ url('user/account') }}"> 
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
-                                        My Account
+                                        {{ __('My Account') }}
                                     </a>
                                 </li>
 
@@ -69,27 +69,27 @@ $sections = \App\Models\Section::sections();
                                 <li>
                                     <a href="{{ url('user/orders') }}"> 
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
-                                        My Orders
+                                        {{ __('My Orders') }}
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="{{ url('user/logout') }}"> 
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
-                                        Logout
+                                        {{ __('Logout') }}
                                     </a>
                                 </li>
                             @else
                                 <li>
                                     <a href="{{ url('user/login-register') }}"> 
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
-                                        Customer Login
+                                        {{ __('Customer Login') }}
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{ url('vendor/login-register') }}">
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
-                                        Vendor Login
+                                        {{ __('Vendor Login') }}
                                     </a>
                                 </li>
                             @endif
@@ -149,14 +149,14 @@ $sections = \App\Models\Section::sections();
 
                     {{-- Website Search Form (to search for all website products) --}} 
                     <form class="form-searchbox" action="{{ url('/search-products') }}" method="get">
-                        <label class="sr-only" for="search-landscape">Search</label>
-                        <input id="search-landscape" type="text" class="text-field" placeholder="Search everything" name="search" @if (isset($_REQUEST['search']) && !empty($_REQUEST['search'])) value="{{ $_REQUEST['search'] }}" @endif> {{-- We use the "name" HTML attribute as a key/name for the "value" HTML attribute for submitting the Search Form. Check the "value" HTML attribute too inside the <option> HTML tag down below! --}} {{-- if the user uses the Search Form --}}
+                        <label class="sr-only" for="search-landscape">{{ __('Search') }}</label>
+                        <input id="search-landscape" type="text" class="text-field" placeholder="{{ __('Search everything') }}" name="search" @if (isset($_REQUEST['search']) && !empty($_REQUEST['search'])) value="{{ $_REQUEST['search'] }}" @endif> {{-- We use the "name" HTML attribute as a key/name for the "value" HTML attribute for submitting the Search Form. Check the "value" HTML attribute too inside the <option> HTML tag down below! --}} {{-- if the user uses the Search Form --}}
                         <div class="select-box-position">
                             <div class="select-box-wrapper select-hide">
-                                <label class="sr-only" for="select-category">Choose category for search</label>
+                                <label class="sr-only" for="select-category">{{ __('Choose category for search') }}</label>
                                 <select class="select-box" id="select-category" name="section_id">
 
-                                    <option selected="selected" value="">All</option>
+                                    <option selected="selected" value="">{{ __('All') }}</option>
                                     @foreach ($sections as $section)
                                         <option value="{{ $section['id'] }}"  @if (isset($_REQUEST['section_id']) && !empty($_REQUEST['section_id']) && $_REQUEST['section_id'] == $section['id']) selected @endif>{{ $section['name'] }}</option> {{-- the search bar drop-down menu at the top --}} {{-- We use the "value" HTML attribute as a value for the "name" HTML attribute for submitting the Search Form. Check the "name" HTML attribute too inside the <input> HTML tag above there! --}}
                                     @endforeach
@@ -221,7 +221,7 @@ $sections = \App\Models\Section::sections();
                     <div class="v-menu v-close">
                         <span class="v-title">
                         <i class="ion ion-md-menu"></i>
-                        All Categories
+                        {{ __('All Categories')}}
                         <i class="fas fa-angle-down"></i>
                         </span>
                         <nav>
@@ -285,42 +285,42 @@ $sections = \App\Models\Section::sections();
                 <div class="col-lg-9">
                     <ul class="bottom-nav g-nav u-d-none-lg">
                         <li>
-                            <a href="{{ url('search-products?search=new-arrivals') }}">New Arrivals 
+                            <a href="{{ url('search-products?search=new-arrivals') }}">{{ __('New Arrivals') }} 
                             <span class="superscript-label-new">NEW</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('search-products?search=best-sellers') }}">Best Seller 
+                            <a href="{{ url('search-products?search=best-sellers') }}">{{ __('Best Seller') }} 
                             <span class="superscript-label-hot">HOT</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('search-products?search=featured') }}">Featured 
+                            <a href="{{ url('search-products?search=featured') }}">{{ __('Featured') }} 
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('search-products?search=discounted') }}">Discounted 
+                            <a href="{{ url('search-products?search=discounted') }}">{{ __('Discounted') }} 
                             <span class="superscript-label-discount">>10%</span>
                             </a>
                         </li>
                         <li class="mega-position">
-                            <a>More
+                            <a>{{ __('More') }}
                             <i class="fas fa-chevron-down u-s-m-l-9"></i>
                             </a>
                             <div class="mega-menu mega-3-colm">
                                 <ul>
-                                    <li class="menu-title">COMPANY</li>
+                                    <li class="menu-title">{{ __('COMPANY') }}</li>
                                     <li>
-                                        <a href="{{ url('about-us') }}" class="u-c-brand">About Us</a>
+                                        <a href="{{ url('about-us') }}" class="u-c-brand">{{ __('About Us') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('contact') }}">Contact Us</a>
+                                        <a href="{{ url('contact') }}">{{ __('Contact Us') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('faq') }}">FAQ</a>
+                                        <a href="{{ url('faq') }}">{{ __('FAQ') }}</a>
                                     </li>
                                 </ul>
-                                <ul>
+                                <!-- <ul>
                                     <li class="menu-title">COLLECTION</li>
                                     <li>
                                         <a href="{{ url('men') }}">Men Clothing</a>
@@ -331,14 +331,14 @@ $sections = \App\Models\Section::sections();
                                     <li>
                                         <a href="{{ url('kids') }}">Kids Clothing</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                                 <ul>
-                                    <li class="menu-title">ACCOUNT</li>
+                                    <li class="menu-title">{{ __('ACCOUNT') }}</li>
                                     <li>
-                                        <a href="{{ url('user/account') }}">My Account</a>
+                                        <a href="{{ url('user/account') }}">{{ __('My Account') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('user/orders') }}">My Orders</a>
+                                        <a href="{{ url('user/orders') }}">{{ __('My Orders') }}</a>
                                     </li>
                                 </ul>
                             </div>

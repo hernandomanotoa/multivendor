@@ -47,19 +47,19 @@
     <section class="section-maker">
         <div class="container">
             <div class="sec-maker-header text-center">
-                <h3 class="sec-maker-h3">TOP COLLECTION</h3>
+                <h3 class="sec-maker-h3">{{ __('TOP COLLECTION')}}</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#men-latest-products">New Arrivals</a>
+                        <a class="nav-link active" data-toggle="tab" href="#men-latest-products">{{ __('New Arrivals')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#men-best-selling-products">Best Sellers</a>
+                        <a class="nav-link" data-toggle="tab" href="#men-best-selling-products">{{ __('Best Sellers')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#discounted-products">Discounted Products</a>
+                        <a class="nav-link" data-toggle="tab" href="#discounted-products">{{ __('Discounted Products')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#men-featured-products">Featured Products</a>
+                        <a class="nav-link" data-toggle="tab" href="#men-featured-products">{{ __('Featured Products')}}</a>
                     </li>
                 </ul>
             </div>
@@ -93,10 +93,10 @@
                                                     @endif
                                                 </a>
                                                 <div class="item-action-behaviors">
-                                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                    <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                    <a class="item-addCart" href="{{ url('product/' . $product['id']) }}">Add to Cart</a>
+                                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">{{ __('Quick Look')}}</a>
+                                                    <a class="item-mail" href="javascript:void(0)">{{ __('Mail')}}</a>
+                                                    <a class="item-addwishlist" href="javascript:void(0)">{{ __('Add to Wishlist')}}</a>
+                                                    <a class="item-addCart" href="{{ url('product/' . $product['id']) }}">{{ __('Add to Cart')}}</a>
                                                 </div>
                                             </div>
                                             <div class="item-content">
@@ -411,7 +411,14 @@
         <div class="banner-layer">
             <div class="container">
                 <div class="image-banner">
-                    <a target="_blank" rel="nofollow" href="{{ url($fixBanners[1]['link']) }}" class="mx-auto banner-hover effect-dark-opacity">
+                    <a target="_blank" rel="nofollow" href="{{ url($fixBanners[1]['link']) }}" class="mx-auto baGreat Value
+We offer competitive prices on our 100 million plus product range
+Shop with Confidence
+Our Protection covers your purchase from click to delivery
+Safe Payment
+Pay with the world’s most popular and secure payment methods
+24/7 Help Center
+Round-the-clock assistance for a smooth shopping experiencenner-hover effect-dark-opacity">
                         <img class="img-fluid" src="{{ asset('front/images/banner_images/' . $fixBanners[1]['image']) }}" alt="{{ $fixBanners[1]['alt'] }}" title="{{ $fixBanners[1]['title'] }}">
                     </a>
                 </div>
@@ -433,9 +440,9 @@
                                 <i class="ion ion-md-star"></i>
                             </div>
                             <h2>
-                                Great Value
+                                {{ __('Great Value') }}
                             </h2>
-                            <p>We offer competitive prices on our 100 million plus product range</p>
+                            <p>{{ __('We offer competitive prices on our 100 million plus product range') }}</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3">
@@ -444,9 +451,9 @@
                                 <i class="ion ion-md-cash"></i>
                             </div>
                             <h2>
-                                Shop with Confidence
+                                {{ __('Shop with Confidence') }}
                             </h2>
-                            <p>Our Protection covers your purchase from click to delivery</p>
+                            <p>{{ __('Our Protection covers your purchase from click to delivery') }}</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3">
@@ -455,9 +462,9 @@
                                 <i class="ion ion-ios-card"></i>
                             </div>
                             <h2>
-                                Safe Payment
+                                {{ __('Safe Payment') }}
                             </h2>
-                            <p>Pay with the world’s most popular and secure payment methods</p>
+                            <p>{{ __('Pay with the world’s most popular and secure payment methods') }}</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3">
@@ -466,9 +473,9 @@
                                 <i class="ion ion-md-contacts"></i>
                             </div>
                             <h2>
-                                24/7 Help Center
+                                {{ __('24/7 Help Center') }}
                             </h2>
-                            <p>Round-the-clock assistance for a smooth shopping experience</p>
+                            <p>{{ __('Round-the-clock assistance for a smooth shopping experience') }}</p>
                         </div>
                     </div>
                 </div>
