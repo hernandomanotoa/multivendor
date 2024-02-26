@@ -29,10 +29,10 @@
 
                     </a>
                     <div class="item-action-behaviors">
-                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                        <a class="item-mail" href="javascript:void(0)">Mail</a>
-                        <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                        <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">{{ __('Quick Look') }}</a>
+                        <a class="item-mail" href="javascript:void(0)">{{ __('Mail') }}</a>
+                        <a class="item-addwishlist" href="javascript:void(0)">{{ __('Add to Wishlist') }}</a>
+                        <a class="item-addCart" href="javascript:void(0)">{{ __('Add to Cart') }}</a>
                     </div>
                 </div>
                 <div class="item-content">
@@ -67,16 +67,16 @@
                     @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
                         <div class="price-template">
                             <div class="item-new-price">
-                                Rs . {{ $getDiscountPrice }} 
+                                {{ __("$") }} {{ $getDiscountPrice }} 
                             </div>
                             <div class="item-old-price">
-                                Rs . {{ $product['product_price'] }}
+                                {{ __("$") }} {{ $product['product_price'] }}
                             </div>
                         </div>
                     @else {{-- if there's no discount on the price, show the original price --}}
                         <div class="price-template">
                             <div class="item-new-price">
-                                Rs . {{ $product['product_price'] }}
+                                {{ __("$") }} {{ $product['product_price'] }}
                             </div>
                         </div>
                     @endif
@@ -93,7 +93,7 @@
                 @endphp
                 @if ($isProductNew == 'Yes')
                     <div class="tag new">
-                        <span>NEW</span>
+                        <span>{{ __('NEW') }}</span>
                     </div>
                 @endif
 

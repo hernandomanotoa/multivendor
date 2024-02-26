@@ -153,9 +153,9 @@ class ProductsController extends Controller
                     $search_product = $_REQUEST['search'];
 
                     // We fill in the $categoryDetails array MANUALLY with the same indexes/keys that come from the categoryDetails() method in Category.php model (because in either cases of the if-else statement, we pass in $categoryDetails variable to the view down below)
-                    $categoryDetails['breadcrumbs']                      = 'New Arrival Products';
-                    $categoryDetails['categoryDetails']['category_name'] = 'New Arrival Products';
-                    $categoryDetails['categoryDetails']['description']   = 'New Arrival Products';
+                    $categoryDetails['breadcrumbs']                      = __('New Arrival Products');
+                    $categoryDetails['categoryDetails']['category_name'] = __('New Arrival Products');
+                    $categoryDetails['categoryDetails']['description']   = __('New Arrival Products');
 
                     // We join `products` table (at the `category_id` column) with `categoreis` table (becausee we're going to search `category_name` column in `categories` table)
                     // Note: It's best practice to name table columns with more verbose descriptive names (e.g. if the table name is `products`, then you should have a column called `product_id`, NOT `id`), and also, don't have repeated column names THROUGHOUT/ACROSS the tables of a certain (one) database (i.e. make all your database tables column names (throughout your database) UNIQUE (even columns in different tables!)). That's because of that problem that emerges when you join (JOIN clause) two tables which have the same column names, when you join them, the column names of the second table overrides the column names of the first table (similar column names override each other), leading to many problems. There are TWO ways/workarounds to tackle this problem
@@ -191,9 +191,9 @@ class ProductsController extends Controller
                     $search_product = $_REQUEST['search'];
 
                     // We fill in the $categoryDetails array MANUALLY with the same indexes/keys that come from the categoryDetails() method in Category.php model (because in either cases of the if-else statement, we pass in $categoryDetails variable to the view down below)
-                    $categoryDetails['breadcrumbs']                      = 'Featured Products';
-                    $categoryDetails['categoryDetails']['category_name'] = 'Featured Products';
-                    $categoryDetails['categoryDetails']['description']   = 'Featured Products';
+                    $categoryDetails['breadcrumbs']                      = __('Featured Products');
+                    $categoryDetails['categoryDetails']['category_name'] = __('Featured Products');
+                    $categoryDetails['categoryDetails']['description']   = __('Featured Products');
 
                     // We join `products` table (at the `category_id` column) with `categoreis` table (becausee we're going to search `category_name` column in `categories` table)
                     // Note: It's best practice to name table columns with more verbose descriptive names (e.g. if the table name is `products`, then you should have a column called `product_id`, NOT `id`), and also, don't have repeated column names THROUGHOUT/ACROSS the tables of a certain (one) database (i.e. make all your database tables column names (throughout your database) UNIQUE (even columns in different tables!)). That's because of that problem that emerges when you join (JOIN clause) two tables which have the same column names, when you join them, the column names of the second table overrides the column names of the first table (similar column names override each other), leading to many problems. There are TWO ways/workarounds to tackle this problem
@@ -210,9 +210,9 @@ class ProductsController extends Controller
                     $search_product = $_REQUEST['search'];
 
                     // We fill in the $categoryDetails array MANUALLY with the same indexes/keys that come from the categoryDetails() method in Category.php model (because in either cases of the if-else statement, we pass in $categoryDetails variable to the view down below)
-                    $categoryDetails['breadcrumbs']                      = 'Discounted Products';
-                    $categoryDetails['categoryDetails']['category_name'] = 'Discounted Products';
-                    $categoryDetails['categoryDetails']['description']   = 'Discounted Products';
+                    $categoryDetails['breadcrumbs']                      = __('Discounted Products');
+                    $categoryDetails['categoryDetails']['category_name'] = __('Discounted Products');
+                    $categoryDetails['categoryDetails']['description']   = __('Discounted Products');
 
                     // We join `products` table (at the `category_id` column) with `categoreis` table (becausee we're going to search `category_name` column in `categories` table)
                     // Note: It's best practice to name table columns with more verbose descriptive names (e.g. if the table name is `products`, then you should have a column called `product_id`, NOT `id`), and also, don't have repeated column names THROUGHOUT/ACROSS the tables of a certain (one) database (i.e. make all your database tables column names (throughout your database) UNIQUE (even columns in different tables!)). That's because of that problem that emerges when you join (JOIN clause) two tables which have the same column names, when you join them, the column names of the second table overrides the column names of the first table (similar column names override each other), leading to many problems. There are TWO ways/workarounds to tackle this problem
@@ -877,7 +877,7 @@ class ProductsController extends Controller
 
         // If the Cart is empty (If there're no Cart Items), don't allow opening/accessing the Checkout page (checkout.blade.php)    
         if (count($getCartItems) == 0) {
-            $message = 'Shopping Cart is empty! Please add products to your Cart to checkout';
+            $message = __('Shopping Cart is empty! Please add products to your Cart to checkout');
 
             return redirect('cart')->with('error_message', $message); // redirect user to the cart.blade.php page, and show an error message in cart.blade.php
         }

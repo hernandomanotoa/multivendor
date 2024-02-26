@@ -69,7 +69,7 @@
                             <div class="section-1-title-breadcrumb-rating">
                                 <div class="product-title">
                                     <h1>
-                                        <a href="single-product.html">Product Name</a>
+                                        <a href="single-product.html">{{ __("Product Name") }}</a>
                                     </h1>
                                 </div>
                                 <ul class="bread-crumb">

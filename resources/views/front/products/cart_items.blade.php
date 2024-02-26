@@ -6,11 +6,11 @@
     <table>
         <thead>
             <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-                <th>Action</th>
+                <th>{{ __('Product') }}</th>
+                <th>{{ __('Price') }}</th>
+                <th>{{ __('Quantity') }}</th>
+                <th>{{ __('Subtotal') }}</th>
+                <th>{{ __('Action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -114,39 +114,39 @@
         <table>
             <thead>
                 <tr>
-                    <th colspan="2">Cart Totals</th>
+                    <th colspan="2">{{ __('Cart Totals') }}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                        <h3 class="calc-h3 u-s-m-b-0">Sub Total</h3> {{-- Total Price before any Coupon discounts --}}
+                        <h3 class="calc-h3 u-s-m-b-0">{{ __('Sub Total') }}</h3> {{-- Total Price before any Coupon discounts --}}
                     </td>
                     <td>
-                        <span class="calc-text">EGP{{ $total_price }}</span>
+                        <span class="calc-text">{{ __('USD') }}{{ $total_price }}</span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <h3 class="calc-h3 u-s-m-b-0">Coupon Discount</h3>
+                        <h3 class="calc-h3 u-s-m-b-0">{{ __('Coupon Discount') }}</h3>
                     </td>
                     <td>
                         <span class="calc-text couponAmount"> {{-- We create the 'couponAmount' CSS class to use it as a handle for AJAX inside    $('#applyCoupon').submit();    function in front/js/custom.js --}}
                             
                             @if (\Illuminate\Support\Facades\Session::has('couponAmount')) {{-- We stored the 'couponAmount' in a Session Variable inside the applyCoupon() method in Front/ProductsController.php --}}
-                                EGP{{ \Illuminate\Support\Facades\Session::get('couponAmount') }}
+                                {{ __('USD') }}{{ \Illuminate\Support\Facades\Session::get('couponAmount') }}
                             @else
-                                EGP0
+                                USD0
                             @endif
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <h3 class="calc-h3 u-s-m-b-0">Grand Total</h3> {{-- Total Price after Coupon discounts (if any) --}}
+                        <h3 class="calc-h3 u-s-m-b-0">{{ __('Grand Total') }}</h3> {{-- Total Price after Coupon discounts (if any) --}}
                     </td>
                     <td>
-                        <span class="calc-text grand_total">EGP{{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}</span> {{-- We create the 'grand_total' CSS class to use it as a handle for AJAX inside    $('#applyCoupon').submit();    function in front/js/custom.js --}} {{-- We stored the 'couponAmount' a Session Variable inside the applyCoupon() method in Front/ProductsController.php --}}
+                        <span class="calc-text grand_total">{{ __('USD') }}{{ $total_price - \Illuminate\Support\Facades\Session::get('couponAmount') }}</span> {{-- We create the 'grand_total' CSS class to use it as a handle for AJAX inside    $('#applyCoupon').submit();    function in front/js/custom.js --}} {{-- We stored the 'couponAmount' a Session Variable inside the applyCoupon() method in Front/ProductsController.php --}}
                     </td>
                 </tr>
             </tbody>

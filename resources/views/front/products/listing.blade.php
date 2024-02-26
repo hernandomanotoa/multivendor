@@ -7,14 +7,14 @@
     <div class="page-style-a">
         <div class="container">
             <div class="page-intro">
-                <h2>Shop</h2>
+                <h2>{{ __('Shop') }}</h2>
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">{{ __('Home') }}</a>
                     </li>
                     <li class="is-marked">
-                        <a href="listing.html">Shop</a>
+                        <a href="listing.html">{{ __('Shop') }}</a>
                     </li>
                 </ul>
             </div>
@@ -29,7 +29,7 @@
             <div class="shop-intro">
                 <ul class="bread-crumb">
                     <li class="has-separator">
-                        <a href="{{ url('/') }}">Home</a>
+                        <a href="{{ url('/') }}">{{ __('Home') }}</a>
                     </li>
 
 
@@ -94,10 +94,10 @@
                         <!-- Toolbar Sorter 2  -->
                         <div class="toolbar-sorter-2">
                             <div class="select-box-wrapper">
-                                <label class="sr-only" for="show-records">Show Records Per Page</label>
+                                <label class="sr-only" for="show-records">{{ __('Show Records Per Page') }}</label>
                                 <select class="select-box" id="show-records">
-                                    <option selected="selected" value="">Showing: {{ count($categoryProducts) }}</option>
-                                    <option value="">Showing: All</option>
+                                    <option selected="selected" value="">{{ __('Showing') }}: {{ count($categoryProducts) }}</option>
+                                    <option value="">{{ __('Showing') }}: {{ __('All') }}</option>
                                 </select>
                             </div>
                         </div>

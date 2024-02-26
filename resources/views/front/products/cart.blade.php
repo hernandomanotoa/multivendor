@@ -11,10 +11,10 @@
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">{{ __('Home') }} </a>
                     </li>
                     <li class="is-marked">
-                        <a href="cart.html">Cart</a>
+                        <a href="cart.html">{{ __('Cart') }} </a>
                     </li>
                 </ul>
             </div>
@@ -78,7 +78,7 @@
                     <!-- Coupon -->
                     <div class="coupon-continue-checkout u-s-m-b-60">
                         <div class="coupon-area">
-                            <h6>Enter your coupon code if you have one.</h6>
+                            <h6>{{ __('Enter your coupon code if you have one.') }} </h6>
                             <div class="coupon-field">
 
 
@@ -86,9 +86,9 @@
                                 {{-- Note: For Coupons, user must be logged in (authenticated) to be able to redeem them. Both 'admins' and 'vendors' can add Coupons. Coupons added by 'vendor' will be available for their products ONLY, but ones added by 'admins' will be available for ALL products. --}}
                                 
                                 <form id="applyCoupon" method="post" action="javascript:void(0)"  @if (\Illuminate\Support\Facades\Auth::check()) user=1 @endif> {{-- Created an id for this <form> to use it as a handle in jQuery for submission via AJAX. Check front/js/custom.js --}} {{-- Only logged in (authenticated) users can redeem the coupon, so we make a condition, if the user is logged in (authenticated), we create that Custom HTML attribute 'user = 1' so that jQuery can use it to submit the form. Check front/js/custom.js --}} {{-- Note: We need to deactivate the 'action' HTML attribute (using    action="javascript:void(0)"    ) as we'r going to submit using an AJAX call. Check front/js/custom.js --}}
-                                    <label class="sr-only" for="coupon-code">Apply Coupon</label>
-                                    <input type="text" class="text-field" placeholder="Enter Coupon Code" id="code" name="code">
-                                    <button type="submit" class="button">Apply Coupon</button>
+                                    <label class="sr-only" for="coupon-code">{{ __('Apply Coupon') }} </label>
+                                    <input type="text" class="text-field" placeholder="{{ __('Enter Coupon Code') }} " id="code" name="code">
+                                    <button type="submit" class="button">{{ __('Apply Coupon') }} </button>
                                 </form>
 
 
@@ -96,8 +96,8 @@
                             </div>
                         </div>
                         <div class="button-area">
-                            <a href="{{ url('/') }}" class="continue">Continue Shopping</a>
-                            <a href="{{ url('/checkout') }}" class="checkout">Proceed to Checkout</a>
+                            <a href="{{ url('/') }}" class="continue">{{ __('Continue Shopping') }} </a>
+                            <a href="{{ url('/checkout') }}" class="checkout">{{ __('Proceed to Checkout') }} </a>
                         </div>
                     </div>
                     <!-- Coupon /- -->

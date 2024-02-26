@@ -98,7 +98,7 @@ $sections = \App\Models\Section::sections();
 
                         </ul>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a>EGP
                         <i class="fas fa-chevron-down u-s-m-l-9"></i>
                         </a>
@@ -123,6 +123,7 @@ $sections = \App\Models\Section::sections();
                                 <a href="#">ARB</a>
                             </li>
                         </ul>
+                    </li> --}}
                 </ul>
             </nav>
         </div>

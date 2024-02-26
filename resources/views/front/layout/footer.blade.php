@@ -17,9 +17,9 @@
 
             
             <form class="newsletter-form">
-                <label class="sr-only" for="subscriber_email">Enter your Email</label>
-                <input type="text" placeholder="Your Email Address" id="subscriber_email" name="subscriber_email" required> {{-- We'll use the HTML id Global Attribute in jQuery in front/js/custom.js --}} 
-                <button type="button" class="button" onclick="addSubscriber()">SUBMIT</button> {{-- Check the addSubscriber() function in front/js/custom.js. We'll use it in conjunction with the    id="subscriber_email"    of the <input> field --}}
+                <label class="sr-only" for="subscriber_email">{{ __('Enter your Email') }}</label>
+                <input type="text" placeholder="{{ __('Your Email Address') }}" id="subscriber_email" name="subscriber_email" required> {{-- We'll use the HTML id Global Attribute in jQuery in front/js/custom.js --}} 
+                <button type="button" class="button" onclick="addSubscriber()">{{ __('SUBMIT') }}</button> {{-- Check the addSubscriber() function in front/js/custom.js. We'll use it in conjunction with the    id="subscriber_email"    of the <input> field --}}
             </form>
 
 
@@ -31,16 +31,16 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="footer-list">
-                        <h6>COMPANY</h6>
+                        <h6>{{ __('COMPANY') }} </h6>
                         <ul>
                             <li>
-                                <a href="{{ url('about-us') }}">About Us</a>
+                                <a href="{{ url('about-us') }}">{{ __('About Us') }} </a>
                             </li>
                             <li>
-                                <a href="{{ url('contact') }}">Contact Us</a>
+                                <a href="{{ url('contact') }}">C{{ __('ontact Us') }} </a>
                             </li>
                             <li>
-                                <a href="{{ url('faq') }}">FAQ</a>
+                                <a href="{{ url('faq') }}">{{ __('FAQ') }} </a>
                             </li>
                         </ul>
                     </div>
