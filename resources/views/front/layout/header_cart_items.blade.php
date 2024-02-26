@@ -27,7 +27,7 @@
                     <a href="{{ url('product/' . $item['product_id']) }}">
                     <img src="{{ asset('front/images/product_images/small/' . $item['product']['product_image']) }}" alt="Product">
                     <span class="mini-item-name">{{ $item['product']['product_name'] }}</span>
-                    <span class="mini-item-price">EGP{{ $getDiscountAttributePrice['final_price'] }}</span>
+                    <span class="mini-item-price">{{ __("$") }}{{ $getDiscountAttributePrice['final_price'] }}</span>
                     <span class="mini-item-quantity"> x {{ $item['quantity'] }} </span>
                     </a>
                 </li>
@@ -39,12 +39,12 @@
 
         </ul>
         <div class="mini-shop-total clearfix">
-            <span class="mini-total-heading float-left">Total:</span>
-            <span class="mini-total-price float-right">EGP{{ $total_price }}</span>
+            <span class="mini-total-heading float-left">{{ __('Total') }}:</span>
+            <span class="mini-total-price float-right">{{ __("$") }}{{ $total_price }}</span>
         </div>
         <div class="mini-action-anchors">
-            <a href="{{ url('cart') }}"     class="cart-anchor">View Cart</a>
-            <a href="{{ url('checkout') }}" class="checkout-anchor">Checkout</a>
+            <a href="{{ url('cart') }}"     class="cart-anchor">{{ __('View Cart') }}</a>
+            <a href="{{ url('checkout') }}" class="checkout-anchor">{{ __('Checkout') }}</a>
         </div>
     </div>
 </div>

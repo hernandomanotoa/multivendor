@@ -57,10 +57,10 @@
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
-                        <a href="{{ url('/') }}">Home</a>
+                        <a href="{{ url('/') }}">{{ __('Home') }}</a>
                     </li>
                     <li class="is-marked">
-                        <a href="javascript:;">Detail</a>
+                        <a href="javascript:;">{{ __('Detail') }}</a>
                     </li>
                 </ul>
             </div>
@@ -145,7 +145,7 @@
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
 
                                 {{-- There are TWO ways to: Displaying Unescaped Data: https://laravel.com/docs/9.x/blade#displaying-unescaped-data --}}
-                                <strong>Success:</strong> @php echo Session::get('success_message') @endphp       {{-- Displaying Unescaped Data: https://laravel.com/docs/9.x/blade#displaying-unescaped-data --}}
+                                <strong>{{ __('Success') }}:</strong> @php echo Session::get('success_message') @endphp       {{-- Displaying Unescaped Data: https://laravel.com/docs/9.x/blade#displaying-unescaped-data --}}
 
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -167,7 +167,7 @@
                             {{-- Breadcrumb --}}
                             <ul class="bread-crumb">
                                 <li class="has-separator">
-                                    <a href="{{ url('/') }}">Home</a> {{-- Home --}}
+                                    <a href="{{ url('/') }}">{{ __('Home') }}</a> {{-- Home --}}
                                 </li>
                                 <li class="has-separator">
                                     <a href="javascript:;">{{ $productDetails['section']['name'] }}</a> {{-- Section Name --}}
@@ -201,7 +201,7 @@
                             </div>
                         </div>
                         <div class="section-2-short-description u-s-p-y-14">
-                            <h6 class="information-heading u-s-m-b-8">Description:</h6>
+                            <h6 class="information-heading u-s-m-b-8">{{ __('Description') }}:</h6>
                             <p>{{ $productDetails['description'] }}</p>
                         </div>
                         <div class="section-3-price-original-discount u-s-p-y-14">
@@ -214,15 +214,15 @@
 
                                 @if ($getDiscountPrice > 0) {{-- if there's a discount on the product price --}}
                                     <div class="price">
-                                        <h4>EGP{{ $getDiscountPrice }}</h4>
+                                        <h4>{{ __("$") }}{{ $getDiscountPrice }}</h4>
                                     </div>
                                     <div class="original-price">
                                         <span>Original Price:</span>
-                                        <span>EGP{{ $productDetails['product_price'] }}</span> {{-- the product original price (without discount) --}}
+                                        <span>{{ __("$") }}{{ $productDetails['product_price'] }}</span> {{-- the product original price (without discount) --}}
                                     </div>
                                 @else {{-- if there's no discount on the product price --}}
                                     <div class="price">
-                                        <h4>EGP{{ $productDetails['product_price'] }}</h4> {{-- the product original price (without discount) --}}
+                                        <h4>{{ __("$") }}{{ $productDetails['product_price'] }}</h4> {{-- the product original price (without discount) --}}
                                     </div>
                                 @endif
 
@@ -232,13 +232,13 @@
 
                         </div>
                         <div class="section-4-sku-information u-s-p-y-14">
-                            <h6 class="information-heading u-s-m-b-8">Sku Information:</h6>
+                            <h6 class="information-heading u-s-m-b-8">{{ __('Sku Information') }}:</h6>
                             <div class="left">
-                                <span>Product Code:</span>
+                                <span>{{ __('Product Code') }}:</span>
                                 <span>{{ $productDetails['product_code'] }}</span>
                             </div>
                             <div class="left">
-                                <span>Product Color:</span>
+                                <span>{{ __('Product Color') }}:</span>
                                 <span>{{ $productDetails['product_color'] }}</span>
                             </div>
                             <div class="availability">
@@ -246,9 +246,9 @@
 
 
                                 @if ($totalStock > 0)
-                                    <span>In Stock</span>
+                                    <span>{{ __('In Stock') }}</span>
                                 @else
-                                    <span style="color: red">Out of Stock (Sold-out)</span>
+                                    <span style="color: red">{{ __('Out of Stock (Sold-out)') }}</span>
                                 @endif
 
 
@@ -259,8 +259,8 @@
 
                             @if ($totalStock > 0)
                                 <div class="left">
-                                    <span>Only:</span>
-                                    <span>{{ $totalStock }} left</span>
+                                    <span>{{ __('Only') }}:</span>
+                                    <span>{{ $totalStock }} {{ __('left') }}</span>
                                 </div>
                             @endif
 
@@ -297,7 +297,7 @@
                                 {{-- Managing Product Colors (using the `group_code` column in `products` table) --}} 
                                 @if (count($groupProducts) > 0) {{-- if there's a value for the `group_code` column (in `products` table) for the currently viewed product --}}
                                     <div>
-                                        <div><strong>Product Colors</strong></div>
+                                        <div><strong>{{ __('Product Colors') }}</strong></div>
                                         <div style="margin-top: 10px">
                                             @foreach ($groupProducts as $product)
                                                 <a href="{{ url('product/' . $product['id']) }}">
@@ -311,13 +311,13 @@
 
 
                                 <div class="sizes u-s-m-b-11" style="margin-top: 20px">
-                                    <span>Available Size:</span>
+                                    <span>{{ __('Available Size') }}:</span>
                                     <div class="size-variant select-box-wrapper">
                                         <select class="select-box product-size" id="getPrice" product-id="{{ $productDetails['id'] }}" name="size" required> {{-- Check front/js/custom.js file --}}
 
 
 
-                                            <option value="">Select Size</option>
+                                            <option value="">{{ __('Select Size') }}</option>
                                             @foreach ($productDetails['attributes'] as $attribute)
                                                 <option value="{{ $attribute['size'] }}">{{ $attribute['size'] }}</option>
                                             @endforeach
@@ -332,7 +332,7 @@
 
                                 
                                 <div class="quantity-wrapper u-s-m-b-22">
-                                    <span>Quantity:</span>
+                                    <span>{{ __('Quantity') }}:</span>
                                     <div class="quantity">
                                         <input class="quantity-text-field" type="number" name="quantity" value="1">
                                     </div>
@@ -350,9 +350,9 @@
 
 
                         {{-- PIN code Availability Check: check if the PIN code of the user's Delivery Address exists in our database (in both `cod_pincodes` and `prepaid_pincodes`) or not via AJAX. Check front/js/custom.js --}} 
-                        <br><br><b>Delivery</b>
+                        <br><br><b>{{ __('Delivery') }}</b>
                         <input type="text" id="pincode" placeholder="Check Pincode" required>
-                        <button type="button" id="checkPincode">Go</button> {{-- We'll use that checkPincode HTML id attribute in front/js/custom.js as a handle for jQuery --}}
+                        <button type="button" id="checkPincode">{{ __('Go') }}</button> {{-- We'll use that checkPincode HTML id attribute in front/js/custom.js as a handle for jQuery --}}
 
 
                     </div>
@@ -367,14 +367,14 @@
                         <div class="detail-nav-wrapper u-s-m-b-30">
                             <ul class="nav single-product-nav justify-content-center">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#video">Product Video</a>
+                                    <a class="nav-link active" data-toggle="tab" href="#video">{{ __('Product Video') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#detail">Product Details</a>
+                                    <a class="nav-link" data-toggle="tab" href="#detail">{{ __('Product Details') }}</a>
                                 </li>
                                 <li class="nav-item">
                                     {{-- <a class="nav-link" data-toggle="tab" href="#review">Reviews (15)</a> --}}
-                                    <a class="nav-link" data-toggle="tab" href="#review">Reviews {{ count($ratings) }}</a>
+                                    <a class="nav-link" data-toggle="tab" href="#review">{{ __('Reviews') }} {{ count($ratings) }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -390,7 +390,7 @@
                                             <source src="{{ url('front/videos/product_videos/' . $productDetails['product_video']) }}" type="video/mp4">
                                         </video>
                                     @else
-                                        Product Video does not exist    
+                                        {{ __('Product Video does not exist') }}    
                                     @endif
 
 
@@ -402,7 +402,7 @@
                             <div class="tab-pane fade" id="detail">
                                 <div class="specification-whole-container">
                                     <div class="spec-table u-s-m-b-50">
-                                        <h4 class="spec-heading">Product Details</h4>
+                                        <h4 class="spec-heading">{{ __('Product Details') }}</h4>
                                         <table>
 
 
@@ -462,45 +462,45 @@
                                     <div class="row r-1 u-s-m-b-26 u-s-p-b-22">
                                         <div class="col-lg-6 col-md-6">
                                             <div class="total-score-wrapper">
-                                                <h6 class="review-h6">Average Rating</h6>
+                                                <h6 class="review-h6">{{ __('Average Rating') }}</h6>
                                                 <div class="circle-wrapper">
                                                     <h1>{{ $avgRating }}</h1>
                                                 </div>
-                                                <h6 class="review-h6">Based on {{ count($ratings) }} Reviews</h6>
+                                                <h6 class="review-h6">{{ __('Based on') }} {{ count($ratings) }} Reviews</h6>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6">
                                             <div class="total-star-meter">
                                                 <div class="star-wrapper">
-                                                    <span>5 Stars</span>
+                                                    <span>5 {{ __('Stars') }}</span>
                                                     <div class="star">
                                                         <span style='width:0'></span>
                                                     </div>
                                                     <span>({{ $ratingFiveStarCount }})</span>
                                                 </div>
                                                 <div class="star-wrapper">
-                                                    <span>4 Stars</span>
+                                                    <span>4 {{ __('Stars') }}</span>
                                                     <div class="star">
                                                         <span style='width:0'></span>
                                                     </div>
                                                     <span>({{ $ratingFourStarCount }})</span>
                                                 </div>
                                                 <div class="star-wrapper">
-                                                    <span>3 Stars</span>
+                                                    <span>3 {{ __('Stars') }}</span>
                                                     <div class="star">
                                                         <span style='width:0'></span>
                                                     </div>
                                                     <span>({{ $ratingThreeStarCount }})</span>
                                                 </div>
                                                 <div class="star-wrapper">
-                                                    <span>2 Stars</span>
+                                                    <span>2 {{ __('Stars') }}</span>
                                                     <div class="star">
                                                         <span style='width:0'></span>
                                                     </div>
                                                     <span>({{ $ratingTwoStarCount }})</span>
                                                 </div>
                                                 <div class="star-wrapper">
-                                                    <span>1 Star</span>
+                                                    <span>1 {{ __('Star') }}</span>
                                                     <div class="star">
                                                         <span style='width:0'></span>
                                                     </div>
@@ -519,33 +519,33 @@
 
                                                 <input type="hidden" name="product_id" value="{{ $productDetails['id'] }}">
                                                 <div class="your-rating-wrapper">
-                                                    <h6 class="review-h6">Your Review matters.</h6>
-                                                    <h6 class="review-h6">Have you used this product before?</h6>
+                                                    <h6 class="review-h6">Y{{ __('our Review matters.') }}</h6>
+                                                    <h6 class="review-h6">{{ __('Have you used this product before?') }}</h6>
                                                     <div class="star-wrapper u-s-m-b-8">
 
 
                                                         {{-- Star Rating (of a Product) (in the "Reviews" tab). --}}
                                                         <div class="rate">
                                                             <input style="display: none" type="radio" id="star5" name="rating" value="5" />
-                                                            <label for="star5" title="text">5 stars</label>
+                                                            <label for="star5" title="text">5 {{ __('stars') }}</label>
 
                                                             <input style="display: none" type="radio" id="star4" name="rating" value="4" />
-                                                            <label for="star4" title="text">4 stars</label>
+                                                            <label for="star4" title="text">4 {{ __('stars') }}</label>
 
                                                             <input style="display: none" type="radio" id="star3" name="rating" value="3" />
-                                                            <label for="star3" title="text">3 stars</label>
+                                                            <label for="star3" title="text">3 {{ __('stars') }}</label>
 
                                                             <input style="display: none" type="radio" id="star2" name="rating" value="2" />
-                                                            <label for="star2" title="text">2 stars</label>
+                                                            <label for="star2" title="text">2 {{ __('stars') }}</label>
 
                                                             <input style="display: none" type="radio" id="star1" name="rating" value="1" />
-                                                            <label for="star1" title="text">1 star</label>
+                                                            <label for="star1" title="text">1 {{ __('star') }}</label>
                                                         </div>
 
 
                                                     </div>
                                                         <textarea class="text-area u-s-m-b-8" id="review-text-area" placeholder="Your Review" name="review" required></textarea>
-                                                        <button class="button button-outline-secondary">Submit Review</button>
+                                                        <button class="button button-outline-secondary">{{ __('Submit Review') }}</button>
                                                     {{-- </form> --}}
                                                 </div>
                                             </form>
@@ -625,7 +625,7 @@
                 <section class="section-maker">
                     <div class="container">
                         <div class="sec-maker-header text-center">
-                            <h3 class="sec-maker-h3">Similar Products</h3>
+                            <h3 class="sec-maker-h3">{{ __('Similar Products') }}</h3>
                         </div>
                         <div class="slider-fouc">
                             <div class="products-slider owl-carousel" data-item="4">
@@ -654,10 +654,10 @@
 
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                                                <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">{{ __('Quick Look') }}</a>
+                                                <a class="item-mail" href="javascript:void(0)">{{ __('Mail') }}</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">{{ __('Add to Wishlist') }}</a>
+                                                <a class="item-addCart" href="javascript:void(0)">{{ __('Add to Cart') }}</a>
                                             </div>
                                         </div>
                                         <div class="item-content">
@@ -695,16 +695,16 @@
                                             @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
                                                 <div class="price-template">
                                                     <div class="item-new-price">
-                                                        EGP{{ $getDiscountPrice }} 
+                                                        {{ __("$") }}{{ $getDiscountPrice }} 
                                                     </div>
                                                     <div class="item-old-price">
-                                                        EGP{{ $product['product_price'] }}
+                                                        {{ __("$") }}{{ $product['product_price'] }}
                                                     </div>
                                                 </div>
                                             @else {{-- if there's no discount on the price, show the original price --}}
                                                 <div class="price-template">
                                                     <div class="item-new-price">
-                                                        EGP{{ $product['product_price'] }}
+                                                        {{ __("$") }}{{ $product['product_price'] }}
                                                     </div>
                                                 </div>
                                             @endif
@@ -713,7 +713,7 @@
 
                                         </div>
                                         <div class="tag new">
-                                            <span>NEW</span>
+                                            <span>{{ __('NEW') }}</span>
                                         </div>
                                     </div>
                                 @endforeach
@@ -729,7 +729,7 @@
                 <section class="section-maker">
                     <div class="container">
                         <div class="sec-maker-header text-center">
-                            <h3 class="sec-maker-h3">Recently Viewed Products</h3>
+                            <h3 class="sec-maker-h3">{{ __('Recently Viewed Products') }}</h3>
                         </div>
                         <div class="slider-fouc">
                             <div class="products-slider owl-carousel" data-item="4">
@@ -759,10 +759,10 @@
 
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                                                <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">{{ __('Quick Look') }}</a>
+                                                <a class="item-mail" href="javascript:void(0)">{{ __('Mail') }}</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">{{ __('Add to Wishlist') }}</a>
+                                                <a class="item-addCart" href="javascript:void(0)">{{ __('Add to Cart') }}</a>
                                             </div>
                                         </div>
                                         <div class="item-content">
@@ -799,16 +799,16 @@
                                             @if ($getDiscountPrice > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
                                                 <div class="price-template">
                                                     <div class="item-new-price">
-                                                        EGP{{ $getDiscountPrice }} 
+                                                        {{ __("$") }}{{ $getDiscountPrice }} 
                                                     </div>
                                                     <div class="item-old-price">
-                                                        EGP{{ $product['product_price'] }}
+                                                        {{ __("$") }}{{ $product['product_price'] }}
                                                     </div>
                                                 </div>
                                             @else {{-- if there's no discount on the price, show the original price --}}
                                                 <div class="price-template">
                                                     <div class="item-new-price">
-                                                        EGP{{ $product['product_price'] }}
+                                                        {{ __("$") }}{{ $product['product_price'] }}
                                                     </div>
                                                 </div>
                                             @endif

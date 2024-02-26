@@ -46,16 +46,16 @@
                             @if ($getDiscountAttributePrice['discount'] > 0) {{-- If there's a discount on the price, show the price before (the original price) and after (the new price) the discount --}}
                                 <div class="price-template">
                                     <div class="item-new-price">
-                                        EGP{{ $getDiscountAttributePrice['final_price'] }}
+                                        {{ __("$") }}{{ $getDiscountAttributePrice['final_price'] }}
                                     </div>
                                     <div class="item-old-price" style="margin-left: -40px">
-                                        EGP{{ $getDiscountAttributePrice['product_price'] }}
+                                        {{ __("$") }}{{ $getDiscountAttributePrice['product_price'] }}
                                     </div>
                                 </div>
                             @else {{-- if there's no discount on the price, show the original price --}}
                                 <div class="price-template">
                                     <div class="item-new-price">
-                                        EGP{{ $getDiscountAttributePrice['final_price'] }}
+                                        {{ __("$") }}{{ $getDiscountAttributePrice['final_price'] }}
                                     </div>
                                 </div>
                             @endif
@@ -75,7 +75,7 @@
                     </td>
                     <td>
                         <div class="cart-price">
-                            EGP{{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }} {{-- price of all products (after discount (if any)) (= price (after discoutn) * no. of products) --}}
+                            {{ __("$") }}{{ $getDiscountAttributePrice['final_price'] * $item['quantity'] }} {{-- price of all products (after discount (if any)) (= price (after discoutn) * no. of products) --}}
                         </div>
                     </td>
                     <td>
@@ -136,7 +136,7 @@
                             @if (\Illuminate\Support\Facades\Session::has('couponAmount')) {{-- We stored the 'couponAmount' in a Session Variable inside the applyCoupon() method in Front/ProductsController.php --}}
                                 {{ __('USD') }}{{ \Illuminate\Support\Facades\Session::get('couponAmount') }}
                             @else
-                                USD0
+                                {{ __("$") }}0
                             @endif
                         </span>
                     </td>
