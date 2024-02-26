@@ -68,7 +68,7 @@ class CouponsController extends Controller
     public function deleteCoupon($id) {
         Coupon::where('id', $id)->delete();
         
-        $message = 'Coupon has been deleted successfully!';
+        $message = __('Coupon has been deleted successfully!');
         
         return redirect()->back()->with('success_message', $message);
     }
@@ -89,7 +89,7 @@ class CouponsController extends Controller
             $selBrands = array();
             $selUsers  = array();
 
-            $message = 'Coupon added successfully!';
+            $message = __('Coupon added successfully!');
 
         } else { // if the $id is passed in the route/URL parameters (Optional Parameters {id?}), this means 'Edit/Update the Coupon'
             // Edit/Update the Coupon
@@ -101,7 +101,7 @@ class CouponsController extends Controller
             $selBrands = explode(',', $coupon['brands']);     // selected brands
             $selUsers  = explode(',', $coupon['users']);      // selected users
 
-            $message = 'Coupon updated successfully!';
+            $message = __('Coupon updated successfully!');
         }
 
 

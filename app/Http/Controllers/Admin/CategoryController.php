@@ -52,15 +52,15 @@ class CategoryController extends Controller
 
 
         if ($id == '') { // if there's no $id is passed in the route/URL parameters, this means Add a new Category
-            $title = 'Add Category';
+            $title = __('Add Category');
             $category = new Category();
             // dd($category);
 
             $getCategories = array(); // An array that contains all the parent categories that are under this section    
 
-            $message = 'Category added successfully!';
+            $message = __('Category added successfully!');
         } else { // if the $id is passed in the route/URL parameters, this means Edit the Category
-            $title = 'Edit Category';
+            $title = __('Edit Category');
             $category = Category::find($id);
             // dd($category->parentCategory);
 
@@ -71,7 +71,7 @@ class CategoryController extends Controller
             ])->get();
 
 
-            $message = 'Category updated successfully!';
+            $message = __('Category updated successfully!');
         }
 
 

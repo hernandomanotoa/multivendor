@@ -56,9 +56,9 @@ class AdminController extends Controller
             ];
 
             $customMessages = [ // Specifying A Custom Message For A Given Attribute: https://laravel.com/docs/9.x/validation#specifying-a-custom-message-for-a-given-attribute
-                'email.required'    => 'Email Address is required!',
-                'email.email'       => 'Valid Email Address is required',
-                'password.required' => 'Password is required!',
+                'email.required'    => __('Email Address is required!'),
+                'email.email'       => __('Valid Email Address is required'),
+                'password.required' => __('Password is required!'),
             ];
 
             $this->validate($request, $rules, $customMessages);

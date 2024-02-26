@@ -217,7 +217,7 @@ class OrderController extends Controller
                 });
             }
 
-            $message = 'Order Status has been updated successfully!';
+            $message = __('Order Status has been updated successfully!');
 
 
             return redirect()->back()->with('success_message', $message);
@@ -307,7 +307,7 @@ class OrderController extends Controller
                 });
             }
 
-            $message = 'Order Item Status has been updated successfully!';
+            $message = __('Order Item Status has been updated successfully!');
 
 
             return redirect()->back()->with('success_message', $message);

@@ -78,7 +78,7 @@ class ProductsController extends Controller
     public function deleteProduct($id) {
         Product::where('id', $id)->delete();
         
-        $message = 'Product has been deleted successfully!';
+        $message = __('Product has been deleted successfully!');
         
         return redirect()->back()->with('success_message', $message);
     }
@@ -92,12 +92,12 @@ class ProductsController extends Controller
             $title = __('Add Product');
             $product = new \App\Models\Product();
             // dd($product);
-            $message = 'Product added successfully!';
+            $message = __('Product added successfully!');
         } else { // if the $id is passed in the route/URL parameters, this means Edit the Product
             $title = __('Edit Product');
             $product = Product::find($id);
             // dd($product);
-            $message = 'Product updated successfully!';
+            $message = __('Product updated successfully!');
         }
 
         if ($request->isMethod('post')) { // WHETHER 'Add a Product' or 'Update a Product' <form> is submitted (THE SAME <form>)!!
@@ -318,7 +318,7 @@ class ProductsController extends Controller
         // Delete the product image name (record) from the `products` database table (Note: We won't use delete() method because we're not deleting a complete record (entry) (we're just deleting a one column `product_image` value), we will just use update() method to update the `product_image` name to an empty string value '')
         Product::where('id', $id)->update(['product_image' => '']);
 
-        $message = 'Product Image has been deleted successfully!';
+        $message = __('Product Image has been deleted successfully!');
 
 
         return redirect()->back()->with('success_message', $message);
@@ -340,7 +340,7 @@ class ProductsController extends Controller
         // Delete the product video name (record) from the `products` database table (Note: We won't use delete() method because we're not deleting a complete record (entry) (we're just deleting a one column `product_video` value), we will just use update() method to update the `product_video` name to an empty string value '')
         Product::where('id', $id)->update(['product_video' => '']);
 
-        $message = 'Product Video has been deleted successfully!';
+        $message = __('Product Video has been deleted successfully!');
 
         return redirect()->back()->with('success_message', $message);
     }
@@ -363,13 +363,13 @@ class ProductsController extends Controller
                     // SKU duplicate check (Prevent duplicate SKU) because SKU is UNIQUE for every product
                     $skuCount = ProductsAttribute::where('sku', $value)->count();
                     if ($skuCount > 0) { // if there's an SKU for the product ALREADY EXISTING
-                        return redirect()->back()->with('error_message', 'SKU already exists! Please add another SKU!');
+                        return redirect()->back()->with('error_message', __('SKU already exists! Please add another SKU!'));
                     }
 
                     // Size duplicate check (Prevent duplicate Size) because Size is UNIQUE for every product
                     $sizeCount = ProductsAttribute::where(['product_id' => $id, 'size' => $data['size'][$key]])->count();
                     if ($sizeCount > 0) { // if there's an SKU for the product ALREADY EXISTING
-                        return redirect()->back()->with('error_message', 'Size already exists! Please add another Size!');
+                        return redirect()->back()->with('error_message', __('Size already exists! Please add another Size!'));
                     }
 
 
@@ -385,7 +385,7 @@ class ProductsController extends Controller
                     $attribute->save();
                 }
             }
-            return redirect()->back()->with('success_message', 'Product Attributes have been addded successfully!');
+            return redirect()->back()->with('success_message', __('Product Attributes have been addded successfully!'));
         }
 
 
@@ -431,7 +431,7 @@ class ProductsController extends Controller
                 }
             }
 
-            return redirect()->back()->with('success_message', 'Product Attributes have been updated successfully!');
+            return redirect()->back()->with('success_message', __('Product Attributes have been updated successfully!'));
         }
     }
 
@@ -486,7 +486,7 @@ class ProductsController extends Controller
                 }
             }
 
-            return redirect()->back()->with('success_message', 'Product Images have been added successfully!');
+            return redirect()->back()->with('success_message', __('Product Images have been added successfully!'));
         }
 
 
@@ -544,7 +544,7 @@ class ProductsController extends Controller
         // Delete the product image name (record) from the `products_images` database table
         ProductsImage::where('id', $id)->delete();
 
-        $message = 'Product Image has been deleted successfully!';
+        $message = __('Product Image has been deleted successfully!');
 
         return redirect()->back()->with('success_message', $message);
     }

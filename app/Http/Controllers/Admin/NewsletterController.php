@@ -49,7 +49,7 @@ class NewsletterController extends Controller
     public function deleteSubscriber($id) { // Route Parameters: Required Parameters: https://laravel.com/docs/9.x/routing#required-parameters
         NewsletterSubscriber::where('id', $id)->delete();
 
-        $message = 'Subscriber has been deleted successfully!';
+        $message = __('Subscriber has been deleted successfully!');
         
 
         return redirect()->back()->with('success_message', $message);

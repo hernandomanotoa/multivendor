@@ -48,7 +48,7 @@ class BrandController extends Controller
     public function deleteBrand($id) {
         Brand::where('id', $id)->delete();
         
-        $message = 'Brand has been deleted successfully!';
+        $message = __('Brand has been deleted successfully!');
         
         return redirect()->back()->with('success_message', $message);
     }
@@ -59,15 +59,15 @@ class BrandController extends Controller
 
 
         if ($id == '') { // if there's no $id is passed in the route/URL parameters, this means Add a new brand
-            $title = 'Add Brand';
+            $title = __('Add Brand');
             $brand = new Brand();
             // dd($brand);
-            $message = 'Brand added successfully!';
+            $message = __('Brand added successfully!');
         } else { // if the $id is passed in the route/URL parameters, this means Edit the Brand
-            $title = 'Edit Brand';
+            $title = __('Edit Brand');
             $brand = Brand::find($id);
             // dd($brand);
-            $message = 'Brand updated successfully!';
+            $message = __('Brand updated successfully!');
         }
 
 
