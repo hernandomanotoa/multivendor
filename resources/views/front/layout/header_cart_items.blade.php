@@ -5,7 +5,7 @@
 <div class="mini-cart-wrapper">
     <div class="mini-cart">
         <div class="mini-cart-header">
-            YOUR CART
+            {{ __('YOUR CART') }}
             <button type="button" class="button ion ion-md-close" id="mini-cart-close"></button>
         </div>
         <ul class="mini-cart-list">

@@ -561,7 +561,7 @@ class ProductsController extends Controller
             }
 
 
-            return redirect()->back()->with('success_message', 'Product has been added in Cart! <a href="/cart" style="text-decoration: underline !important">View Cart</a>');
+            return redirect()->back()->with('success_message', 'Product has been added in Cart! <a href="/cart" style="text-decoration: underline !important">'.__('View Cart').'</a>');
         }
     }
 
@@ -956,21 +956,21 @@ class ProductsController extends Controller
             // Validation:
             // Delivery Address Validation
             if (empty($data['address_id'])) { // if the user doesn't select a Delivery Address
-                $message = 'Please select Delivery Address!';
+                $message = __('Please select Delivery Address!');
 
                 return redirect()->back()->with('error_message', $message);
             }
 
             // Payment Method Validation
             if (empty($data['payment_gateway'])) { // if the user doesn't select a Delivery Address
-                $message = 'Please select Payment Method!';
+                $message = __('Please select Payment Method!');
 
                 return redirect()->back()->with('error_message', $message);
             }
 
             // Agree to T&C (Accept Terms and Conditions) Validation
             if (empty($data['accept'])) { // if the user doesn't select a Delivery Address
-                $message = 'Please agree to T&C!';
+                $message = __('Please agree to T&C!');
 
                 return redirect()->back()->with('error_message', $message);
             }

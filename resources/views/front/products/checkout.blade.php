@@ -11,10 +11,10 @@
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">{{ __('Home') }}</a>
                     </li>
                     <li class="is-marked">
-                        <a href="checkout.html">Checkout</a>
+                        <a href="checkout.html">{{ __('Checkout') }}</a>
                     </li>
                 </ul>
             </div>
@@ -71,7 +71,7 @@
                                     
                                     @if (count($deliveryAddresses) > 0) {{-- Checking if there are any $deliveryAddreses for the currently authenticated/logged-in user --}} {{-- $deliveryAddresses variable is passed in from checkout() method in Front/ProductsController.php --}}
 
-                                        <h4 class="section-h4">Delivery Addresses</h4>
+                                        <h4 class="section-h4">{{ __('Delivery Addresses') }}</h4>
 
                                         @foreach ($deliveryAddresses as $address)
                                             <div class="control-group" style="float: left; margin-right: 5px">
@@ -82,21 +82,21 @@
                                                 <label class="control-label" for="address{{ $address['id'] }}">
                                                     {{ $address['name'] }}, {{ $address['address'] }}, {{ $address['city'] }}, {{ $address['state'] }}, {{ $address['country'] }} ({{ $address['mobile'] }})
                                                 </label>
-                                                <a href="javascript:;" data-addressid="{{ $address['id'] }}" class="removeAddress" style="float: right; margin-left: 10px">Remove</a> {{-- We used href="javascript:;" to prevent the <a> link from being clickable (to make the <a> unclickable) (stop the <a> function or action) because we'll use jQuery AJAX to click this link, check front/js/custom.js --}} {{-- We use the class="removeAddress" as a handle for the AJAX request in front/js/custom.js --}}
-                                                <a href="javascript:;" data-addressid="{{ $address['id'] }}" class="editAddress"   style="float: right"                   >Edit</a>   {{-- We used href="javascript:;" to prevent the <a> link from being clickable (to make the <a> unclickable) (stop the <a> function or action) because we'll use jQuery AJAX to click this link, check front/js/custom.js --}} {{-- We use the class="editAddress" as a handle for the AJAX request in front/js/custom.js --}}
+                                                <a href="javascript:;" data-addressid="{{ $address['id'] }}" class="removeAddress" style="float: right; margin-left: 10px">{{ __('Remove') }}</a> {{-- We used href="javascript:;" to prevent the <a> link from being clickable (to make the <a> unclickable) (stop the <a> function or action) because we'll use jQuery AJAX to click this link, check front/js/custom.js --}} {{-- We use the class="removeAddress" as a handle for the AJAX request in front/js/custom.js --}}
+                                                <a href="javascript:;" data-addressid="{{ $address['id'] }}" class="editAddress"   style="float: right"                   >{{ __('Edit') }}</a>   {{-- We used href="javascript:;" to prevent the <a> link from being clickable (to make the <a> unclickable) (stop the <a> function or action) because we'll use jQuery AJAX to click this link, check front/js/custom.js --}} {{-- We use the class="editAddress" as a handle for the AJAX request in front/js/custom.js --}}
                                             </div>
                                         @endforeach
                                         <br>
                                     @endif 
 
 
-                                    <h4 class="section-h4">Your Order</h4>
+                                    <h4 class="section-h4">{{ __('Your Order') }}</h4>
                                     <div class="order-table">
                                         <table class="u-s-m-b-13">
                                             <thead>
                                                 <tr>
-                                                    <th>Product</th>
-                                                    <th>Total</th>
+                                                    <th>{{ __('Product') }}</th>
+                                                    <th>{{ __('Total') }}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -137,7 +137,7 @@
 
                                                 <tr>
                                                     <td>
-                                                        <h3 class="order-h3">Subtotal</h3>
+                                                        <h3 class="order-h3">{{ __('Subtotal') }}</h3>
                                                     </td>
                                                     <td>
                                                         <h3 class="order-h3">{{ __("$") }}{{ $total_price }}</h3>
@@ -145,7 +145,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h6 class="order-h6">Shipping Charges</h6>
+                                                        <h6 class="order-h6">{{ __('Shipping Charges') }}</h6>
                                                     </td>
                                                     <td>
                                                         <h6 class="order-h6">
@@ -155,7 +155,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h6 class="order-h6">Coupon Discount</h6>
+                                                        <h6 class="order-h6">{{ __('Coupon Discount') }}</h6>
                                                     </td>
                                                     <td>
                                                         <h6 class="order-h6">
@@ -170,7 +170,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h3 class="order-h3">Grand Total</h3>
+                                                        <h3 class="order-h3">{{ __('Grand Total') }}</h3>
                                                     </td>
                                                     <td>
                                                         <h3 class="order-h3">
@@ -184,28 +184,28 @@
                                         </table>
                                         <div class="u-s-m-b-13 codMethod"> {{-- We added the codMethod CSS class to disable that payment method (check front/js/custom.js) if the PIN code of that user's Delivery Address doesn't exist in our `cod_pincodes` database table --}}
                                             <input type="radio" class="radio-box" name="payment_gateway" id="cash-on-delivery" value="COD">
-                                            <label class="label-text" for="cash-on-delivery">Cash on Delivery</label>
+                                            <label class="label-text" for="cash-on-delivery">{{ __('Cash on Delivery') }}</label>
                                         </div>
                                         <div class="u-s-m-b-13 prepaidMethod"> {{-- We added the prepaidMethod CSS class to disable that payment method (check front/js/custom.js) if the PIN code of that user's Delivery Address doesn't exist in our `prepaid_pincodes` database table --}}
                                             <input type="radio" class="radio-box" name="payment_gateway" id="paypal" value="Paypal">
-                                            <label class="label-text" for="paypal">PayPal</label>
+                                            <label class="label-text" for="paypal">{{ __('PayPal') }}</label>
                                         </div>
 
 
                                         {{-- iyzico Payment Gateway integration in/with Laravel --}}
                                         <div class="u-s-m-b-13 prepaidMethod"> {{-- We added the prepaidMethod CSS class to disable that payment method (check front/js/custom.js) if the PIN code of that user's Delivery Address doesn't exist in our `prepaid_pincodes` database table --}}
                                             <input type="radio" class="radio-box" name="payment_gateway" id="iyzipay" value="iyzipay">
-                                            <label class="label-text" for="iyzipay">iyzipay</label>
+                                            <label class="label-text" for="iyzipay">{{ __('iyzipay') }}</label>
                                         </div>
 
 
                                         <div class="u-s-m-b-13">
                                             <input type="checkbox" class="check-box" id="accept" name="accept" value="Yes" title="Please agree to T&C">
-                                            <label class="label-text no-color" for="accept">I’ve read and accept the
-                                                <a href="terms-and-conditions.html" class="u-c-brand">terms & conditions</a>
+                                            <label class="label-text no-color" for="accept">{{ __('I’ve read and accept the') }}
+                                                <a href="terms-and-conditions.html" class="u-c-brand">{{ __('terms & conditions') }}</a>
                                             </label>
                                         </div>
-                                        <button type="submit" id="placeOrder" class="button button-outline-secondary">Place Order</button> {{-- Show our Preloader/Loader/Loading Page/Preloading Screen while the <form> is submitted using the    id="placeOrder"    HTML attribute. Check front/js/custom.js --}}
+                                        <button type="submit" id="placeOrder" class="button button-outline-secondary">{{ __('Place Order') }}</button> {{-- Show our Preloader/Loader/Loading Page/Preloading Screen while the <form> is submitted using the    id="placeOrder"    HTML attribute. Check front/js/custom.js --}}
                                     </div>
                                 </form>
 
