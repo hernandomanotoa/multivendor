@@ -22,7 +22,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'id'               => 1,
                 'section_id'       => 2,
-                'category_id'      => 5,
+                'category_id'      => 1,
                 'brand_id'         => 7,
                 'vendor_id'        => 1,
                 'admin_id'         => 2,
@@ -41,11 +41,12 @@ class ProductsTableSeeder extends Seeder
                 'meta_keywords'    => '',
                 'is_featured'      => 'Yes',
                 'status'           => 1,
+                'is_bestseller' => 'Yes',
             ],
             [
                 'id'               => 2,
                 'section_id'       => 1,
-                'category_id'      => 6,
+                'category_id'      => 2,
                 'brand_id'         => 2,
                 'vendor_id'        => 0, // 0 means not a vendor
                 'admin_id'         => 1,
@@ -64,6 +65,7 @@ class ProductsTableSeeder extends Seeder
                 'meta_keywords'    => '',
                 'is_featured'      => 'Yes',
                 'status'           => 1,
+                'is_bestseller' => 'No',
             ],
         ];
 

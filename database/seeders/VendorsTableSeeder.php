@@ -29,6 +29,7 @@ class VendorsTableSeeder extends Seeder
                 'mobile'  => '9700000000',
                 'email'   => 'yasser@admin.com',
                 'status'  => 1,
+                'confirm'  => 'No',
             ],
         ];
 

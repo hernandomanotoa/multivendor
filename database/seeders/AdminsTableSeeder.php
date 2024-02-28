@@ -30,6 +30,7 @@ class AdminsTableSeeder extends Seeder
                 'password'  => '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', // This is the encryption of '123456'    // using https://bcrypt-generator.com/
                 'image'     => '',
                 'status'    => 1,
+                'confirm' => 'Yes'
             ],
 
             
@@ -42,6 +43,7 @@ class AdminsTableSeeder extends Seeder
                 'password'  => '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', // This is the encryption of '123456'    // using https://bcrypt-generator.com/
                 'image'     => '',
                 'status'    => 1, // Our authentication logic in the login() method in the AdminController won't allow this admin logging in in case of 'status' = 0
+                'confirm' => 'Yes'
             ],
 
             [
@@ -53,6 +55,7 @@ class AdminsTableSeeder extends Seeder
                 'password'  => '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', // This is the encryption of '123456'    // using https://bcrypt-generator.com/
                 'image'     => '',
                 'status'    => 1, // Our authentication logic in the login() method in the AdminController won't allow this admin logging in in case of 'status' = 0
+                'confirm' => 'Yes'
             ],
             [
                 'name'      => 'Raul',
@@ -63,6 +66,7 @@ class AdminsTableSeeder extends Seeder
                 'password'  => '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', // This is the encryption of '123456'    // using https://bcrypt-generator.com/
                 'image'     => '',
                 'status'    => 1, // Our authentication logic in the login() method in the AdminController won't allow this admin logging in in case of 'status' = 0
+                'confirm' => 'Yes'
             ],
             [
                 'name'      => 'Mauricio',
@@ -73,9 +77,11 @@ class AdminsTableSeeder extends Seeder
                 'password'  => '$2a$12$xvkjSScUPRexfcJTAy9ATutIeGUuRgJrjDIdL/.xlrddEvRZINpeC', // This is the encryption of '123456'    // using https://bcrypt-generator.com/
                 'image'     => '',
                 'status'    => 1, // Our authentication logic in the login() method in the AdminController won't allow this admin logging in in case of 'status' = 0
+                'confirm' => 'Yes'
             ],
         ];
         // Note: Check DatabaseSeeder.php
         \App\Models\Admin::insert($adminRecords);
+        
     }
 }

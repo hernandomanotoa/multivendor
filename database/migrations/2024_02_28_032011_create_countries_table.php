@@ -8,29 +8,23 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('products_filters_values', function (Blueprint $table) { // this table has a relationship with `products_filters` table
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
-
-            $table->integer('filter_id');
-            $table->string('filter_value');
+			$table->string('country_code');
+			$table->string('country_name');
             $table->tinyInteger('status');
-
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('products_filters_values');
+        Schema::dropIfExists('countries');
     }
 };
