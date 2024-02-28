@@ -381,10 +381,29 @@
     "Product Attributes have been addded successfully!": "¡Los atributos del producto se han agregado correctamente!",
     "Product Images have been added successfully!": "¡Las imágenes del producto se han agregado correctamente!",
     "Product Image has been deleted successfully!": "¡La imagen del producto se ha eliminado correctamente!",
-
-
-
-
+    "Sku Information": "Información SKU",
+    "Similar Products": "Productos Similares",
+    "Recently Viewed Products": "Productos Vistos Recientemente",
+    "Product Video does not exist": "El video del producto no existe",
+    "Product Video": "Video del producto",
+    "Product Details": "Detalles de producto",
+    "Reviews": "Reseñas",
+    "Delivery": "Entrega",
+    "Check Pincode": "Verificar código PIN",
+    "Availability": "Disponibilidads",
+    "Only": "Solo",
+    "Available Size": "Talla disponible",
+    "Select Size": "Selecciona el tamaño",
+    "Description": "Descripción",
+    "Original Price": "Precio Original",
+    "Add to cart": "Añadir a la compra",
+    "Average Rating": "Puntuación media",    
+    "Based on": "Residencia en",
+    "Stars": "Estrellas",    
+    "Star": "Estrella",
+    "Your Review matters.": "Tu reseña importa.",    
+    "Have you used this product before?": "Has usado este producto antes?",
+    "Submit Review": "Enviar opinión",
 
 
 

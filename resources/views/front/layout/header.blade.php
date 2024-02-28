@@ -350,5 +350,6 @@ $sections = \App\Models\Section::sections();
         </div>
     </div>
     <!-- Bottom-Header /- -->
+    <?php echo '<script> var moneySimbol = "' . __('$') . '";</script>'; ?>
 </header>
 <!-- Header /- -->

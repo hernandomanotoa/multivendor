@@ -49,6 +49,8 @@
     </div>
 </div>
 <!-- Mini Cart /- -->
+<?php echo '<script> var moneySimbol = "' . __('$') . '";</script>'; ?>
+
 
 
 
