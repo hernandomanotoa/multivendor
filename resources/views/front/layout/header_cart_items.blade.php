@@ -50,6 +50,7 @@
 </div>
 <!-- Mini Cart /- -->
 <?php echo '<script> var moneySimbol = "' . __('$') . '";</script>'; ?>
+<?php echo '<script> var originalPrice = "' . __('Original Price') . '";</script>'; ?>
 
 
 

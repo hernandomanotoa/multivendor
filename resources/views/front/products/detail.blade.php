@@ -217,7 +217,7 @@
                                         <h4>{{ __("$") }}{{ $getDiscountPrice }}</h4>
                                     </div>
                                     <div class="original-price">
-                                        <span>Original Price:</span>
+                                        <span>{{ __('Original Price') }}:</span>
                                         <span>{{ __("$") }}{{ $productDetails['product_price'] }}</span> {{-- the product original price (without discount) --}}
                                     </div>
                                 @else {{-- if there's no discount on the product price --}}
@@ -351,7 +351,7 @@
 
                         {{-- PIN code Availability Check: check if the PIN code of the user's Delivery Address exists in our database (in both `cod_pincodes` and `prepaid_pincodes`) or not via AJAX. Check front/js/custom.js --}} 
                         <br><br><b>{{ __('Delivery') }}</b>
-                        <input type="text" id="pincode" placeholder="Check Pincode" required>
+                        <input type="text" id="pincode" placeholder="{{ __('Check Pincode') }}" required>
                         <button type="button" id="checkPincode">{{ __('Go') }}</button> {{-- We'll use that checkPincode HTML id attribute in front/js/custom.js as a handle for jQuery --}}
 
 
