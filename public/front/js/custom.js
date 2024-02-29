@@ -208,6 +208,7 @@ $(document).ready(function() {
                 if (resp.type == 'error') { // if there're Validation Errors (login fails), show the Validation Error Messages (each of them under its respective <input> field)    // 'type' is sent as a PHP array key (in the HTTP response from the server (backend)) from inside the userRegister() method in Front/UserController.php
                     // Hide our Preloader/Loader/Loading Page/Preloading Screen when there's an error    
                     $('.loader').hide();
+                    // console.log(resp.errors);
 
 
                     // Note: in HTML in front/users/login_register.blade.php, to conveniently display the errors by jQuery loop, the pattern must be like: register-x (e.g. register-mobile, regitster-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array are sent as a response to the AJAX request, they could conveniently/easily handled by the jQuery $.each() loop)
@@ -225,7 +226,7 @@ $(document).ready(function() {
                             $('#register-' + i).css({
                                 'display': 'none'
                             });
-                        }, 3000);
+                        }, 5000);
 
                     });
 
@@ -279,7 +280,7 @@ $(document).ready(function() {
                             $('#login-' + i).css({
                                 'display': 'none'
                             });
-                        }, 3000);
+                        }, 5000);
 
                     });
 
@@ -344,7 +345,7 @@ $(document).ready(function() {
 
                                 'display': 'none'
                             });
-                        }, 3000);
+                        }, 5000);
 
                     });
 
@@ -401,7 +402,7 @@ $(document).ready(function() {
                             $('#account-' + i).css({
                                 'display': 'none'
                             });
-                        }, 3000);
+                        }, 5000);
 
                     });
 
@@ -419,7 +420,7 @@ $(document).ready(function() {
                         $('#account-success').css({
                             'display': 'none'
                         });
-                    }, 3000);
+                    }, 5000);
                 }
             },
             error  : function() { // if the AJAX request is unsuccessful
@@ -469,7 +470,7 @@ $(document).ready(function() {
                             $('#password-' + i).css({
                                 'display': 'none'
                             });
-                        }, 3000);
+                        }, 5000);
 
                     });
 
@@ -485,7 +486,7 @@ $(document).ready(function() {
                         $('#password-error').css({
                             'display': 'none'
                         });
-                    }, 3000);
+                    }, 5000);
 
                 } else if (resp.type == 'success') { // if there're no validation errors (login is successful), redirect to the Cart page    // 'type' is sent as a PHP array key (in the HTTP response from the server (backend)) from inside the userAccount() method in Front/UserController.php
                     // Hide our Preloader/Loader/Loading Page/Preloading Screen when the response is 'success'    
@@ -499,7 +500,7 @@ $(document).ready(function() {
                         $('#password-success').css({
                             'display': 'none'
                         });
-                    }, 3000);
+                    }, 5000);
                 }
             },
             error  : function() { // if the AJAX request is unsuccessful
@@ -655,7 +656,7 @@ $(document).ready(function() {
                             $('#delivery-' + i).css({
                                 'display': 'none'
                             });
-                        }, 3000);
+                        }, 5000);
                     });
                 } else { // if there're no Validation Errors
                     $('#deliveryAddresses').html(resp.view); // refresh the whole delivery_addresses.blade.php view    // 'view' is sent as a PHP array key (in the HTTP response from the server (backend)) from inside the saveDeliveryAddress() method in Front/AddressController.php

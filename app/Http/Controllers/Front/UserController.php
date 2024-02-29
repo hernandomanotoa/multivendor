@@ -70,7 +70,7 @@ class UserController extends Controller
                     'code'   => base64_encode($data['email']) // We base64 code the user's $email and send it as a Route Parameter from resources/views/emails/confirmation.blade.php to the 'user/confirm/{code}' route in web.php, then it gets base64 de-coded again in confirmUser() method in Front/UserController.php    // We will use the opposite: base64_decode() in the confirmUser() method to decode the encoded string (encode X decode)
                 ];
                 \Illuminate\Support\Facades\Mail::send('emails.confirmation', $messageData, function ($message) use ($email) { // Sending Mail: https://laravel.com/docs/9.x/mail#sending-mail    // 'emails.confirmation' is the resources/views/emails/confirmation.blade.php file that will be sent as an email    // We pass in all the variables that confirmation.blade.php will use    // https://www.php.net/manual/en/functions.anonymous.php
-                    $message->to($email)->subject('Confirm your Multi-vendor E-commerce Application Account');
+                    $message->to($email)->subject(__('Confirm your Multi-vendor E-commerce Application Account'));
                 });
 
                 // Redirect user back with a success message
@@ -80,7 +80,7 @@ class UserController extends Controller
                 return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
                     'type'    => 'success',
                     'url'     => $redirectTo, // redirect user to the Cart cart.blade.php page
-                    'message' => 'Please confirm your email to activate your account!'
+                    'message' => __('Please confirm your email to activate your account!')
                 ]);
 
 
@@ -135,7 +135,7 @@ class UserController extends Controller
                         return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
                             'type'    => 'inactive',
                             // 'message' => 'Your account is inactive. Please contact Admin'
-                            'message' => 'Your account is not activated! Please confirm your account (by clicking on the Activation Link in the Confirmation Mail) to activate your account.'
+                            'message' => __('Your account is not activated! Please confirm your account (by clicking on the Activation Link in the Confirmation Mail) to activate your account.')
                         ]);
                     }
 
@@ -162,7 +162,7 @@ class UserController extends Controller
                     // Here, we return a JSON response because the request is ORIGINALLY submitting an HTML <form> data using an AJAX request
                     return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
                         'type'    => 'incorrect',
-                        'message' => 'Incorrect Email or Password! Wrong Credentials!'
+                        'message' => __('Incorrect Email or Password! Wrong Credentials!')
                     ]);
                 }
 
@@ -202,7 +202,7 @@ class UserController extends Controller
             $userDetails = User::where('email', $email)->first();
             if ($userDetails->status == 1) { // if the user's account is already activated
                 // Redirect the user to the User Login/Register page with an 'error' message
-                return redirect('user/login-register')->with('error_message', 'Your account is already activated. You can login now.');
+                return redirect('user/login-register')->with('error_message', __('Your account is already activated. You can login now.'));
             } else { // if the user's account is not yet activated, activate it (update `status` to 1) and send a 'Welcome' Email
                 User::where('email', $email)->update([
                     'status' => 1
@@ -224,7 +224,7 @@ class UserController extends Controller
                 // Note: Here, we have TWO options, either redirect user with a success message or Log the user In IMMDEIATELY, AUTOMATICALLY and DIRECTLY
 
                 // Redirect the user to the User Login/Register page with a 'success' message
-                return redirect('user/login-register')->with('success_message', 'Your account is activated. You can login now.');
+                return redirect('user/login-register')->with('success_message', __('Your account is activated. You can login now.'));
             }
 
         } else { // if the user's email doesn't exist (hacking or cyber attack!!)
@@ -276,14 +276,14 @@ class UserController extends Controller
                     // 'code'  => base64_encode($data['email']) // We base64 code the user's $email and send it as a Route Parameter from user_confirmation.blade.php to the 'user/confirm/{code}' route in web.php, then it gets base64 decoded again in confirmUser() method in Front/UserController.php    // we will use the opposite: base64_decode() in the confirmUser() method (encode X decode)
                 ];
                 \Illuminate\Support\Facades\Mail::send('emails.user_forgot_password', $messageData, function ($message) use ($email) { // Sending Mail: https://laravel.com/docs/9.x/mail#sending-mail    // 'emails.user_forgot_password' is the resources/views/emails/user_forgot_password.blade.php file inside the 'resources/views/emails' folder that will be sent as an email    // We pass in all the variables that the user_forgot_password.blade.php file will use    // https://www.php.net/manual/en/functions.anonymous.php
-                    $message->to($email)->subject('New Password - Multi-vendor E-commerce Application');
+                    $message->to($email)->subject(__('New Password - OnlineShop'));
                 });
 
                 // Redirect user with a success message
                 // Here, we return a JSON response because the request is ORIGINALLY submitting an HTML <form> data using an AJAX request. Check    $('#forgotForm').submit();    in front/js/custom.js
                 return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
                     'type'    => 'success',
-                    'message' => 'New Password sent to your registered email.'
+                    'message' => __('New Password sent to your registered email.')
                 ]);
 
             } else { // if validation fails (is unsuccessful), send the Validation Error Messages
@@ -348,7 +348,7 @@ class UserController extends Controller
                 return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
                     'type'    => 'success',
                     // 'url'     => $redirectTo, // redirect user to the Cart cart.blade.php page
-                    'message' => 'Your contact/billing details successfully updated!'
+                    'message' => __('Your contact/billing details successfully updated!')
                 ]);
 
             } else { // if validation fails (is unsuccessful), send the Validation Error Messages
@@ -408,7 +408,7 @@ class UserController extends Controller
                     // Here, we return a JSON response because the request is ORIGINALLY submitting an HTML <form> data using an AJAX request
                     return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
                         'type'    => 'success',
-                        'message' => 'Account password successfully updated!'
+                        'message' => __('Account password successfully updated!')
                     ]);
 
                 } else { // if the entered current password is incorrect/wrong, redirect with an error message
@@ -416,7 +416,7 @@ class UserController extends Controller
                     // Here, we return a JSON response because the request is ORIGINALLY submitting an HTML <form> data using an AJAX request
                     return response()->json([ // JSON Responses: https://laravel.com/docs/9.x/responses#json-responses
                         'type'    => 'incorrect',
-                        'message' => 'Your current password is incorrect!'
+                        'message' => __('Your current password is incorrect!')
                     ]);
                 }
 

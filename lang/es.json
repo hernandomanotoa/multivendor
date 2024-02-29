@@ -404,7 +404,22 @@
     "Your Review matters.": "Tu reseña importa.",    
     "Have you used this product before?": "Has usado este producto antes?",
     "Submit Review": "Enviar opinión",
+    "Your account is activated. You can login now.": "Tu cuenta está activada. Puedes iniciar sesión ahora.",
+    "Your account is already activated. You can login now.": "Su cuenta ya está activada. Puedes iniciar sesión ahora.",
+    "Please confirm your email to activate your account!":"¡Confirma tu correo electrónico para activar tu cuenta!",
+    "Confirm your Multi-vendor E-commerce Application Account": "Confirme su cuenta de aplicación de comercio electrónico de múltiples proveedores",
 
+    "Your current password is incorrect!": "¡Tu contraseña actual es incorrecta!",
+    "Account password successfully updated!": "¡La contraseña de la cuenta se actualizó correctamente!",
+    "Your contact/billing details successfully updated!": "¡Sus datos de contacto/facturación se actualizaron correctamente!",
+    "New Password sent to your registered email.": "Nueva Contraseña enviada a su correo electrónico registrado.",
+    "Incorrect Email or Password! Wrong Credentials!": "¡Correo o contraseña incorrectos! ¡Credenciales incorrectas!",
+    "Your account is not activated! Please confirm your account (by clicking on the Activation Link in the Confirmation Mail) to activate your account.": "¡Su cuenta no está activada! Confirme su cuenta (haciendo clic en el enlace de activación en el correo de confirmación) para activarla.",
+    "Forgot Password?": "¿Has olvidado tu contraseña?",
+    "Back to Login": "Atrás para iniciar sesión",
+    "Recovery Password": "Recuperar Contraseña",
+    "New Password - OnlineShop": "Nueva Contraseña - Tienda Online",
+    "User Name": "Nombre de Usuario",
 
 
 

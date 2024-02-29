@@ -68,8 +68,8 @@
                 <!-- Forgot Password -->
                 <div class="col-lg-6">
                     <div class="login-wrapper">
-                        <h2 class="account-h2 u-s-m-b-20">Forgot Password?</h2>
-                        <h6 class="account-h6 u-s-m-b-30">Welcome back! Sign in to your account.</h6>
+                        <h2 class="account-h2 u-s-m-b-20">{{ __('Forgot Password?') }}</h2>
+                        <h6 class="account-h6 u-s-m-b-30">{{ __('Welcome back! Sign in to your account.') }}</h6>
 
 
                         
@@ -82,23 +82,23 @@
 
 
                             <div class="u-s-m-b-30">
-                                <label for="user-email">Email
+                                <label for="user-email">{{ __('Email') }}
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="email" name="email" id="users-email" class="text-field" placeholder="Email" name="email">
+                                <input type="email" name="email" id="users-email" class="text-field" placeholder="{{ __('Email') }}" name="email">
                                 <p id="forgot-email"></p> {{-- this will be used by jQuery to show the Validation Error Messages (Laravel's Validation Error Messages) from the AJAX call response from the server (backend) --}} {{-- The pattern must be like: register-x (e.g. register-mobile, register-email, ... in order for the jQuery loop to work. And x must be identical to the 'name' HTML attributes (e.g. the <input> with the    name='mobile'    HTML attribute must have a <p> with an id HTML attribute    id="register-mobile"    ) so that when the vaildation errors array is sent as a response from backend/server (check $validator->messages()    inside    the method inside the controller) to the AJAX request, they could conveniently/easily be handled by the jQuery $.each() loop. Check front/js/custom.js) --}}
                             </div>
                             <div class="group-inline u-s-m-b-30">
                                 <div class="group-2 text-right">
                                     <div class="page-anchor">
                                         <a href="{{ url('user/login-register') }}">
-                                            <i class="fas fa-circle-o-notch u-s-m-r-9"></i>Back to Login
+                                            <i class="fas fa-circle-o-notch u-s-m-r-9"></i>{{ __('Back to Login') }}
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="m-b-45">
-                                <button type="submit" class="button button-outline-secondary w-100">Submit</button>
+                                <button type="submit" class="button button-outline-secondary w-100">{{ __('Recovery Password') }}</button>
                             </div>
                         </form>
                     </div>
