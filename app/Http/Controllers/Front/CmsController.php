@@ -71,4 +71,16 @@ class CmsController extends Controller
 
         return view('front.pages.contact');
     }
+    public function aboutUs(Request $request) {
+        
+
+
+        return view('front.pages.about-us');
+    }
+    public function faq(Request $request) {
+        
+
+
+        return view('front.pages.faq');
+    }
 }
