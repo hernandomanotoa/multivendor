@@ -408,7 +408,6 @@
     "Your account is already activated. You can login now.": "Su cuenta ya está activada. Puedes iniciar sesión ahora.",
     "Please confirm your email to activate your account!":"¡Confirma tu correo electrónico para activar tu cuenta!",
     "Confirm your Multi-vendor E-commerce Application Account": "Confirme su cuenta de aplicación de comercio electrónico de múltiples proveedores",
-
     "Your current password is incorrect!": "¡Tu contraseña actual es incorrecta!",
     "Account password successfully updated!": "¡La contraseña de la cuenta se actualizó correctamente!",
     "Your contact/billing details successfully updated!": "¡Sus datos de contacto/facturación se actualizaron correctamente!",
@@ -422,6 +421,18 @@
     "User Name": "Nombre de Usuario",
     "Welcome to Multi-vendor E-commerce Application": "Bienvenido a la aplicación de comercio electrónico de múltiples proveedores",
     "Go": "Ir",
+    "Get In Touch With Us": "Póngase en contacto con nosotros",
+    "Your Name": "Su nombre",
+    "Your Email": "Tu correo electrónico",
+    "Subject": "Asunto",
+    "Message": "Mensaje",
+    "Send Message": "Enviar mensaje",
+    "Information About Us": "Información sobre nosotros",
+    "Location": "Ubicación",    
+
+
+
+
 
 
 

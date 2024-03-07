@@ -7,14 +7,14 @@
     <div class="page-style-a">
         <div class="container">
             <div class="page-intro">
-                <h2>Contact Us</h2>
+                <h2>{{ __('Contact Us') }}</h2>
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">{{ __('Home') }}</a>
                     </li>
                     <li class="is-marked">
-                        <a href="contact.html">Contact Us</a>
+                        <a href="contact.html">{{ __('Contact Us') }}</a>
                     </li>
                 </ul>
             </div>
@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="touch-wrapper">
-                        <h1 class="contact-h1">Get In Touch With Us</h1>
+                        <h1 class="contact-h1">{{ __('Get In Touch With Us') }}</h1>
 
 
                         {{-- Displaying Laravel Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors --}}    
@@ -64,7 +64,7 @@
                         {{-- Displaying Success Message --}}
                         @if (Session::has('success_message')) <!-- Check vendorRegister() method in Front/VendorController.php -->
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>Success:</strong> {{ Session::get('success_message') }}
+                                <strong>{{ __('Success') }}:</strong> {{ Session::get('success_message') }}
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
@@ -77,38 +77,38 @@
 
                             <div class="group-inline u-s-m-b-30">
                                 <div class="group-1 u-s-p-r-16">
-                                    <label for="contact-name">Your Name
+                                    <label for="contact-name">{{ __('Your Name') }}
                                         <span class="astk">*</span>
                                     </label>
-                                    <input type="text" id="contact-name" class="text-field" placeholder="Name" name="name" value="{{ old('name') }}"> {{-- Retrieving Old Input: https://laravel.com/docs/9.x/requests#retrieving-old-input --}}
+                                    <input type="text" id="contact-name" class="text-field" placeholder="{{ __('Name') }}" name="name" value="{{ old('name') }}"> {{-- Retrieving Old Input: https://laravel.com/docs/9.x/requests#retrieving-old-input --}}
                                 </div>
                                 <div class="group-2">
-                                    <label for="contact-email">Your Email
+                                    <label for="contact-email">{{ __('Your Email') }}
                                         <span class="astk">*</span>
                                     </label>
-                                    <input type="email" id="contact-email" class="text-field" placeholder="Email" name="email" value="{{ old('email') }}"> {{-- Retrieving Old Input: https://laravel.com/docs/9.x/requests#retrieving-old-input --}}
+                                    <input type="email" id="contact-email" class="text-field" placeholder="{{ __('Email') }}" name="email" value="{{ old('email') }}"> {{-- Retrieving Old Input: https://laravel.com/docs/9.x/requests#retrieving-old-input --}}
                                 </div>
                             </div>
                             <div class="u-s-m-b-30">
-                                <label for="contact-subject">Subject
+                                <label for="contact-subject">{{ __('Subject') }}
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="text" id="contact-subject" class="text-field" placeholder="Subject" name="subject" value="{{ old('subject') }}"> {{-- Retrieving Old Input: https://laravel.com/docs/9.x/requests#retrieving-old-input --}}
+                                <input type="text" id="contact-subject" class="text-field" placeholder="{{ __('Subject') }}" name="subject" value="{{ old('subject') }}"> {{-- Retrieving Old Input: https://laravel.com/docs/9.x/requests#retrieving-old-input --}}
                             </div>
                             <div class="u-s-m-b-30">
-                                <label for="contact-message">Message:</label>
+                                <label for="contact-message">{{ __('Message') }}:</label>
                                 <span class="astk">*</span>
                                 <textarea class="text-area" id="contact-message" name="message">{{ old('message') }}</textarea> {{-- Retrieving Old Input: https://laravel.com/docs/9.x/requests#retrieving-old-input --}}
                             </div>
                             <div class="u-s-m-b-30">
-                                <button type="submit" class="button button-outline-secondary">Send Message</button>
+                                <button type="submit" class="button button-outline-secondary">{{ __('Send Message') }}</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="information-about-wrapper">
-                        <h1 class="contact-h1">Information About Us</h1>
+                        <h1 class="contact-h1">{{ __('Information About Us') }}</h1>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, tempora, voluptate. Architecto aspernatur, culpa cupiditate deserunt dolore eos facere in, incidunt omnis quae quam quos, similique sunt tempore vel vero.
                         </p>
@@ -117,18 +117,18 @@
                         </p>
                     </div>
                     <div class="contact-us-wrapper">
-                        <h1 class="contact-h1">Contact Us</h1>
+                        <h1 class="contact-h1">{{ __('Contact Us') }}</h1>
                         <div class="contact-material u-s-m-b-16">
-                            <h6>Location</h6>
+                            <h6>{{ __('Location') }}</h6>
                             <span>10 Salah Salem St.</span>
                             <span>Cairo, Egypt</span>
                         </div>
                         <div class="contact-material u-s-m-b-16">
-                            <h6>Email</h6>
+                            <h6>{{ __('Email') }}</h6>
                             <span>developers@computerscience.com</span>
                         </div>
                         <div class="contact-material u-s-m-b-16">
-                            <h6>Telephone</h6>
+                            <h6>{{ __('Telephone') }}</h6>
                             <span>+201122237359</span>
                         </div>
                     </div>
