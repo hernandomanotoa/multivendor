@@ -64,7 +64,7 @@ class CmsController extends Controller
 
 
             // Return the user back with a Success Message
-            $message = 'Thanks for your inquiry. We will get back to you soon.';
+            $message = __('Thanks for your inquiry. We will get back to you soon.');
             return redirect()->back()->with('success_message', $message);
         }
 
