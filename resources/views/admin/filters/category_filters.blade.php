@@ -34,9 +34,9 @@
 
         @if ($filterAvailable == 'Yes') {{-- if the filter has the current category_id in its `cat_ids` --}}
             <div class="form-group">
-                <label for="{{ $filter['filter_column'] }}">Select {{ $filter['filter_name'] }}</label> {{-- ONLY show the related filters of the added product! (NOT ALL FILTERS!) --}}
+                <label for="{{ $filter['filter_column'] }}">{{ __('Select') }} {{ $filter['filter_name'] }}</label> {{-- ONLY show the related filters of the added product! (NOT ALL FILTERS!) --}}
                 <select name="{{ $filter['filter_column'] }}" id="{{ $filter['filter_column'] }}" class="form-control text-dark"> {{-- $filter['filter_column'] is like 'ram' --}}
-                    <option value="">Select Filter Value</option>
+                    <option value="">{{ __('Select Filter Value') }}</option>
                     @foreach ($filter['filter_values'] as $value) {{-- show the related values of the filter of the product --}}
                         @php
                             // echo '<pre>', var_dump($value), '</pre>'; exit;
@@ -48,3 +48,13 @@
         @endif
     @endif
 @endforeach
+
+@push('other-scripts')
+    <script>
+        $('#filters').DataTable({
+            "language": {
+                "url": "{{ __('Link Languaje') }}"
+            }
+        });
+    </script>
+@endpush

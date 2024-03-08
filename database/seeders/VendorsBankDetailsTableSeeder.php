@@ -19,7 +19,6 @@ class VendorsBankDetailsTableSeeder extends Seeder
         // Note: Check DatabaseSeeder.php
         $vendorsBankDetailsRecords = [
             [
-                'id'                  => 1,
                 'vendor_id'           => 1,
                 'account_holder_name' => 'John Cena',
                 'bank_name'           => 'ICICI',

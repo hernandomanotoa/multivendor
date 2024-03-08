@@ -22,7 +22,6 @@ class ProductsAttributesTableSeeder extends Seeder
         $productAttributesRecords = [
             // Note: The three attributes we will insert ALL are related to one product (T-shirt): small, medium and large sizes of one T-shirt
             [
-                'id'         => 1,
                 'product_id' => 2,
                 'size'       => 'Small',
                 'price'      => 1000,
@@ -31,7 +30,6 @@ class ProductsAttributesTableSeeder extends Seeder
                 'status'     => 1
             ],
             [
-                'id'         => 2,
                 'product_id' => 2,
                 'size'       => 'Medium',
                 'price'      => 1100,
@@ -40,7 +38,6 @@ class ProductsAttributesTableSeeder extends Seeder
                 'status'     => 1
             ],
             [
-                'id'         => 3,
                 'product_id' => 2,
                 'size'       => 'Large',
                 'price'      => 1200,

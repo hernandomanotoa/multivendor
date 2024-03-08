@@ -19,7 +19,6 @@ class VendorsTableSeeder extends Seeder
         // Note: Check DatabaseSeeder.php
         $vendorRecords = [
             [
-                'id'      => 1,
                 'name'    => 'Yasser Fouaad - Vendor',
                 'address' => '17 El-Salam St.',
                 'city'    => 'Maadi',

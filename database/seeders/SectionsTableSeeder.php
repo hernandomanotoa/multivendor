@@ -19,9 +19,9 @@ class SectionsTableSeeder extends Seeder
         // Databas Seeding
         // Note: Check DatabaseSeeder.php        
         $sectionRecords = [
-            ['id' => 1, 'name' => 'Clothing'   , 'status' => 1],
-            ['id' => 2, 'name' => 'Electronics', 'status' => 1],
-            ['id' => 3, 'name' => 'Appliances' , 'status' => 1],
+            ['name' => 'Clothing'   , 'status' => 1],
+            ['name' => 'Electronics', 'status' => 1],
+            ['name' => 'Appliances' , 'status' => 1],
         ];
 
         // Note: Check DatabaseSeeder.php

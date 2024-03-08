@@ -16,7 +16,6 @@ class RatingsTableSeeder extends Seeder
         // Note: Check DatabaseSeeder.php!
         $ratingRecords = [
             [
-                'id'         => 1,
                 'user_id'    => 2,
                 'product_id' => 1,
                 'review'     => 'It\'s a great mobile phone!',
@@ -24,7 +23,6 @@ class RatingsTableSeeder extends Seeder
                 'status'     => 1
             ],
             [
-                'id'         => 2,
                 'user_id'    => 2,
                 'product_id' => 2,
                 'review'     => 'Awesome product!',

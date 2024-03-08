@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
 
-                            <h4 class="card-title">Images</h4> {{-- meaning Product images --}}
+                            <h4 class="card-title">{{ __('Images') }}</h4> {{-- meaning Product images --}}
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
@@ -33,7 +33,7 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Add Images</h4>
+                            <h4 class="card-title">{{ __('Add Images') }}</h4>
 
 
                             {{-- Our Bootstrap error code in case of wrong current password or the new password and confirm password are not matching: --}}
@@ -70,7 +70,7 @@
                             {{-- Our Bootstrap success message in case of updating admin password is successful: --}}
                             @if (Session::has('success_message')) <!-- Check AdminController.php, updateAdminPassword() method -->
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Success:</strong> {{ Session::get('success_message') }}
+                                    <strong>{{ __('Success')}}:</strong> {{ Session::get('success_message') }}
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -86,19 +86,19 @@
                                 @csrf
 
                                 <div class="form-group">
-                                    <label for="product_name">Product Name:</label>
+                                    <label for="product_name">{{ __('Product Name') }}:</label>
                                     &nbsp; {{ $product['product_name'] }}
                                 </div>
                                 <div class="form-group">
-                                    <label for="product_code">Product Code:</label>
+                                    <label for="product_code">{{ __('Product Code') }}:</label>
                                     &nbsp; {{ $product['product_code'] }}
                                 </div>
                                 <div class="form-group">
-                                    <label for="product_color">Product Color:</label>
+                                    <label for="product_color">{{ __('Product Color') }}:</label>
                                     &nbsp; {{ $product['product_color'] }}
                                 </div>
                                 <div class="form-group">
-                                    <label for="product_price">Product Price:</label>
+                                    <label for="product_price">{{ __('Product Price') }}:</label>
                                     &nbsp; {{ $product['product_price'] }}
                                 </div>
                                 <div class="form-group">
@@ -119,21 +119,21 @@
                                         <input type="file" name="images[]" multiple id="images"> {{-- Upload multiple images for the product --}} {{-- "multiple" HTML attribute: https://www.w3schools.com/tags/att_multiple.asp --}}
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button type="reset"  class="btn btn-light">Cancel</button>
+                                <button type="submit" class="btn btn-primary mr-2">{{ __('Submit') }}</button>
+                                <button type="reset"  class="btn btn-light">{{ __('Cancel') }}</button>
                             </form>
 
                             <br><br>
                             
-                            <h4 class="card-title">Product Images</h4>
+                            <h4 class="card-title">{{ __('Product Images') }}</h4>
 
                             {{-- DataTable --}}
                             <table id="products" class="table table-bordered"> {{-- using the id here for the DataTable --}}
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Image</th>
-                                        <th>Actions</th>
+                                        <th>{{ __('Image') }}</th>
+                                        <th>{{ __('Actions') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -173,3 +173,13 @@
         <!-- partial -->
     </div>
 @endsection
+
+@push('other-scripts')
+    <script>
+        $('#products').DataTable({
+            "language": {
+                "url": "{{ __('Link Languaje') }}"
+            }
+        });
+    </script>
+@endpush

@@ -18,22 +18,18 @@ class OrderItemStatusTableSeeder extends Seeder
         // Note: Check DatabaseSeeder.php!
         $orderItemStatusRecords = [
             [
-                'id'     => 1,
                 'name'   => 'Pending',
                 'status' => 1
             ],
             [
-                'id'     => 2,
                 'name'   => 'In Progress',
                 'status' => 1
             ],
             [
-                'id'     => 3,
                 'name'   => 'Shipped',
                 'status' => 1
             ],
             [
-                'id'     => 4,
                 'name'   => 'Delivered',
                 'status' => 1
             ]

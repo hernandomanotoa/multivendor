@@ -20,7 +20,6 @@ class ProductsTableSeeder extends Seeder
         // Note: Check DatabaseSeeder.php        
         $productRecords = [
             [
-                'id'               => 1,
                 'section_id'       => 2,
                 'category_id'      => 1,
                 'brand_id'         => 7,
@@ -44,7 +43,6 @@ class ProductsTableSeeder extends Seeder
                 'is_bestseller' => 'Yes',
             ],
             [
-                'id'               => 2,
                 'section_id'       => 1,
                 'category_id'      => 2,
                 'brand_id'         => 2,

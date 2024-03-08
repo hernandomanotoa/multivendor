@@ -18,7 +18,6 @@ class CouponsTableSeeder extends Seeder
         // Note: Check DatabaseSeeder.php!
         $couponRecords = [
             [
-                'id'            => 1,
                 'vendor_id'     => 0,
                 'coupon_option' => 'Manual',
                 'coupon_code'   => 'test10',
@@ -31,7 +30,6 @@ class CouponsTableSeeder extends Seeder
                 'status'        => 1
             ],
             [
-                'id'            => 2,
                 'vendor_id'     => 1,
                 'coupon_option' => 'Manual',
                 'coupon_code'   => 'test20',

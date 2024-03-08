@@ -20,7 +20,6 @@ class CategoriesTableSeeder extends Seeder
         // Note: Check DatabaseSeeder.php
         $categoryRecords = [
             [
-                'id'                => 1,
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
                 'section_id'        => 1, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Men',
@@ -34,7 +33,6 @@ class CategoriesTableSeeder extends Seeder
                 'status'            => 1,
             ],
             [
-                'id'                => 2,
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
                 'section_id'        => 1, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Women',
@@ -48,7 +46,6 @@ class CategoriesTableSeeder extends Seeder
                 'status'            => 1,
             ],
             [
-                'id'                => 3,
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
                 'section_id'        => 1, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Kids',
@@ -62,7 +59,6 @@ class CategoriesTableSeeder extends Seeder
                 'status'            => 1,
             ],
             [
-                'id'                => 4,
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
                 'section_id'        => 1, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Kid2',
@@ -76,7 +72,6 @@ class CategoriesTableSeeder extends Seeder
                 'status'            => 1,
             ],
             [
-                'id'                => 5,
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
                 'section_id'        => 1, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Kids3',
@@ -90,7 +85,6 @@ class CategoriesTableSeeder extends Seeder
                 'status'            => 1,
             ],
             [
-                'id'                => 6,
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
                 'section_id'        => 1, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Kids4',
@@ -104,7 +98,6 @@ class CategoriesTableSeeder extends Seeder
                 'status'            => 1,
             ],
             [
-                'id'                => 7,
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
                 'section_id'        => 1, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Kids5',
@@ -118,7 +111,6 @@ class CategoriesTableSeeder extends Seeder
                 'status'            => 1,
             ],
             [
-                'id'                => 8,
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
                 'section_id'        => 1, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Categoria8',
