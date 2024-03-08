@@ -28,12 +28,12 @@
 
 
                     </a>
-                    <div class="item-action-behaviors">
+                    <!-- <div class="item-action-behaviors">
                         <a class="item-quick-look" data-toggle="modal" href="#quick-view">{{ __('Quick Look') }}</a>
                         <a class="item-mail" href="javascript:void(0)">{{ __('Mail') }}</a>
                         <a class="item-addwishlist" href="javascript:void(0)">{{ __('Add to Wishlist') }}</a>
                         <a class="item-addCart" href="javascript:void(0)">{{ __('Add to Cart') }}</a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="item-content">
                     <div class="what-product-is">

@@ -300,7 +300,7 @@
     "My Cart": "Mi carrito",    
     "Checkout": "Pagar la compra",
     "Logout": "Cerrar sesión",
-    "Customer Login": "Inicio de sesión del cliente",
+    "Customer Login": "Inicio de sesión / Registro del cliente",
     "Vendor Login": "Inicio de sesión de vendedor",
     "Search": "Buscar",
     "Search everything": "busca todo",
@@ -450,6 +450,13 @@
     "Update Attributes": "Actualizar atributos",
     "Product Images": "Imágenes del producto",
     "Add Images": "Añadir imágenes",
+    "Product has been added in Cart!": "¡El producto ha sido agregado al carrito!",
+    "Detail": "Detalle",
+    "Your email already exists for Newsletter Subscription!": "¡Tu correo electrónico ya existe para la suscripción al boletín!",
+    "Thanks for subscribing!": "¡Gracias por suscribirte!",    
+
+
+
 
 
     "Link Languaje": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",

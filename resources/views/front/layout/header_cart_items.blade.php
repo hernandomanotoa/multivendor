@@ -51,7 +51,8 @@
 <!-- Mini Cart /- -->
 <?php echo '<script> var moneySimbol = "' . __('$') . '";</script>'; ?>
 <?php echo '<script> var originalPrice = "' . __('Original Price') . '";</script>'; ?>
-
+<?php echo '<script> var existsSubscription = "' . __('Your email already exists for Newsletter Subscription!') . '";</script>'; ?>
+<?php echo '<script> var thanksSubscription = "' . __('Thanks for subscribing!') . '";</script>'; ?>
 
 
 

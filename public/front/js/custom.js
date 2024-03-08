@@ -41,10 +41,10 @@ function addSubscriber() {
             // alert(resp);
 
             if (resp == 'Email already exists') { // Check addSubscriber() method in Front/NewsletterController.php
-                alert('Your email already exists for Newsletter Subscription!');
+                alert(existsSubscription);
 
             } else if (resp == 'Email saved in our database') { // Check addSubscriber() method in Front/NewsletterController.php
-                alert('Thanks for subscribing!');
+                alert(thanksSubscription);
             }
         },
         error  : function() { // if the AJAX request is unsuccessful
