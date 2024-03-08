@@ -71,15 +71,15 @@
 
                                 <div class="toolbar-sorter">
                                     <div class="select-box-wrapper">
-                                        <label class="sr-only" for="sort-by">Sort By</label>
+                                        <label class="sr-only" for="sort-by">{{ __('Sort By') }}</label>
                                         <select name="sort" id="sort" class="select-box">
-                                            {{-- <option selected="selected" value="">Sort By: Best Selling</option> --}}
-                                            <option value="" selected>Select</option>
-                                            <option value="product_latest" @if(isset($_GET['sort']) && $_GET['sort'] == 'product_latest') selected @endif>Sort By: Latest</option>
-                                            <option value="price_lowest"   @if(isset($_GET['sort']) && $_GET['sort'] == 'price_lowest')   selected @endif>Sort By: Lowest Price</option>
-                                            <option value="price_highest"  @if(isset($_GET['sort']) && $_GET['sort'] == 'price_highest')  selected @endif>Sort By: Highest Price</option>
-                                            <option value="name_a_z"       @if(isset($_GET['sort']) && $_GET['sort'] == 'name_a_z')       selected @endif>Sort By: Name A - Z</option>
-                                            <option value="name_z_a"       @if(isset($_GET['sort']) && $_GET['sort'] == 'name_z_a')       selected @endif>Sort By: Name Z - A</option>
+                                            {{-- <option selected="selected" value="">{{ __('Sort By: Best Selling') }}</option> --}}
+                                            <option value="" selected>{{ __('Select') }}</option>
+                                            <option value="product_latest" @if(isset($_GET['sort']) && $_GET['sort'] == 'product_latest') selected @endif>{{ __('Sort By: Latest') }}</option>
+                                            <option value="price_lowest"   @if(isset($_GET['sort']) && $_GET['sort'] == 'price_lowest')   selected @endif>{{ __('Sort By: Lowest Price') }}</option>
+                                            <option value="price_highest"  @if(isset($_GET['sort']) && $_GET['sort'] == 'price_highest')  selected @endif>{{ __('Sort By: Highest Price') }}</option>
+                                            <option value="name_a_z"       @if(isset($_GET['sort']) && $_GET['sort'] == 'name_a_z')       selected @endif>{{ __('Sort By: Name A - Z') }}</option>
+                                            <option value="name_z_a"       @if(isset($_GET['sort']) && $_GET['sort'] == 'name_z_a')       selected @endif>{{ __('Sort By: Name Z - A') }}</option>
                                         </select>
                                     </div>
                                 </div>
