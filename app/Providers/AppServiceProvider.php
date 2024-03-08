@@ -21,9 +21,18 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    // public function boot()
+    // {
+    //     // Customizing The Pagination View Using Bootstrap (displaying Laravel pagination using Bootstrap pagination): https://laravel.com/docs/9.x/pagination#using-bootstrap
+    //     \Illuminate\Pagination\Paginator::useBootstrap();
+    // }
+    public function boot(\Illuminate\Http\Request $request)
     {
-        // Customizing The Pagination View Using Bootstrap (displaying Laravel pagination using Bootstrap pagination): https://laravel.com/docs/9.x/pagination#using-bootstrap
+        if (!empty( env('NGROK_URL') ) && $request->server->has('HTTP_X_ORIGINAL_HOST')) {
+            $this->app['url']->forceRootUrl(env('NGROK_URL'));
+        }
         \Illuminate\Pagination\Paginator::useBootstrap();
-    }
+
+        // other code
+}
 }
