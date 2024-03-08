@@ -79,7 +79,7 @@
 
         {{-- My Preloader/Loader/Loading Page/Preloading Screen --}} 
         <div class="loader">
-            <img src="{{ asset('front/images/loaders/loader.gif') }}" alt="loading..." />
+            <img src="{{ secure_asset('front/images/loaders/loader.gif') }}" alt="loading..." />
          </div>
 
 

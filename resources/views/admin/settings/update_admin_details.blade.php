@@ -83,7 +83,7 @@
 
 
 
-                            <form class="forms-sample" action="{{ url('admin/update-admin-details') }}" method="post"
+                            <form class="forms-sample" action="{{ secure_url('admin/update-admin-details') }}" method="post"
                                 enctype="multipart/form-data"> @csrf
                                 <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                 <div class="form-group">
@@ -116,7 +116,7 @@
                                     @if (!empty(Auth::guard('admin')->user()->image))
                                         {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}}
                                         <a target="_blank"
-                                            href="{{ url('admin/images/photos/' . Auth::guard('admin')->user()->image) }}">{{ __('View Image') }}</a>
+                                            href="{{ secure_url('admin/images/photos/' . Auth::guard('admin')->user()->image) }}">{{ __('View Image') }}</a>
                                         <!-- We used    target="_blank"    to open the image in another separate page -->
                                         {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}}
                                         <input type="hidden" name="current_admin_image"

@@ -87,7 +87,7 @@
 
 
                             <form class="forms-sample"
-                                @if (empty($product['id'])) action="{{ url('admin/add-edit-product') }}" @else action="{{ url('admin/add-edit-product/' . $product['id']) }}" @endif
+                                @if (empty($product['id'])) action="{{ secure_url('admin/add-edit-product') }}" @else action="{{ secure_url('admin/add-edit-product/' . $product['id']) }}" @endif
                                 method="post" enctype="multipart/form-data">
                                 <!-- If the id is not passed in from the route, this measn 'Add a new Product', but if the id is passed in from the route, this means 'Edit the Product' -->
                                 <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
@@ -210,7 +210,7 @@
                                     {{-- Show the product image, if any (if exits) --}}
                                     @if (!empty($product['product_image']))
                                         <a target="_blank"
-                                            href="{{ url('front/images/product_images/large/' . $product['product_image']) }}">{{ __('View Product Image') }}</a>&nbsp;|&nbsp; {{-- Showing the 'large' image inside the 'large' folder --}}
+                                            href="{{ secure_url('front/images/product_images/large/' . $product['product_image']) }}">{{ __('View Product Image') }}</a>&nbsp;|&nbsp; {{-- Showing the 'large' image inside the 'large' folder --}}
                                         <a href="JavaScript:void(0)" class="confirmDelete" module="product-image"
                                             moduleid="{{ $product['id'] }}">{{ __('Delete Product Image') }}</a>
                                         {{-- Delete the product image from BOTH SERVER (FILESYSTEM) & DATABASE --}} {{-- Check admin/js/custom.js and web.php (routes) --}}
@@ -228,7 +228,7 @@
                                     {{-- Show the product video, if any (if exits) --}}
                                     @if (!empty($product['product_video']))
                                         <a target="_blank"
-                                            href="{{ url('front/videos/product_videos/' . $product['product_video']) }}">{{ __('View Product Video') }}</a>&nbsp;|&nbsp;
+                                            href="{{ secure_url('front/videos/product_videos/' . $product['product_video']) }}">{{ __('View Product Video') }}</a>&nbsp;|&nbsp;
                                         <a href="JavaScript:void(0)" class="confirmDelete" module="product-video"
                                             moduleid="{{ $product['id'] }}">{{ __('Delete Product Video') }}</a>
                                         {{-- Delete the product video from BOTH SERVER (FILESYSTEM) & DATABASE --}} {{-- Check admin/js/custom.js and web.php (routes) --}}

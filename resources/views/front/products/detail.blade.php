@@ -57,7 +57,7 @@
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
-                        <a href="{{ url('/') }}">{{ __('Home') }}</a>
+                        <a href="{{ secure_url('/') }}">{{ __('Home') }}</a>
                     </li>
                     <li class="is-marked">
                         <a href="javascript:;">{{ __('Detail') }}</a>
@@ -81,14 +81,14 @@
 
                     <!-- Product-zoom-area -->
                     <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails"> {{-- EasyZoom plugin --}}
-                        <a      href="{{ asset('front/images/product_images/large/' . $productDetails['product_image']) }}">
-                            <img src="{{ asset('front/images/product_images/large/' . $productDetails['product_image']) }}" alt="" width="500" height="500" />
+                        <a      href="{{ secure_asset('front/images/product_images/large/' . $productDetails['product_image']) }}">
+                            <img src="{{ secure_asset('front/images/product_images/large/' . $productDetails['product_image']) }}" alt="" width="500" height="500" />
                         </a>
                     </div>
 
                     <div class="thumbnails" style="margin-top: 30px"> {{-- EasyZoom plugin --}}
-                        <a      href="{{ asset('front/images/product_images/large/' . $productDetails['product_image']) }}" data-standard="{{ asset('front/images/product_images/small/' . $productDetails['product_image']) }}">
-                            <img src="{{ asset('front/images/product_images/small/' . $productDetails['product_image']) }}" width="120" height="120" alt="" />
+                        <a      href="{{ secure_asset('front/images/product_images/large/' . $productDetails['product_image']) }}" data-standard="{{ secure_asset('front/images/product_images/small/' . $productDetails['product_image']) }}">
+                            <img src="{{ secure_asset('front/images/product_images/small/' . $productDetails['product_image']) }}" width="120" height="120" alt="" />
                         </a>
 
 
@@ -96,8 +96,8 @@
                         {{-- Show the product Alternative images (`image` in `products_images` table) --}}
                         @foreach ($productDetails['images'] as $image)
                             {{-- EasyZoom plugin --}}
-                            <a      href="{{ asset('front/images/product_images/large/' . $image['image']) }}" data-standard="{{ asset('front/images/product_images/small/' . $image['image']) }}">
-                                <img src="{{ asset('front/images/product_images/small/' . $image['image']) }}" width="120" height="120" alt="" />
+                            <a      href="{{ secure_asset('front/images/product_images/large/' . $image['image']) }}" data-standard="{{ secure_asset('front/images/product_images/small/' . $image['image']) }}">
+                                <img src="{{ secure_asset('front/images/product_images/small/' . $image['image']) }}" width="120" height="120" alt="" />
                             </a>
                         @endforeach
 
@@ -167,7 +167,7 @@
                             {{-- Breadcrumb --}}
                             <ul class="bread-crumb">
                                 <li class="has-separator">
-                                    <a href="{{ url('/') }}">{{ __('Home') }}</a> {{-- Home --}}
+                                    <a href="{{ secure_url('/') }}">{{ __('Home') }}</a> {{-- Home --}}
                                 </li>
                                 <li class="has-separator">
                                     <a href="javascript:;">{{ $productDetails['section']['name'] }}</a> {{-- Section Name --}}
@@ -283,7 +283,7 @@
 
 
                         {{-- Add to Cart <form> --}} 
-                        <form action="{{ url('cart/add') }}" method="Post" class="post-form">
+                        <form action="{{ secure_url('cart/add') }}" method="Post" class="post-form">
                             @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
 
@@ -300,8 +300,8 @@
                                         <div><strong>{{ __('Product Colors') }}</strong></div>
                                         <div style="margin-top: 10px">
                                             @foreach ($groupProducts as $product)
-                                                <a href="{{ url('product/' . $product['id']) }}">
-                                                    <img style="width: 80px" src="{{ asset('front/images/product_images/small/' . $product['product_image']) }}">
+                                                <a href="{{ secure_url('product/' . $product['id']) }}">
+                                                    <img style="width: 80px" src="{{ secure_asset('front/images/product_images/small/' . $product['product_image']) }}">
                                                 </a>
                                             @endforeach
                                         </div>
@@ -387,7 +387,7 @@
 
                                     @if ($productDetails['product_video'])
                                         <video controls>
-                                            <source src="{{ url('front/videos/product_videos/' . $productDetails['product_video']) }}" type="video/mp4">
+                                            <source src="{{ secure_url('front/videos/product_videos/' . $productDetails['product_video']) }}" type="video/mp4">
                                         </video>
                                     @else
                                         {{ __('Product Video does not exist') }}    
@@ -514,7 +514,7 @@
 
 
                                             {{-- Star Rating (of a Product) (in the "Reviews" tab). --}}
-                                            <form method="POST" action="{{ url('add-rating') }}" name="formRating" id="formRating">
+                                            <form method="POST" action="{{ secure_url('add-rating') }}" name="formRating" id="formRating">
                                                 @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
                                                 <input type="hidden" name="product_id" value="{{ $productDetails['id'] }}">
@@ -636,7 +636,7 @@
                                 @foreach ($similarProducts as $product)
                                     <div class="item">
                                         <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="{{ url('product/' . $product['id']) }}">
+                                            <a class="item-img-wrapper-link" href="{{ secure_url('product/' . $product['id']) }}">
 
 
 
@@ -645,9 +645,9 @@
                                                 @endphp
                         
                                                 @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
-                                                    <img class="img-fluid" src="{{ asset($product_image_path) }}" alt="Product">
+                                                    <img class="img-fluid" src="{{ secure_asset($product_image_path) }}" alt="Product">
                                                 @else {{-- show the dummy image --}}
-                                                    <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                    <img class="img-fluid" src="{{ secure_asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                                 @endif
 
 
@@ -680,7 +680,7 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                    <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
                                                 </h6>
 
                                             </div>
@@ -741,7 +741,7 @@
                                 @foreach ($recentlyViewedProducts as $product)
                                     <div class="item">
                                         <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="{{ url('product/' . $product['id']) }}">
+                                            <a class="item-img-wrapper-link" href="{{ secure_url('product/' . $product['id']) }}">
 
 
 
@@ -750,9 +750,9 @@
                                                 @endphp
                         
                                                 @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
-                                                    <img class="img-fluid" src="{{ asset($product_image_path) }}" alt="Product">
+                                                    <img class="img-fluid" src="{{ secure_asset($product_image_path) }}" alt="Product">
                                                 @else {{-- show the dummy image --}}
-                                                    <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                    <img class="img-fluid" src="{{ secure_asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                                 @endif
 
 
@@ -785,7 +785,7 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                    <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
                                                 </h6>
                                             </div>
 

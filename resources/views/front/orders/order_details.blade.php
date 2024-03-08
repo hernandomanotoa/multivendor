@@ -17,7 +17,7 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li class="is-marked">
-                        <a href="{{ url('user/orders') }}">Orders</a>
+                        <a href="{{ secure_url('user/orders') }}">Orders</a>
                     </li>
                 </ul>
             </div>
@@ -99,8 +99,8 @@
                                 @php
                                     $getProductImage = \App\Models\Product::getProductImage($product['product_id']);
                                 @endphp
-                                <a target="_blank" href="{{ url('product/' . $product['product_id']) }}">
-                                    <img style="width: 80px" src="{{ asset('front/images/product_images/small/' . $getProductImage) }}">
+                                <a target="_blank" href="{{ secure_url('product/' . $product['product_id']) }}">
+                                    <img style="width: 80px" src="{{ secure_asset('front/images/product_images/small/' . $getProductImage) }}">
                                 </a>
                             </td>
                             <td>{{ $product['product_code'] }}</td>

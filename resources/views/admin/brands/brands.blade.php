@@ -13,7 +13,7 @@
 
 
 
-                            <a href="{{ url('admin/add-edit-brand') }}"
+                            <a href="{{ secure_url('admin/add-edit-brand') }}"
                                 style="max-width: 150px; float: right; display: inline-block"
                                 class="btn btn-block btn-primary">{{ __('Add Brand') }}</a>
 
@@ -66,13 +66,13 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{ url('admin/add-edit-brand/' . $brand['id']) }}">
+                                                    <a href="{{ secure_url('admin/add-edit-brand/' . $brand['id']) }}">
                                                         <i style="font-size: 25px" class="mdi mdi-pencil-box"></i>
                                                         {{-- Icons from Skydash Admin Panel Template --}}
                                                     </a>
 
                                                     {{-- Confirm Deletion JS alert and Sweet Alert --}}
-                                                    {{-- <a title="Brand" class="confirmDelete" href="{{ url('admin/delete-brand/' . $brand['id']) }}"> --}}
+                                                    {{-- <a title="Brand" class="confirmDelete" href="{{ secure_url('admin/delete-brand/' . $brand['id']) }}"> --}}
                                                     {{-- <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i> --}} {{-- Icons from Skydash Admin Panel Template --}}
                                                     {{-- </a> --}}
                                                     <a href="JavaScript:void(0)" class="confirmDelete" module="brand"

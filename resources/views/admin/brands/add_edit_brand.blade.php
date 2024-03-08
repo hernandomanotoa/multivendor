@@ -83,7 +83,7 @@
 
 
                             
-                            <form class="forms-sample"   @if (empty($brand['id'])) action="{{ url('admin/add-edit-brand') }}" @else action="{{ url('admin/add-edit-brand/' . $brand['id']) }}" @endif   method="post" enctype="multipart/form-data"> <!-- If the id is not passed in from the route, this measn 'Add a new Brand', but if the id is passed in from the route, this means 'Edit the Brand' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
+                            <form class="forms-sample"   @if (empty($brand['id'])) action="{{ secure_url('admin/add-edit-brand') }}" @else action="{{ secure_url('admin/add-edit-brand/' . $brand['id']) }}" @endif   method="post" enctype="multipart/form-data"> <!-- If the id is not passed in from the route, this measn 'Add a new Brand', but if the id is passed in from the route, this means 'Edit the Brand' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                 @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
                                 <div class="form-group">

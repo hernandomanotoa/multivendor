@@ -44,12 +44,12 @@ $sections = \App\Models\Section::sections();
                         </a>
                         <ul class="g-dropdown" style="width:200px">
                             <li>
-                                <a href="{{ url('cart') }}">
+                                <a href="{{ secure_url('cart') }}">
                                 <i class="fas fa-cog u-s-m-r-9"></i>
                                 {{ __('My Cart') }}</a>
                             </li>
                             <li>
-                                <a href="{{ url('checkout') }}">
+                                <a href="{{ secure_url('checkout') }}">
                                 <i class="far fa-check-circle u-s-m-r-9"></i>
                                 {{ __('Checkout') }}</a>
                             </li>
@@ -59,7 +59,7 @@ $sections = \App\Models\Section::sections();
                             {{-- If the user is authenticated/logged in, show 'My Account' and 'Logout', if not, show 'Customer Login' and 'Vendor Login' --}} 
                             @if (\Illuminate\Support\Facades\Auth::check()) {{-- Determining If The Current User Is Authenticated: https://laravel.com/docs/9.x/authentication#determining-if-the-current-user-is-authenticated --}}
                                 <li>
-                                    <a href="{{ url('user/account') }}"> 
+                                    <a href="{{ secure_url('user/account') }}"> 
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
                                         {{ __('My Account') }}
                                     </a>
@@ -67,27 +67,27 @@ $sections = \App\Models\Section::sections();
 
                                 
                                 <li>
-                                    <a href="{{ url('user/orders') }}"> 
+                                    <a href="{{ secure_url('user/orders') }}"> 
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
                                         {{ __('My Orders') }}
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ url('user/logout') }}"> 
+                                    <a href="{{ secure_url('user/logout') }}"> 
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
                                         {{ __('Logout') }}
                                     </a>
                                 </li>
                             @else
                                 <li>
-                                    <a href="{{ url('user/login-register') }}"> 
+                                    <a href="{{ secure_url('user/login-register') }}"> 
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
                                         {{ __('Customer Login') }}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('vendor/login-register') }}">
+                                    <a href="{{ secure_url('vendor/login-register') }}">
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
                                         {{ __('Vendor Login') }}
                                     </a>
@@ -137,10 +137,10 @@ $sections = \App\Models\Section::sections();
                     <div class="brand-logo text-lg-center">
 
 
-                        <a href="{{ url('/') }}">
+                        <a href="{{ secure_url('/') }}">
 
 
-                            <img src="{{ asset('front/images/main-logo/main-logo.png') }}" alt="Multi-vendor E-commerce Application" class="app-brand-logo">
+                            <img src="{{ secure_asset('front/images/main-logo/main-logo.png') }}" alt="Multi-vendor E-commerce Application" class="app-brand-logo">
                         </a>
                     </div>
                 </div>
@@ -149,7 +149,7 @@ $sections = \App\Models\Section::sections();
 
 
                     {{-- Website Search Form (to search for all website products) --}} 
-                    <form class="form-searchbox" action="{{ url('/search-products') }}" method="get">
+                    <form class="form-searchbox" action="{{ secure_url('/search-products') }}" method="get">
                         <label class="sr-only" for="search-landscape">{{ __('Search') }}</label>
                         <input id="search-landscape" type="text" class="text-field" placeholder="{{ __('Search everything') }}" name="search" @if (isset($_REQUEST['search']) && !empty($_REQUEST['search'])) value="{{ $_REQUEST['search'] }}" @endif> {{-- We use the "name" HTML attribute as a key/name for the "value" HTML attribute for submitting the Search Form. Check the "value" HTML attribute too inside the <option> HTML tag down below! --}} {{-- if the user uses the Search Form --}}
                         <div class="select-box-position">
@@ -179,7 +179,7 @@ $sections = \App\Models\Section::sections();
                     <nav>
                         <ul class="mid-nav g-nav">
                             <li class="u-d-none-lg">
-                                <a href="{{ url('/') }}">
+                                <a href="{{ secure_url('/') }}">
                                 <i class="ion ion-md-home u-c-brand"></i>
                                 </a>
                             </li>
@@ -253,14 +253,14 @@ $sections = \App\Models\Section::sections();
                                                             <div class="col-lg-4">
                                                                 <ul class="v-level-2">
                                                                     <li>
-                                                                        <a href="{{ url($category['url']) }}">{{ $category['category_name'] }}</a>
+                                                                        <a href="{{ secure_url($category['url']) }}">{{ $category['category_name'] }}</a>
                                                                         <ul>
 
 
  
                                                                             @foreach ($category['sub_categories'] as $subcategory) {{-- Show the section child categories child Subcategories --}}
                                                                             <li>
-                                                                                <a href="{{ url($subcategory['url']) }}">{{ $subcategory['category_name'] }}</a>
+                                                                                <a href="{{ secure_url($subcategory['url']) }}">{{ $subcategory['category_name'] }}</a>
                                                                             </li>
                                                                             @endforeach
 
@@ -286,21 +286,21 @@ $sections = \App\Models\Section::sections();
                 <div class="col-lg-9">
                     <ul class="bottom-nav g-nav u-d-none-lg">
                         <li>
-                            <a href="{{ url('search-products?search=new-arrivals') }}">{{ __('New Arrivals') }} 
+                            <a href="{{ secure_url('search-products?search=new-arrivals') }}">{{ __('New Arrivals') }} 
                             <span class="superscript-label-new">NEW</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('search-products?search=best-sellers') }}">{{ __('Best Seller') }} 
+                            <a href="{{ secure_url('search-products?search=best-sellers') }}">{{ __('Best Seller') }} 
                             <span class="superscript-label-hot">HOT</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('search-products?search=featured') }}">{{ __('Featured') }} 
+                            <a href="{{ secure_url('search-products?search=featured') }}">{{ __('Featured') }} 
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('search-products?search=discounted') }}">{{ __('Discounted') }} 
+                            <a href="{{ secure_url('search-products?search=discounted') }}">{{ __('Discounted') }} 
                             <span class="superscript-label-discount">>10%</span>
                             </a>
                         </li>
@@ -312,34 +312,34 @@ $sections = \App\Models\Section::sections();
                                 <ul>
                                     <li class="menu-title">{{ __('COMPANY') }}</li>
                                     <li>
-                                        <a href="{{ url('about-us') }}" class="u-c-brand">{{ __('About Us') }}</a>
+                                        <a href="{{ secure_url('about-us') }}" class="u-c-brand">{{ __('About Us') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('contact') }}">{{ __('Contact Us') }}</a>
+                                        <a href="{{ secure_url('contact') }}">{{ __('Contact Us') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('faq') }}">{{ __('FAQ') }}</a>
+                                        <a href="{{ secure_url('faq') }}">{{ __('FAQ') }}</a>
                                     </li>
                                 </ul>
                                 <!-- <ul>
                                     <li class="menu-title">COLLECTION</li>
                                     <li>
-                                        <a href="{{ url('men') }}">Men Clothing</a>
+                                        <a href="{{ secure_url('men') }}">Men Clothing</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('women') }}">Women Clothing</a>
+                                        <a href="{{ secure_url('women') }}">Women Clothing</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('kids') }}">Kids Clothing</a>
+                                        <a href="{{ secure_url('kids') }}">Kids Clothing</a>
                                     </li>
                                 </ul> -->
                                 <ul>
                                     <li class="menu-title">{{ __('ACCOUNT') }}</li>
                                     <li>
-                                        <a href="{{ url('user/account') }}">{{ __('My Account') }}</a>
+                                        <a href="{{ secure_url('user/account') }}">{{ __('My Account') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('user/orders') }}">{{ __('My Orders') }}</a>
+                                        <a href="{{ secure_url('user/orders') }}">{{ __('My Orders') }}</a>
                                     </li>
                                 </ul>
                             </div>

@@ -29,7 +29,7 @@
             <div class="shop-intro">
                 <ul class="bread-crumb">
                     <li class="has-separator">
-                        <a href="{{ url('/') }}">Home</a>
+                        <a href="{{ secure_url('/') }}">Home</a>
                     </li>
 
 

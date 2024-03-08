@@ -78,7 +78,7 @@
                 
 
                             
-                            <form class="forms-sample"   @if (empty($banner['id'])) action="{{ url('admin/add-edit-banner') }}" @else action="{{ url('admin/add-edit-banner/' . $banner['id']) }}" @endif   method="post" enctype="multipart/form-data"> <!-- If the id is not passed in from the route, this measn 'Add a new Banner', but if the id is passed in from the route, this means 'Edit the Banner' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
+                            <form class="forms-sample"   @if (empty($banner['id'])) action="{{ secure_url('admin/add-edit-banner') }}" @else action="{{ secure_url('admin/add-edit-banner/' . $banner['id']) }}" @endif   method="post" enctype="multipart/form-data"> <!-- If the id is not passed in from the route, this measn 'Add a new Banner', but if the id is passed in from the route, this means 'Edit the Banner' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                 @csrf
 
                                 <div class="form-group"> 
@@ -93,13 +93,13 @@
                                     <label for="image">{{ __('Banner Image')}}</label>
                                     <input type="file" class="form-control" id="image" name="image">
                                     {{-- Show the admin image if exists --}}
-                                        <a target="_blank" href="{{ url('admin/images/photos/' . Auth::guard('admin')->user()->image) }}">{{ __('View Image')}}</a> {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}} <!-- We used    target="_blank"    to open the image in another separate page -->
+                                        <a target="_blank" href="{{ secure_url('admin/images/photos/' . Auth::guard('admin')->user()->image) }}">{{ __('View Image')}}</a> {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}} <!-- We used    target="_blank"    to open the image in another separate page -->
                                         <input type="hidden" name="current_banner_image" value="{{ Auth::guard('admin')->user()->image }}"> <!-- to send the current admin image url all the time with all the requests --> {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}}
 
 
                                     {{-- Show the banner image, if any (if exits) --}}
                                     @if (!empty($banner['image']))
-                                        <a target="_blank" href="{{ url('front/images/banner_images/' . $banner['image']) }}">{{ __('View Banner Image')}}</a>
+                                        <a target="_blank" href="{{ secure_url('front/images/banner_images/' . $banner['image']) }}">{{ __('View Banner Image')}}</a>
                                     @endif
                                 </div>
                                 <div class="form-group">

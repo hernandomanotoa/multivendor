@@ -73,13 +73,13 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{ url('admin/edit-shipping-charges/' . $shipping['id']) }}">
+                                                    <a href="{{ secure_url('admin/edit-shipping-charges/' . $shipping['id']) }}">
                                                         <i style="font-size: 25px" class="mdi mdi-pencil-box"></i>
                                                         {{-- Icons from Skydash Admin Panel Template --}}
                                                     </a>
 
                                                     {{-- Confirm Deletion JS alert and Sweet Alert --}}
-                                                    {{-- <a title="Shipping" class="confirmDelete" href="{{ url('admin/delete-shipping/' . $shipping['id']) }}"> --}}
+                                                    {{-- <a title="Shipping" class="confirmDelete" href="{{ secure_url('admin/delete-shipping/' . $shipping['id']) }}"> --}}
                                                     {{-- <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i> --}} {{-- Icons from Skydash Admin Panel Template --}}
                                                     {{-- </a> --}}
                                                     {{-- <a href="JavaScript:void(0)" class="confirmDelete" module="shipping" moduleid="{{ $shipping['id'] }}"> --}}

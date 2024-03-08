@@ -38,7 +38,7 @@
                         @foreach ($orders as $order)
                             <tr>
                                 <td>
-                                    <a href="{{ url('user/orders/' . $order['id']) }}">{{ $order['id'] }}</a>
+                                    <a href="{{ secure_url('user/orders/' . $order['id']) }}">{{ $order['id'] }}</a>
                                 </td>
                                 <td> {{-- We'll display products codes --}}
                                     @foreach ($order['orders_products'] as $product)

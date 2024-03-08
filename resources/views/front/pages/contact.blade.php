@@ -72,7 +72,7 @@
                         @endif
 
 
-                        <form action="{{ url('contact') }}" method="post">
+                        <form action="{{ secure_url('contact') }}" method="post">
                             @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
                             <div class="group-inline u-s-m-b-30">

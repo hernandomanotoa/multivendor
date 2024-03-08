@@ -82,7 +82,7 @@
 
 
                             
-                            <form class="forms-sample" action="{{ url('admin/add-images/' . $product['id']) }}" method="post" enctype="multipart/form-data"> {{-- "enctype" attribute must be used becasue we're uploading files --}}
+                            <form class="forms-sample" action="{{ secure_url('admin/add-images/' . $product['id']) }}" method="post" enctype="multipart/form-data"> {{-- "enctype" attribute must be used becasue we're uploading files --}}
                                 @csrf
 
                                 <div class="form-group">
@@ -104,9 +104,9 @@
                                 <div class="form-group">
                                     {{-- Show the product image, if any (if exits) --}}
                                     @if (!empty($product['product_image']))
-                                        <img style="width: 120px" src="{{ url('front/images/product_images/small/' . $product['product_image']) }}"> {{--  the 'small' image --}}
+                                        <img style="width: 120px" src="{{ secure_url('front/images/product_images/small/' . $product['product_image']) }}"> {{--  the 'small' image --}}
                                     @else
-                                        <img style="width: 120px" src="{{ url('front/images/product_images/small/no-image.png') }}"> {{--  the 'small' image --}}
+                                        <img style="width: 120px" src="{{ secure_url('front/images/product_images/small/no-image.png') }}"> {{--  the 'small' image --}}
                                     @endif
                                 </div>
 
@@ -140,7 +140,7 @@
                                     @foreach ($product['images'] as $image) {{-- using the relationship 'images' --}}<tr>
                                             <td>{{ $image['id'] }}</td>
                                             <td>
-                                                <img src="{{ url('front/images/product_images/small/' . $image['image']) }}"> {{-- Small --}}
+                                                <img src="{{ secure_url('front/images/product_images/small/' . $image['image']) }}"> {{-- Small --}}
                                                 {{-- Medium --}}
                                                 {{-- Large --}}
                                             </td>

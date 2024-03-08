@@ -105,7 +105,7 @@
                                 {{-- Forgot Password Functionality --}} 
                                 <div class="group-2 text-right">
                                     <div class="page-anchor">
-                                        <a href="{{ url('user/forgot-password') }}">
+                                        <a href="{{ secure_url('user/forgot-password') }}">
                                             <i class="fas fa-circle-o-notch u-s-m-r-9"></i>{{ __('Lost your password?') }}
                                         </a>
                                     </div>

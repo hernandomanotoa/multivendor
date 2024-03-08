@@ -12,7 +12,7 @@
 
 
                             
-                            <a href="{{ url('admin/add-edit-banner') }}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-primary">Add Banner</a>
+                            <a href="{{ secure_url('admin/add-edit-banner') }}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-primary">Add Banner</a>
 
 
                             {{-- Displaying The Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors AND https://laravel.com/docs/9.x/blade#validation-errors --}}
@@ -48,7 +48,7 @@
                                             <tr>
                                                 <td>{{ $banner['id'] }}</td>
                                                 <td>
-                                                    <img style="width: 180px" src="{{ asset('front/images/banner_images/' . $banner['image']) }}">
+                                                    <img style="width: 180px" src="{{ secure_asset('front/images/banner_images/' . $banner['image']) }}">
                                                 </td>
                                                 <td>{{ $banner['type'] }}</td>
                                                 <td>{{ $banner['link'] }}</td>
@@ -66,12 +66,12 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{ url('admin/add-edit-banner/' . $banner['id']) }}">
+                                                    <a href="{{ secure_url('admin/add-edit-banner/' . $banner['id']) }}">
                                                         <i style="font-size: 25px" class="mdi mdi-pencil-box"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                     </a>
 
                                                     {{-- Confirm Deletion JS alert and Sweet Alert --}}
-                                                    {{-- <a title="Banner" class="confirmDelete" href="{{ url('admin/delete-banner/' . $banner['id']) }}"> --}}
+                                                    {{-- <a title="Banner" class="confirmDelete" href="{{ secure_url('admin/delete-banner/' . $banner['id']) }}"> --}}
                                                         {{-- <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i> --}} {{-- Icons from Skydash Admin Panel Template --}}
                                                     {{-- </a> --}}
                                                     <a href="JavaScript:void(0)" class="confirmDelete" module="banner" moduleid="{{ $banner['id'] }}"> {{-- Check admin/js/custom.js and web.php (routes) --}}

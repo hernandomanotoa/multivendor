@@ -57,7 +57,7 @@
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                             <h3 class="font-weight-bold">Order Details</h3>
-                            <h6 class="font-weight-normal mb-0"><a href="{{ url('admin/orders') }}">Back to Orders</a></h6>
+                            <h6 class="font-weight-normal mb-0"><a href="{{ secure_url('admin/orders') }}">Back to Orders</a></h6>
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
@@ -240,7 +240,7 @@
                             @if (Auth::guard('admin')->user()->type != 'vendor') {{-- If the authenticated/logged-in user is 'admin', allow "Update Order Status" feature --}} {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}} {{-- Retrieving The Authenticated User: https://laravel.com/docs/9.x/authentication#retrieving-the-authenticated-user --}}
                                 
                                 {{-- Note: The `order_statuses` table contains all kinds of order statuses (that can be updated by 'admin'-s ONLY in `orders` table) like: pending, in progress, shipped, canceled, ...etc. In `order_statuses` table, the `name` column can be: 'New', 'Pending', 'Canceled', 'In Progress', 'Shipped', 'Partially Shipped', 'Delivered', 'Partially Delivered' and 'Paid'. 'Partially Shipped': If one order has products from different vendors, and one vendor has shipped their product to the customer while other vendor (or vendors) didn't!. 'Partially Delivered': if one order has products from different vendors, and one vendor has shipped and DELIVERED their product to the customer while other vendor (or vendors) didn't!    // The `order_item_statuses` table contains all kinds of order statuses (that can be updated by both 'vendor'-s and 'admin'-s in `orders_products` table) like: pending, in progress, shipped, canceled, ...etc. --}}
-                                <form action="{{ url('admin/update-order-status') }}" method="post">  {{-- determined by 'admin'-s ONLY, not 'vendor'-s. This is in contrast to 'Order Item Status' which can be updated by both 'vendor'-s and 'admin'-s --}}
+                                <form action="{{ secure_url('admin/update-order-status') }}" method="post">  {{-- determined by 'admin'-s ONLY, not 'vendor'-s. This is in contrast to 'Order Item Status' which can be updated by both 'vendor'-s and 'admin'-s --}}
                                     @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
                                     <input type="hidden" name="order_id" value="{{ $orderDetails['id'] }}">
@@ -352,8 +352,8 @@
                                                     $getProductImage = \App\Models\Product::getProductImage($product['product_id']);
                                                 @endphp
 
-                                                <a target="_blank" href="{{ url('product/' . $product['product_id']) }}">
-                                                    <img src="{{ asset('front/images/product_images/small/' . $getProductImage) }}">
+                                                <a target="_blank" href="{{ secure_url('product/' . $product['product_id']) }}">
+                                                    <img src="{{ secure_asset('front/images/product_images/small/' . $getProductImage) }}">
                                                 </a>
                                             </td>
                                             <td>{{ $product['product_code'] }}</td>
@@ -413,7 +413,7 @@
                                             <td>
                                                 
                                                 {{-- Note: The `order_statuses` table contains all kinds of order statuses (that can be updated by 'admin'-s ONLY in `orders` table) like: pending, in progress, shipped, canceled, ...etc. In `order_statuses` table, the `name` column can be: 'New', 'Pending', 'Canceled', 'In Progress', 'Shipped', 'Partially Shipped', 'Delivered', 'Partially Delivered' and 'Paid'. 'Partially Shipped': If one order has products from different vendors, and one vendor has shipped their product to the customer while other vendor (or vendors) didn't!. 'Partially Delivered': if one order has products from different vendors, and one vendor has shipped and DELIVERED their product to the customer while other vendor (or vendors) didn't!    // The `order_item_statuses` table contains all kinds of order statuses (that can be updated by both 'vendor'-s and 'admin'-s in `orders_products` table) like: pending, in progress, shipped, canceled, ...etc. --}}
-                                                <form action="{{ url('admin/update-order-item-status') }}" method="post">  {{-- can be updated by both 'vendor'-s and 'admin'-s. This is in contrast to 'Update Order Status' which can be updated by 'admin'-s ONLY --}}
+                                                <form action="{{ secure_url('admin/update-order-item-status') }}" method="post">  {{-- can be updated by both 'vendor'-s and 'admin'-s. This is in contrast to 'Update Order Status' which can be updated by 'admin'-s ONLY --}}
                                                     @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
                                                     <input type="hidden" name="order_item_id" value="{{ $product['id'] }}">

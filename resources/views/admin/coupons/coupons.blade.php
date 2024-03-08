@@ -13,7 +13,7 @@
 
 
 
-                            <a href="{{ url('admin/add-edit-coupon') }}"
+                            <a href="{{ secure_url('admin/add-edit-coupon') }}"
                                 style="max-width: 150px; float: right; display: inline-block"
                                 class="btn btn-block btn-primary">{{ __('Add Coupon') }}</a>
 
@@ -79,13 +79,13 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{ url('admin/add-edit-coupon/' . $coupon['id']) }}">
+                                                    <a href="{{ secure_url('admin/add-edit-coupon/' . $coupon['id']) }}">
                                                         <i style="font-size: 25px" class="mdi mdi-pencil-box"></i>
                                                         {{-- Icons from Skydash Admin Panel Template --}}
                                                     </a>
 
                                                     {{-- Confirm Deletion JS alert and Sweet Alert --}}
-                                                    {{-- <a title="Coupon" class="confirmDelete" href="{{ url('admin/delete-coupon/' . $coupon['id']) }}"> --}}
+                                                    {{-- <a title="Coupon" class="confirmDelete" href="{{ secure_url('admin/delete-coupon/' . $coupon['id']) }}"> --}}
                                                     {{-- <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i> --}} {{-- Icons from Skydash Admin Panel Template --}}
                                                     {{-- </a> --}}
                                                     <a href="JavaScript:void(0)" class="confirmDelete" module="coupon"

@@ -11,7 +11,7 @@
     <body>
         <table style="width: 700px">
             <tr><td>&nbsp;</td></tr>
-            <tr><td><img src="{{ asset('front/images/main-logo/main-logo.png') }}"></td></tr>
+            <tr><td><img src="{{ secure_asset('front/images/main-logo/main-logo.png') }}"></td></tr>
             <tr><td>&nbsp;</td></tr>
             <tr><td>Hello {{ $name }}</td></tr>
             <tr><td>&nbsp;<br></td></tr>
@@ -94,7 +94,7 @@
             {{-- PDF Invoice download link --}}
             <tr>
                 <td>
-                    <a href="{{ url('orders/invoice/download/' . $orderDetails['id']) }}">Click here to Download Order Invoice</a>
+                    <a href="{{ secure_url('orders/invoice/download/' . $orderDetails['id']) }}">Click here to Download Order Invoice</a>
                     <br>
                     (Copy & Paste link to open if it doesn't work!)
                 </td>

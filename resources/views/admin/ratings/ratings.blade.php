@@ -45,7 +45,7 @@
                                             <tr>
                                                 <td>{{ $rating['id'] }}</td>
                                                 <td>
-                                                    <a target="_blank" href="{{ url('product/' . $rating['product']['id']) }}">
+                                                    <a target="_blank" href="{{ secure_url('product/' . $rating['product']['id']) }}">
                                                         {{ $rating['product']['product_name'] }}
                                                     </a>
                                                 </td>
@@ -64,12 +64,12 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    {{-- <a href="{{ url('admin/add-edit-rating/' . $rating['id']) }}"> --}}
+                                                    {{-- <a href="{{ secure_url('admin/add-edit-rating/' . $rating['id']) }}"> --}}
                                                         {{-- <i style="font-size: 25px" class="mdi mdi-pencil-box"></i> --}} {{-- Icons from Skydash Admin Panel Template --}}
                                                     {{-- </a> --}}
 
                                                     {{-- Confirm Deletion JS alert and Sweet Alert --}}
-                                                    {{-- <a title="Rating" class="confirmDelete" href="{{ url('admin/delete-rating/' . $rating['id']) }}"> --}}
+                                                    {{-- <a title="Rating" class="confirmDelete" href="{{ secure_url('admin/delete-rating/' . $rating['id']) }}"> --}}
                                                         {{-- <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i> --}} {{-- Icons from Skydash Admin Panel Template --}}
                                                     {{-- </a> --}}
                                                     <a href="JavaScript:void(0)" class="confirmDelete" module="rating" moduleid="{{ $rating['id'] }}">

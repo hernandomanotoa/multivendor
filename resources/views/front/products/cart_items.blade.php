@@ -28,8 +28,8 @@
                 <tr>
                     <td>
                         <div class="cart-anchor-image">
-                            <a href="{{ url('product/' . $item['product_id']) }}">
-                                <img src="{{ asset('front/images/product_images/small/' . $item['product']['product_image']) }}" alt="Product">
+                            <a href="{{ secure_url('product/' . $item['product_id']) }}">
+                                <img src="{{ secure_asset('front/images/product_images/small/' . $item['product']['product_image']) }}" alt="Product">
                                 <h6>
                                     {{ $item['product']['product_name'] }} ({{ $item['product']['product_code'] }}) - {{ $item['size'] }}
                                     <br>

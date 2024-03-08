@@ -91,7 +91,7 @@
                             <div class="group-inline u-s-m-b-30">
                                 <div class="group-2 text-right">
                                     <div class="page-anchor">
-                                        <a href="{{ url('user/login-register') }}">
+                                        <a href="{{ secure_url('user/login-register') }}">
                                             <i class="fas fa-circle-o-notch u-s-m-r-9"></i>{{ __('Back to Login') }}
                                         </a>
                                     </div>

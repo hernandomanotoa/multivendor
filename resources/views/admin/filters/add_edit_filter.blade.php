@@ -78,7 +78,7 @@
 
 
                             
-                            <form class="forms-sample"   @if (empty($filter['id'])) action="{{ url('admin/add-edit-filter') }}" @else action="{{ url('admin/add-edit-filter/' . $filter['id']) }}" @endif   method="post" enctype="multipart/form-data">  <!-- If the id is not passed in from the route, this measn 'Add a new Filter', but if the id is passed in from the route, this means 'Edit the Filter' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
+                            <form class="forms-sample"   @if (empty($filter['id'])) action="{{ secure_url('admin/add-edit-filter') }}" @else action="{{ secure_url('admin/add-edit-filter/' . $filter['id']) }}" @endif   method="post" enctype="multipart/form-data">  <!-- If the id is not passed in from the route, this measn 'Add a new Filter', but if the id is passed in from the route, this means 'Edit the Filter' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                 @csrf
 
                                 <div class="form-group">

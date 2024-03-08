@@ -6,7 +6,7 @@
     <ul class="nav">
         <li class="nav-item">
             <a @if (Session::get('page') == 'dashboard') style="background: #052CA3 !important; color: #FFF !important" @endif
-                class="nav-link" href="{{ url('admin/dashboard') }}">
+                class="nav-link" href="{{ secure_url('admin/dashboard') }}">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">{{ __('Dashboard') }}</span>
             </a>
@@ -31,15 +31,15 @@
                     <ul class="nav flex-column sub-menu" style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'update_personal_details') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/update-vendor-details/personal') }}">{{ __('Personal Details') }}
+                                class="nav-link" href="{{ secure_url('admin/update-vendor-details/personal') }}">{{ __('Personal Details') }}
                                 </a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'update_business_details') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/update-vendor-details/business') }}">{{ __('Business Details') }}
+                                class="nav-link" href="{{ secure_url('admin/update-vendor-details/business') }}">{{ __('Business Details') }}
                                 </a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'update_bank_details') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/update-vendor-details/bank') }}">{{ __('Bank Details') }}</a>
+                                class="nav-link" href="{{ secure_url('admin/update-vendor-details/bank') }}">{{ __('Bank Details') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -63,10 +63,10 @@
                     <ul class="nav flex-column sub-menu" style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'products') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/products') }}">{{ __('Products') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/products') }}">{{ __('Products') }}</a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'coupons') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/coupons') }}">{{ __('Coupons') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/coupons') }}">{{ __('Coupons') }}</a></li>
                     </ul>
                 </div>
             </li>
@@ -84,7 +84,7 @@
                     <ul class="nav flex-column sub-menu" style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'orders') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/orders') }}">{{ __('Orders') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/orders') }}">{{ __('Orders') }}</a></li>
                     </ul>
                 </div>
             </li>
@@ -102,11 +102,11 @@
                     <ul class="nav flex-column sub-menu" style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'update_admin_password') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/update-admin-password') }}">{{ __('Update Admin Password') }}
+                                class="nav-link" href="{{ secure_url('admin/update-admin-password') }}">{{ __('Update Admin Password') }}
                                 </a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'update_admin_details') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/update-admin-details') }}">{{ __('Update Admin Details') }}</a>
+                                class="nav-link" href="{{ secure_url('admin/update-admin-details') }}">{{ __('Update Admin Details') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -131,16 +131,16 @@
                         {{-- The Route Parameter {type} is the `type` column in the `admins` table, which can only be: admin, subadmin or vendor. And if there's no parameter passed at all, show ALL of the admins, subadmins and vendors at the same page --}}
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'view_admins') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/admins/admin') }}">{{ __('Admins') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/admins/admin') }}">{{ __('Admins') }}</a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'view_subadmins') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/admins/subadmin') }}">{{ __('Subadmins') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/admins/subadmin') }}">{{ __('Subadmins') }}</a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'view_vendors') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/admins/vendor') }}">{{ __('Vendors') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/admins/vendor') }}">{{ __('Vendors') }}</a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'view_all') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/admins') }}">{{ __('All') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/admins') }}">{{ __('All') }}</a></li>
                     </ul>
                 </div>
             </li>
@@ -163,22 +163,22 @@
                         style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'sections') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/sections') }}">{{ __('Sections') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/sections') }}">{{ __('Sections') }}</a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'categories') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/categories') }}">{{ __('Categories') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/categories') }}">{{ __('Categories') }}</a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'brands') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/brands') }}">{{ __('Brands') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/brands') }}">{{ __('Brands') }}</a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'products') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/products') }}">{{ __('Products') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/products') }}">{{ __('Products') }}</a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'coupons') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/coupons') }}">{{ __('Coupons') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/coupons') }}">{{ __('Coupons') }}</a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'filters') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/filters') }}">{{ __('Filters') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/filters') }}">{{ __('Filters') }}</a></li>
                     </ul>
                 </div>
             </li>
@@ -197,7 +197,7 @@
                         style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'orders') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/orders') }}">{{ __('Orders') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/orders') }}">{{ __('Orders') }}</a></li>
                     </ul>
                 </div>
             </li>
@@ -216,7 +216,7 @@
                         style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'ratings') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/ratings') }}">{{ __('Product Ratings & Reviews') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/ratings') }}">{{ __('Product Ratings & Reviews') }}</a></li>
                     </ul>
                 </div>
             </li>
@@ -236,10 +236,10 @@
                         style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'users') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/users') }}">{{ __('Users') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/users') }}">{{ __('Users') }}</a></li>
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'subscribers') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/subscribers') }}">{{ __('Subscribers') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/subscribers') }}">{{ __('Subscribers') }}</a></li>
                     </ul>
                 </div>
             </li>
@@ -259,7 +259,7 @@
                         style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'banners') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/banners') }}">{{ __('Home Page Banners') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/banners') }}">{{ __('Home Page Banners') }}</a></li>
                     </ul>
                 </div>
             </li>
@@ -278,7 +278,7 @@
                         style="background: #fff !important; color: #052CA3 !important">
                         <li class="nav-item"> <a
                                 @if (Session::get('page') == 'shipping') style="background: #052CA3 !important; color: #FFF !important" @else style="background: #fff !important; color: #052CA3 !important" @endif
-                                class="nav-link" href="{{ url('admin/shipping-charges') }}">{{ __('Shipping Charges') }}</a></li>
+                                class="nav-link" href="{{ secure_url('admin/shipping-charges') }}">{{ __('Shipping Charges') }}</a></li>
                     </ul>
                 </div>
             </li>

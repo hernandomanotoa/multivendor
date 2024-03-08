@@ -69,7 +69,7 @@
 
 
                         
-                        <form action="{{ url('admin/login') }}" method="post"> {{-- the same HTML Form as the one in the Admin Panel in admin/login.blade.php --}}
+                        <form action="{{ secure_url('admin/login') }}" method="post"> {{-- the same HTML Form as the one in the Admin Panel in admin/login.blade.php --}}
                             @csrf {{-- https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
 
@@ -101,7 +101,7 @@
 
 
                         
-                        <form id="vendorForm" action="{{ url('/vendor/register') }}" method="post">
+                        <form id="vendorForm" action="{{ secure_url('/vendor/register') }}" method="post">
                             @csrf
 
 

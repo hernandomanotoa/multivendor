@@ -80,7 +80,7 @@
                 
 
                             
-                            <form class="forms-sample" action="{{ url('admin/edit-shipping-charges/' . $shippingDetails['id']) }}" method="post"> <!-- If the id is not passed in from the route, this measn 'Add a new Shipping Charge', but if the id is passed in from the route, this means 'Edit the Shipping Charge' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
+                            <form class="forms-sample" action="{{ secure_url('admin/edit-shipping-charges/' . $shippingDetails['id']) }}" method="post"> <!-- If the id is not passed in from the route, this measn 'Add a new Shipping Charge', but if the id is passed in from the route, this means 'Edit the Shipping Charge' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                 @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
                                 <div class="form-group">

@@ -13,7 +13,7 @@
 
 
 
-                            <a href="{{ url('admin/add-edit-product') }}"
+                            <a href="{{ secure_url('admin/add-edit-product') }}"
                                 style="max-width: 150px; float: right; display: inline-block"
                                 class="btn btn-block btn-primary">{{ __('Add Product') }}</a>
 
@@ -58,11 +58,11 @@
                                                 <td>
                                                     @if (!empty($product['product_image']))
                                                         <img style="width:120px; height:100px"
-                                                            src="{{ asset('front/images/product_images/small/' . $product['product_image']) }}">
+                                                            src="{{ secure_asset('front/images/product_images/small/' . $product['product_image']) }}">
                                                         {{-- Show the 'small' image size from the 'small' folder --}}
                                                     @else
                                                         <img style="width:120px; height:100px"
-                                                            src="{{ asset('front/images/product_images/small/no-image.png') }}">
+                                                            src="{{ secure_asset('front/images/product_images/small/no-image.png') }}">
                                                         {{-- Show the 'no-image' Dummy Image: If you have for example a table with an 'images' column (that can exist or not exist), use a 'Dummy Image' in case there's no image. Example: https://dummyimage.com/  --}}
                                                     @endif
                                                 </td>
@@ -71,7 +71,7 @@
                                                 <td>
                                                     @if ($product['admin_type'] == 'vendor')
                                                         <a target="_blank"
-                                                            href="{{ url('admin/view-vendor-details/' . $product['admin_id']) }}">{{ __(ucfirst($product['admin_type'])) }}</a>
+                                                            href="{{ secure_url('admin/view-vendor-details/' . $product['admin_id']) }}">{{ __(ucfirst($product['admin_type'])) }}</a>
                                                     @else
                                                         {{ ucfirst($product['admin_type']) }}
                                                     @endif
@@ -96,23 +96,23 @@
                                                 </td>
                                                 <td>
                                                     <a title="{{ __('Edit Product') }}"
-                                                        href="{{ url('admin/add-edit-product/' . $product['id']) }}">
+                                                        href="{{ secure_url('admin/add-edit-product/' . $product['id']) }}">
                                                         <i style="font-size: 25px" class="mdi mdi-pencil-box"></i>
                                                         {{-- Icons from Skydash Admin Panel Template --}}
                                                     </a>
                                                     <a title="{{ __('Add Attributes') }}"
-                                                        href="{{ url('admin/add-edit-attributes/' . $product['id']) }}">
+                                                        href="{{ secure_url('admin/add-edit-attributes/' . $product['id']) }}">
                                                         <i style="font-size: 25px" class="mdi mdi-plus-box"></i>
                                                         {{-- Icons from Skydash Admin Panel Template --}}
                                                     </a>
                                                     <a title="{{ __('Add Multiple Images') }}"
-                                                        href="{{ url('admin/add-images/' . $product['id']) }}">
+                                                        href="{{ secure_url('admin/add-images/' . $product['id']) }}">
                                                         <i style="font-size: 25px" class="mdi mdi-library-plus"></i>
                                                         {{-- Icons from Skydash Admin Panel Template --}}
                                                     </a>
 
                                                     {{-- Confirm Deletion JS alert and Sweet Alert --}}
-                                                    {{-- <a title="Product" class="confirmDelete" href="{{ url('admin/delete-product/' . $product['id']) }}"> --}}
+                                                    {{-- <a title="Product" class="confirmDelete" href="{{ secure_url('admin/delete-product/' . $product['id']) }}"> --}}
                                                     {{-- <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i> --}} {{-- Icons from Skydash Admin Panel Template --}}
                                                     {{-- </a> --}}
                                                     <a title="{{ __('Delete') }}" href="JavaScript:void(0)"

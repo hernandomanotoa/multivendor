@@ -9,10 +9,10 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">{{ __('Filters') }}</h4>
-                            <a href="{{ url('admin/filters-values') }}"
+                            <a href="{{ secure_url('admin/filters-values') }}"
                                 style="max-width: 163px; float: right; display: inline-block"
                                 class="btn btn-block btn-primary">{{ __('View Filter Values') }}</a>
-                            <a href="{{ url('admin/add-edit-filter') }}"
+                            <a href="{{ secure_url('admin/add-edit-filter') }}"
                                 style="max-width: 169px; float: left;  display: inline-block"
                                 class="btn btn-block btn-primary">{{ __('Add Filter Column') }}</a>
 

@@ -63,7 +63,7 @@
 
 
                                 {{-- The complete HTML Form of the user submitting their Delivery Address and Payment Method --}}
-                                <form name="checkoutForm" id="checkoutForm" action="{{ url('/checkout') }}" method="post">
+                                <form name="checkoutForm" id="checkoutForm" action="{{ secure_url('/checkout') }}" method="post">
                                     @csrf {{-- Preventing CSRF Requests: https://laravel.com/docs/9.x/csrf#preventing-csrf-requests --}}
 
 
@@ -115,8 +115,8 @@
 
                                                     <tr>
                                                         <td>
-                                                            <a href="{{ url('product/' . $item['product_id']) }}">
-                                                                <img width="50px" src="{{ asset('front/images/product_images/small/' . $item['product']['product_image']) }}" alt="Product">
+                                                            <a href="{{ secure_url('product/' . $item['product_id']) }}">
+                                                                <img width="50px" src="{{ secure_asset('front/images/product_images/small/' . $item['product']['product_image']) }}" alt="Product">
                                                                 <h6 class="order-h6">{{ $item['product']['product_name'] }}
                                                                 <br>
                                                                 {{ $item['size'] }}/{{ $item['product']['product_color'] }}</h6>

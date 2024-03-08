@@ -83,7 +83,7 @@
 
 
                             
-                            <form class="forms-sample" action="{{ url('admin/add-edit-attributes/' . $product['id']) }}" method="post">
+                            <form class="forms-sample" action="{{ secure_url('admin/add-edit-attributes/' . $product['id']) }}" method="post">
                                 @csrf
 
                                 <div class="form-group">
@@ -105,9 +105,9 @@
                                 <div class="form-group">
                                     {{-- Show the product image, if any (if exits) --}}
                                     @if (!empty($product['product_image']))
-                                        <img style="width: 120px" src="{{ url('front/images/product_images/small/' . $product['product_image']) }}"> {{--  the 'small' image --}}
+                                        <img style="width: 120px" src="{{ secure_url('front/images/product_images/small/' . $product['product_image']) }}"> {{--  the 'small' image --}}
                                     @else
-                                        <img style="width: 120px" src="{{ url('front/images/product_images/small/no-image.png') }}"> {{--  the 'small' image --}}
+                                        <img style="width: 120px" src="{{ secure_url('front/images/product_images/small/no-image.png') }}"> {{--  the 'small' image --}}
                                     @endif
                                 </div>
 
@@ -134,7 +134,7 @@
                             
                             <h4 class="card-title">Product Attributes</h4>
 
-                            <form method="post" action="{{ url('admin/edit-attributes/' . $product['id']) }}">
+                            <form method="post" action="{{ secure_url('admin/edit-attributes/' . $product['id']) }}">
                                 @csrf
 
                                 {{-- DataTable --}}

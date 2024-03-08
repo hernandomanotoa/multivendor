@@ -96,8 +96,8 @@
                             </div>
                         </div>
                         <div class="button-area">
-                            <a href="{{ url('/') }}" class="continue">{{ __('Continue Shopping') }} </a>
-                            <a href="{{ url('/checkout') }}" class="checkout">{{ __('Proceed to Checkout') }} </a>
+                            <a href="{{ secure_url('/') }}" class="continue">{{ __('Continue Shopping') }} </a>
+                            <a href="{{ secure_url('/checkout') }}" class="checkout">{{ __('Proceed to Checkout') }} </a>
                         </div>
                     </div>
                     <!-- Coupon /- -->

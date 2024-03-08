@@ -6,7 +6,7 @@
         <div class="product-item col-lg-4 col-md-6 col-sm-6">
             <div class="item">
                 <div class="image-container">
-                    <a class="item-img-wrapper-link" href="{{ url('product/' . $product['id']) }}">
+                    <a class="item-img-wrapper-link" href="{{ secure_url('product/' . $product['id']) }}">
 
 
                         @php
@@ -14,9 +14,9 @@
                         @endphp
 
                         @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
-                            <img class="img-fluid" src="{{ asset($product_image_path) }}" alt="Product">
+                            <img class="img-fluid" src="{{ secure_asset($product_image_path) }}" alt="Product">
                         @else {{-- show the dummy image --}}
-                            <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                            <img class="img-fluid" src="{{ secure_asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                         @endif
 
 
@@ -45,7 +45,7 @@
                             </li>
                         </ul>
                         <h6 class="item-title">
-                            <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                            <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
                         </h6>
                         <div class="item-description">
                             <p>{{ $product['description'] }}</p>

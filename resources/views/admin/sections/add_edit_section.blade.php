@@ -80,7 +80,7 @@
               
 
                         
-                        <form class="forms-sample"   @if (empty($section['id'])) action="{{ url('admin/add-edit-section') }}" @else action="{{ url('admin/add-edit-section/' . $section['id']) }}" @endif   method="post" enctype="multipart/form-data"> @csrf  <!-- If the id is not passed in from the route, this measn 'Add a new Section', but if the id is passed in from the route, this means 'Edit the Section' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
+                        <form class="forms-sample"   @if (empty($section['id'])) action="{{ secure_url('admin/add-edit-section') }}" @else action="{{ secure_url('admin/add-edit-section/' . $section['id']) }}" @endif   method="post" enctype="multipart/form-data"> @csrf  <!-- If the id is not passed in from the route, this measn 'Add a new Section', but if the id is passed in from the route, this means 'Edit the Section' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                             <div class="form-group">
                                 <label for="section_name">{{ __('Section Name')}}</label>
                                 <input type="text" class="form-control" id="section_name" placeholder="{{ __('Enter Section Name')}}" name="section_name" @if (!empty($section['name'])) value="{{ $section['name'] }}" @else value="{{ old('section_name') }}" @endif> 

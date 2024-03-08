@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-lg-12" align="center">
                     <h3>PLEASE MAKE <span style="color: red">INR {{ Session::get('grand_total') }}</span> PAYMENT FOR YOUR ORDER</h3>
-                    <a href="{{ url('iyzipay/pay') }}">
+                    <a href="{{ secure_url('iyzipay/pay') }}">
                         <button class="button button2">Pay Now</button> {{-- Interacting With The Session: Retrieving Data: https://laravel.com/docs/9.x/session#retrieving-data --}}
                     </a>
                 </div>

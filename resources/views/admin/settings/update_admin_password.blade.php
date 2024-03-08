@@ -69,7 +69,7 @@
 
 
 
-                            <form class="forms-sample" action="{{ url('admin/update-admin-password') }}" method="post">
+                            <form class="forms-sample" action="{{ secure_url('admin/update-admin-password') }}" method="post">
                                 @csrf
 
 

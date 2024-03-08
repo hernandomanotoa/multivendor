@@ -15,7 +15,7 @@
         <!-- inject:css -->
         <link rel="stylesheet" href="{{ secure_url('admin/css/vertical-layout-light/style.css') }}">
         <!-- endinject -->
-        <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" />
+        <link rel="shortcut icon" href="{{ secure_asset('admin/images/favicon.png') }}" />
     </head>
     <body>
         <div class="container-scroller">

@@ -22,27 +22,27 @@
         </ul>
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
-                <a class="nav-link dropdown-toggle" href="{{ url('admin/update-admin-details') }}"
+                <a class="nav-link dropdown-toggle" href="{{ secure_url('admin/update-admin-details') }}"
                     data-toggle="dropdown" id="profileDropdown">
 
 
                     {{-- Show the admin image if exists --}}
                     @if (!empty(Auth::guard('admin')->user()->image))
                         {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}}
-                        <img src="{{ url('admin/images/photos/' . Auth::guard('admin')->user()->image) }}"
+                        <img src="{{ secure_url('admin/images/photos/' . Auth::guard('admin')->user()->image) }}"
                             alt="profile"> {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}}
                     @else
-                        <img src="{{ url('admin/images/photos/no-image.gif') }}" alt="profile">
+                        <img src="{{ secure_url('admin/images/photos/no-image.gif') }}" alt="profile">
                     @endif
 
 
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a href="{{ url('admin/update-admin-details') }}" class="dropdown-item">
+                    <a href="{{ secure_url('admin/update-admin-details') }}" class="dropdown-item">
                         <i class="ti-settings text-primary"></i>
                         {{ __('Header Settings') }}
                     </a>
-                    <a href="{{ url('admin/logout') }}" class="dropdown-item">
+                    <a href="{{ secure_url('admin/logout') }}" class="dropdown-item">
                         <i class="ti-power-off text-primary"></i>
                         {{ __('Header Logout') }}
                     </a>

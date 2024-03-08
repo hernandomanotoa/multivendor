@@ -80,7 +80,7 @@
 
 
                             
-                            <form class="forms-sample"   @if (empty($coupon['id'])) action="{{ url('admin/add-edit-coupon') }}" @else action="{{ url('admin/add-edit-coupon/' . $coupon['id']) }}" @endif   method="post" enctype="multipart/form-data">  <!-- If the id is not passed in from the route, this measn 'Add a new Coupon', but if the id is passed in from the route, this means 'Edit the Coupon' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
+                            <form class="forms-sample"   @if (empty($coupon['id'])) action="{{ secure_url('admin/add-edit-coupon') }}" @else action="{{ secure_url('admin/add-edit-coupon/' . $coupon['id']) }}" @endif   method="post" enctype="multipart/form-data">  <!-- If the id is not passed in from the route, this measn 'Add a new Coupon', but if the id is passed in from the route, this means 'Edit the Coupon' --> <!-- Using the enctype="multipart/form-data" to allow uploading files (images) -->
                                 @csrf
 
                                 @if (empty($coupon['coupon_code'])) {{-- In case of 'Add a new Coupon' --}}

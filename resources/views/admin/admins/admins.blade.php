@@ -33,9 +33,9 @@
                                                 <td>{{ $admin['email'] }}</td>
                                                 <td>
                                                     @if ($admin['image'] != '')
-                                                        <img src="{{ asset('admin/images/photos/' . $admin['image']) }}">
+                                                        <img src="{{ secure_asset('admin/images/photos/' . $admin['image']) }}">
                                                     @else
-                                                        <img src="{{ asset('admin/images/photos/no-image.gif') }}">
+                                                        <img src="{{ secure_asset('admin/images/photos/no-image.gif') }}">
                                                     @endif
                                                 </td>
                                                 <td>
@@ -51,7 +51,7 @@
                                                 </td>
                                                 <td>
                                                     @if ($admin['type'] == 'vendor') {{-- if the admin `type` is vendor, show their further details --}}
-                                                        <a href="{{ url('admin/view-vendor-details/' . $admin['id']) }}">
+                                                        <a href="{{ secure_url('admin/view-vendor-details/' . $admin['id']) }}">
                                                             <i style="font-size: 25px" class="mdi mdi-file-document"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                         </a>
                                                     @endif

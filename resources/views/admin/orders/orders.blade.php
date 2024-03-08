@@ -50,19 +50,19 @@
                                                     <td>{{ $order['order_status'] }}</td>
                                                     <td>{{ $order['payment_method'] }}</td>
                                                     <td>
-                                                        <a title="View Order Details" href="{{ url('admin/orders/' . $order['id']) }}">
+                                                        <a title="View Order Details" href="{{ secure_url('admin/orders/' . $order['id']) }}">
                                                             <i style="font-size: 25px" class="mdi mdi-file-document"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                         </a>
                                                         &nbsp;&nbsp;
 
                                                         {{-- View HTML invoice --}} 
-                                                        <a title="View Order Invoice" href="{{ url('admin/orders/invoice/' . $order['id']) }}" target="_blank">
+                                                        <a title="View Order Invoice" href="{{ secure_url('admin/orders/invoice/' . $order['id']) }}" target="_blank">
                                                             <i style="font-size: 25px" class="mdi mdi-printer"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                         </a>
                                                         &nbsp;&nbsp;
 
                                                         {{-- View PDF invoice --}} 
-                                                        <a title="Print PDF Invoice" href="{{ url('admin/orders/invoice/pdf/' . $order['id']) }}" target="_blank">
+                                                        <a title="Print PDF Invoice" href="{{ secure_url('admin/orders/invoice/pdf/' . $order['id']) }}" target="_blank">
                                                             <i style="font-size: 25px" class="mdi mdi-file-pdf"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                         </a>
                                                     </td>

@@ -13,7 +13,7 @@
 
 
                             
-                            <a href="{{ url('admin/add-edit-section') }}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-primary">{{ __('Add Section') }}</a>
+                            <a href="{{ secure_url('admin/add-edit-section') }}" style="max-width: 150px; float: right; display: inline-block" class="btn btn-block btn-primary">{{ __('Add Section') }}</a>
 
                             {{-- Displaying The Validation Errors: https://laravel.com/docs/9.x/validation#quick-displaying-the-validation-errors AND https://laravel.com/docs/9.x/blade#validation-errors --}}
                             {{-- Determining If An Item Exists In The Session (using has() method): https://laravel.com/docs/9.x/session#determining-if-an-item-exists-in-the-session --}}
@@ -56,12 +56,12 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{ url('admin/add-edit-section/' . $section['id']) }}">
+                                                    <a href="{{ secure_url('admin/add-edit-section/' . $section['id']) }}">
                                                         <i style="font-size: 25px" class="mdi mdi-pencil-box"></i> {{-- Icons from Skydash Admin Panel Template --}}
                                                     </a>
 
                                                     {{-- Confirm Deletion JS alert and Sweet Alert --}}
-                                                    {{-- <a title="Section" class="confirmDelete" href="{{ url('admin/delete-section/' . $section['id']) }}"> --}}
+                                                    {{-- <a title="Section" class="confirmDelete" href="{{ secure_url('admin/delete-section/' . $section['id']) }}"> --}}
                                                         {{-- <i style="font-size: 25px" class="mdi mdi-file-excel-box"></i> --}} {{-- Icons from Skydash Admin Panel Template --}}
                                                     {{-- </a> --}}
                                                     <a href="JavaScript:void(0)" class="confirmDelete" module="section" moduleid="{{ $section['id'] }}">

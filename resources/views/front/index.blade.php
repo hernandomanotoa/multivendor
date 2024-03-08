@@ -12,8 +12,8 @@
                 <div class="bg-image">
                     <div class="slide-content">
                         <h1>
-                            <a @if (!empty($banner['link'])) href="{{ url($banner['link']) }}" @else href="javascript:;" @endif>
-                                <img src="{{ asset('front/images/banner_images/' . $banner['image']) }}" title="{{ $banner['title'] }}" alt="{{ $banner['title'] }}">
+                            <a @if (!empty($banner['link'])) href="{{ secure_url($banner['link']) }}" @else href="javascript:;" @endif>
+                                <img src="{{ secure_asset('front/images/banner_images/' . $banner['image']) }}" title="{{ $banner['title'] }}" alt="{{ $banner['title'] }}">
                             </a>
                         </h1>
                         <h2>{{ $banner['title'] }}</h2>
@@ -32,8 +32,8 @@
         <div class="banner-layer">
             <div class="container">
                 <div class="image-banner">
-                    <a target="_blank" rel="nofollow" href="{{ url($fixBanners[1]['link']) }}" class="mx-auto banner-hover effect-dark-opacity">
-                        <img class="img-fluid" src="{{ asset('front/images/banner_images/' . $fixBanners[1]['image']) }}" alt="{{ $fixBanners[1]['alt'] }}" title="{{ $fixBanners[1]['title'] }}">
+                    <a target="_blank" rel="nofollow" href="{{ secure_url($fixBanners[1]['link']) }}" class="mx-auto banner-hover effect-dark-opacity">
+                        <img class="img-fluid" src="{{ secure_asset('front/images/banner_images/' . $fixBanners[1]['image']) }}" alt="{{ $fixBanners[1]['alt'] }}" title="{{ $fixBanners[1]['title'] }}">
                     </a>
                 </div>
             </div>
@@ -85,29 +85,29 @@
 
                                         <div class="item">
                                             <div class="image-container">
-                                                <a class="item-img-wrapper-link" href="{{ url('product/' . $product['id']) }}">
+                                                <a class="item-img-wrapper-link" href="{{ secure_url('product/' . $product['id']) }}">
                                                     @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
-                                                        <img class="img-fluid" src="{{ asset($product_image_path) }}" alt="Product">
+                                                        <img class="img-fluid" src="{{ secure_asset($product_image_path) }}" alt="Product">
                                                     @else {{-- show the dummy image --}}
-                                                        <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                        <img class="img-fluid" src="{{ secure_asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                                     @endif
                                                 </a>
                                                 <div class="item-action-behaviors">
                                                     <a class="item-quick-look" data-toggle="modal" href="#quick-view">{{ __('Quick Look')}}</a>
                                                     <a class="item-mail" href="javascript:void(0)">{{ __('Mail')}}</a>
                                                     <a class="item-addwishlist" href="javascript:void(0)">{{ __('Add to Wishlist')}}</a>
-                                                    <a class="item-addCart" href="{{ url('product/' . $product['id']) }}">{{ __('Add to Cart')}}</a>
+                                                    <a class="item-addCart" href="{{ secure_url('product/' . $product['id']) }}">{{ __('Add to Cart')}}</a>
                                                 </div>
                                             </div>
                                             <div class="item-content">
                                                 <div class="what-product-is">
                                                     <ul class="bread-crumb">
                                                         <li>
-                                                            <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_code'] }}</a>
+                                                            <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_code'] }}</a>
                                                         </li>
                                                     </ul>
                                                     <h6 class="item-title">
-                                                        <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                        <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
                                                     </h6>
                                                     <div class="item-stars">
                                                         <div class='star' title="0 out of 5 - based on 0 Reviews">
@@ -173,29 +173,29 @@
 
                                         <div class="item">
                                             <div class="image-container">
-                                                <a class="item-img-wrapper-link" href="{{ url('product/' . $product['id']) }}">
+                                                <a class="item-img-wrapper-link" href="{{ secure_url('product/' . $product['id']) }}">
                                                     @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
-                                                        <img class="img-fluid" src="{{ asset($product_image_path) }}" alt="Product">
+                                                        <img class="img-fluid" src="{{ secure_asset($product_image_path) }}" alt="Product">
                                                     @else {{-- show the dummy image --}}
-                                                        <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                        <img class="img-fluid" src="{{ secure_asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                                     @endif
                                                 </a>
                                                 <div class="item-action-behaviors">
                                                     <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
                                                     <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                     <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                    <a class="item-addCart" href="{{ url('product/' . $product['id']) }}">Add to Cart</a>
+                                                    <a class="item-addCart" href="{{ secure_url('product/' . $product['id']) }}">Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="item-content">
                                                 <div class="what-product-is">
                                                     <ul class="bread-crumb">
                                                         <li>
-                                                            <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_code'] }}</a>
+                                                            <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_code'] }}</a>
                                                         </li>
                                                     </ul>
                                                     <h6 class="item-title">
-                                                        <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                        <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
                                                     </h6>
                                                     <div class="item-stars">
                                                         <div class='star' title="0 out of 5 - based on 0 Reviews">
@@ -254,29 +254,29 @@
 
                                         <div class="item">
                                             <div class="image-container">
-                                                <a class="item-img-wrapper-link" href="{{ url('product/' . $product['id']) }}">
+                                                <a class="item-img-wrapper-link" href="{{ secure_url('product/' . $product['id']) }}">
                                                     @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
-                                                        <img class="img-fluid" src="{{ asset($product_image_path) }}" alt="Product">
+                                                        <img class="img-fluid" src="{{ secure_asset($product_image_path) }}" alt="Product">
                                                     @else {{-- show the dummy image --}}
-                                                        <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                        <img class="img-fluid" src="{{ secure_asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                                     @endif
                                                 </a>
                                                 <div class="item-action-behaviors">
                                                     <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
                                                     <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                     <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                    <a class="item-addCart" href="{{ url('product/' . $product['id']) }}">Add to Cart</a>
+                                                    <a class="item-addCart" href="{{ secure_url('product/' . $product['id']) }}">Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="item-content">
                                                 <div class="what-product-is">
                                                     <ul class="bread-crumb">
                                                         <li>
-                                                            <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_code'] }}</a>
+                                                            <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_code'] }}</a>
                                                         </li>
                                                     </ul>
                                                     <h6 class="item-title">
-                                                        <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                        <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
                                                     </h6>
                                                     <div class="item-stars">
                                                         <div class='star' title="0 out of 5 - based on 0 Reviews">
@@ -335,29 +335,29 @@
 
                                         <div class="item">
                                             <div class="image-container">
-                                                <a class="item-img-wrapper-link" href="{{ url('product/' . $product['id']) }}">
+                                                <a class="item-img-wrapper-link" href="{{ secure_url('product/' . $product['id']) }}">
                                                     @if (!empty($product['product_image']) && file_exists($product_image_path)) {{-- if the product image exists in BOTH database table AND filesystem (on server) --}}
-                                                        <img class="img-fluid" src="{{ asset($product_image_path) }}" alt="Product">
+                                                        <img class="img-fluid" src="{{ secure_asset($product_image_path) }}" alt="Product">
                                                     @else {{-- show the dummy image --}}
-                                                        <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                        <img class="img-fluid" src="{{ secure_asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                                     @endif
                                                 </a>
                                                 <div class="item-action-behaviors">
                                                     <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
                                                     <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                     <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                    <a class="item-addCart" href="{{ url('product/' . $product['id']) }}">Add to Cart</a>
+                                                    <a class="item-addCart" href="{{ secure_url('product/' . $product['id']) }}">Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="item-content">
                                                 <div class="what-product-is">
                                                     <ul class="bread-crumb">
                                                         <li>
-                                                            <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_code'] }}</a>
+                                                            <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_code'] }}</a>
                                                         </li>
                                                     </ul>
                                                     <h6 class="item-title">
-                                                        <a href="{{ url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
+                                                        <a href="{{ secure_url('product/' . $product['id']) }}">{{ $product['product_name'] }}</a>
                                                     </h6>
                                                     <div class="item-stars">
                                                         <div class='star' title="0 out of 5 - based on 0 Reviews">
@@ -411,7 +411,7 @@
         <div class="banner-layer">
             <div class="container">
                 <div class="image-banner">
-                    <a target="_blank" rel="nofollow" href="{{ url($fixBanners[1]['link']) }}" class="mx-auto baGreat Value
+                    <a target="_blank" rel="nofollow" href="{{ secure_url($fixBanners[1]['link']) }}" class="mx-auto baGreat Value
 We offer competitive prices on our 100 million plus product range
 Shop with Confidence
 Our Protection covers your purchase from click to delivery
@@ -419,7 +419,7 @@ Safe Payment
 Pay with the world’s most popular and secure payment methods
 24/7 Help Center
 Round-the-clock assistance for a smooth shopping experiencenner-hover effect-dark-opacity">
-                        <img class="img-fluid" src="{{ asset('front/images/banner_images/' . $fixBanners[1]['image']) }}" alt="{{ $fixBanners[1]['alt'] }}" title="{{ $fixBanners[1]['title'] }}">
+                        <img class="img-fluid" src="{{ secure_asset('front/images/banner_images/' . $fixBanners[1]['image']) }}" alt="{{ $fixBanners[1]['alt'] }}" title="{{ $fixBanners[1]['title'] }}">
                     </a>
                 </div>
             </div>

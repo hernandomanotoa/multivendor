@@ -13,9 +13,9 @@
 
 
 
-                            <a href="{{ url('admin/filters') }}" style="max-width: 163px; float: right; display: inline-block"
+                            <a href="{{ secure_url('admin/filters') }}" style="max-width: 163px; float: right; display: inline-block"
                                 class="btn btn-block btn-primary">{{ __('View Filters') }}</a>
-                            <a href="{{ url('admin/add-edit-filter-value') }}"
+                            <a href="{{ secure_url('admin/add-edit-filter-value') }}"
                                 style="max-width: 150px; float: left;  display: inline-block"
                                 class="btn btn-block btn-primary">{{ __('Add Filter Value') }}</a>
 

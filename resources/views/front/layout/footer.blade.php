@@ -34,13 +34,13 @@
                         <h6>{{ __('COMPANY') }} </h6>
                         <ul>
                             <li>
-                                <a href="{{ url('about-us') }}">{{ __('About Us') }} </a>
+                                <a href="{{ secure_url('about-us') }}">{{ __('About Us') }} </a>
                             </li>
                             <li>
-                                <a href="{{ url('contact') }}">C{{ __('ontact Us') }} </a>
+                                <a href="{{ secure_url('contact') }}">C{{ __('ontact Us') }} </a>
                             </li>
                             <li>
-                                <a href="{{ url('faq') }}">{{ __('FAQ') }} </a>
+                                <a href="{{ secure_url('faq') }}">{{ __('FAQ') }} </a>
                             </li>
                         </ul>
                     </div>
@@ -50,13 +50,13 @@
                         <h6>COLLECTION</h6>
                         <ul>
                             <li>
-                                <a href="{{ url('men') }}">Men Clothing</a>
+                                <a href="{{ secure_url('men') }}">Men Clothing</a>
                             </li>
                             <li>
-                                <a href="{{ url('women') }}">Women Clothing</a>
+                                <a href="{{ secure_url('women') }}">Women Clothing</a>
                             </li>
                             <li>
-                                <a href="{{ url('kids') }}">Kids Clothing</a>
+                                <a href="{{ secure_url('kids') }}">Kids Clothing</a>
                             </li>
                         </ul>
                     </div>
@@ -66,10 +66,10 @@
                         <h6>{{ __('ACCOUNT') }}</h6>
                         <ul>
                             <li>
-                                <a href="{{ url('user/account') }}">{{ __('My Account') }}</a>
+                                <a href="{{ secure_url('user/account') }}">{{ __('My Account') }}</a>
                             </li>
                             <li>
-                                <a href="{{ url('user/orders') }}">{{ __('My Orders') }}</a>
+                                <a href="{{ secure_url('user/orders') }}">{{ __('My Orders') }}</a>
                             </li>
                         </ul>
                     </div>
