@@ -34,7 +34,7 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Add Attributes</h4>
+                            <h4 class="card-title">{{ __('Add Attributes') }}</h4>
 
 
                             {{-- Our Bootstrap error code in case of wrong current password or the new password and confirm password are not matching: --}}
@@ -87,19 +87,19 @@
                                 @csrf
 
                                 <div class="form-group">
-                                    <label for="product_name">Product Name:</label>
+                                    <label for="product_name">{{ __('Product Name') }}:</label>
                                     &nbsp; {{ $product['product_name'] }}
                                 </div>
                                 <div class="form-group">
-                                    <label for="product_code">Product Code:</label>
+                                    <label for="product_code">{{ __('Product Code') }}:</label>
                                     &nbsp; {{ $product['product_code'] }}
                                 </div>
                                 <div class="form-group">
-                                    <label for="product_color">Product Color:</label>
+                                    <label for="product_color">{{ __('Product Color') }}:</label>
                                     &nbsp; {{ $product['product_color'] }}
                                 </div>
                                 <div class="form-group">
-                                    <label for="product_price">Product Price:</label>
+                                    <label for="product_price">{{ __('Product Price') }}:</label>
                                     &nbsp; {{ $product['product_price'] }}
                                 </div>
                                 <div class="form-group">
@@ -118,21 +118,21 @@
                                 <div class="form-group">
                                     <div class="field_wrapper">
                                         <div>
-                                            <input type="text" name="size[]"  placeholder="Size"  style="width:100px" required> {{-- !! Note that the "name" HTML attribute is an ARRAY (using SQUARE BRAKETS [] !!) --}}
-                                            <input type="text" name="sku[]"   placeholder="SKU"   style="width:100px" required> {{-- !! Note that the "name" HTML attribute is an ARRAY (using SQUARE BRAKETS [] !!) --}}
-                                            <input type="text" name="price[]" placeholder="Price" style="width:100px" required> {{-- !! Note that the "name" HTML attribute is an ARRAY (using SQUARE BRAKETS [] !!) --}}
-                                            <input type="text" name="stock[]" placeholder="Stock" style="width:100px" required> {{-- !! Note that the "name" HTML attribute is an ARRAY (using SQUARE BRAKETS [] !!) --}}
-                                            <a href="javascript:void(0);" class="add_button" title="Add Attributes">Add</a> {{-- Add another 4 input fields like the former --}}
+                                            <input type="text" name="size[]"  placeholder="{{ __('Size') }}"  style="width:100px" required> {{-- !! Note that the "name" HTML attribute is an ARRAY (using SQUARE BRAKETS [] !!) --}}
+                                            <input type="text" name="sku[]"   placeholder="{{ __('SKU') }}"   style="width:100px" required> {{-- !! Note that the "name" HTML attribute is an ARRAY (using SQUARE BRAKETS [] !!) --}}
+                                            <input type="text" name="price[]" placeholder="{{ __('Price') }}" style="width:100px" required> {{-- !! Note that the "name" HTML attribute is an ARRAY (using SQUARE BRAKETS [] !!) --}}
+                                            <input type="text" name="stock[]" placeholder="{{ __('Stock') }}" style="width:100px" required> {{-- !! Note that the "name" HTML attribute is an ARRAY (using SQUARE BRAKETS [] !!) --}}
+                                            <a href="javascript:void(0);" class="add_button" title="{{ __('Add Attributes') }}">{{ __('Add')}}</a> {{-- Add another 4 input fields like the former --}}
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button type="reset"  class="btn btn-light">Cancel</button>
+                                <button type="submit" class="btn btn-primary mr-2">{{ __('Submit') }}</button>
+                                <button type="reset"  class="btn btn-light">{{ __('Cancel') }}</button>
                             </form>
 
                             <br><br>
                             
-                            <h4 class="card-title">Product Attributes</h4>
+                            <h4 class="card-title">{{ __('Product Attributes') }}</h4>
 
                             <form method="post" action="{{ secure_url('admin/edit-attributes/' . $product['id']) }}">
                                 @csrf
@@ -142,11 +142,11 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Size</th>
-                                            <th>SKU</th>
-                                            <th>Price</th>
-                                            <th>Stock</th>
-                                            <th>Actions</th>
+                                            <th>{{ __('Size') }}</th>
+                                            <th>{{ __('SKU') }}</th>
+                                            <th>{{ __('Price') }}</th>
+                                            <th>{{ __('Stock') }}</th>
+                                            <th>{{ __('Actions') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -178,7 +178,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <button type="submit" class="btn btn-primary">Update Attributes</button>
+                                <button type="submit" class="btn btn-primary">{{ __('Update Attributes') }}</button>
                             </form>
                         </div>
                     </div>
@@ -190,3 +190,13 @@
         <!-- partial -->
     </div>
 @endsection
+
+@push('other-scripts')
+    <script>
+        $('#products').DataTable({
+            "language": {
+                "url": "{{ __('Link Languaje') }}"
+            }
+        });
+    </script>
+@endpush

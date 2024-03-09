@@ -18,7 +18,6 @@ class DeliveryAddressTableSeeder extends Seeder
         // Note: Check DatabaseSeeder.php!
         $deliveryRecords = [
             [
-                'id'      => 1,
                 'user_id' => 1,
                 'name'    => 'Ahmed Yahya',
                 'address' => '37 Salah Salem',
@@ -30,7 +29,6 @@ class DeliveryAddressTableSeeder extends Seeder
                 'status'  => 1
             ],
             [
-                'id'      => 2,
                 'user_id' => 1, // the same user_id in the previous record which means the the delivery address is for the same person
                 'name'    => 'Ahmed Yahya',
                 'address' => '15 Fouaad St.',

@@ -119,7 +119,9 @@ class FilterController extends Controller
 
 
             // Secondly: Save inserted `filter_column` as a new column in `products` database table after `description` column
-            \Illuminate\Support\Facades\DB::statement('ALTER TABLE `products` ADD ' . $data['filter_column'] . ' VARCHAR(255) AFTER `description`'); // Running A General Statement: https://laravel.com/docs/9.x/database#running-a-general-statement
+            // \Illuminate\Support\Facades\DB::statement('ALTER TABLE `products` ADD ' . $data['filter_column'] . ' VARCHAR(255) AFTER `description`'); // Running A General Statement: https://laravel.com/docs/9.x/database#running-a-general-statement
+            \Illuminate\Support\Facades\DB::statement('ALTER TABLE products ADD ' . $data['filter_column'] . ' VARCHAR(255)'); // Running A General Statement: https://laravel.com/docs/9.x/database#running-a-general-statement
+            // \Illuminate\Support\Facades\DB::statement('ALTER TABLE products ADD ' . $data['filter_column'] . ' VARCHAR(255)'); // Running A General Statement: https://laravel.com/docs/9.x/database#running-a-general-statement
 
 
             return redirect('admin/filters')->with('success_message', $message); // $message was defined in the first if-else statement (in case Add or Update cases)

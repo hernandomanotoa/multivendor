@@ -74,7 +74,7 @@
                             @if (Session::has('success_message'))
                                 <!-- Check AdminController.php, updateAdminPassword() method -->
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Success:</strong> {{ Session::get('success_message') }}
+                                    <strong>{{ __('Success')}}:</strong> {{ Session::get('success_message') }}
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -145,7 +145,7 @@
                                 <div class="form-group">
                                     <label for="product_name">{{ __('Product Name') }}</label>
                                     <input type="text" class="form-control" id="product_name"
-                                        placeholder="Enter Product Name" name="product_name"
+                                        placeholder="{{ __('Enter Product Name') }}" name="product_name"
                                         @if (!empty($product['product_name'])) value="{{ $product['product_name'] }}" @else value="{{ old('product_name') }}" @endif>
                                     {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
@@ -159,28 +159,28 @@
                                 <div class="form-group">
                                     <label for="product_color">{{ __('Product Color') }}</label>
                                     <input type="text" class="form-control" id="product_color"
-                                        placeholder="Enter Product Color" name="product_color"
+                                        placeholder="{{ __('Enter Product Color') }}" name="product_color"
                                         @if (!empty($product['product_color'])) value="{{ $product['product_color'] }}" @else value="{{ old('product_color') }}" @endif>
                                     {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
                                     <label for="product_price">{{ __('Product Price') }}</label>
                                     <input type="text" class="form-control" id="product_price"
-                                        placeholder="Enter Product Price" name="product_price"
+                                        placeholder="{{ __('Enter Product Price') }}" name="product_price"
                                         @if (!empty($product['product_price'])) value="{{ $product['product_price'] }}" @else value="{{ old('product_price') }}" @endif>
                                     {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
                                     <label for="product_discount">{{ __('Product Discount') }} (%)</label>
                                     <input type="text" class="form-control" id="product_discount"
-                                        placeholder="Enter Product Discount" name="product_discount"
+                                        placeholder="{{ __('Enter Product Discount') }}" name="product_discount"
                                         @if (!empty($product['product_discount'])) value="{{ $product['product_discount'] }}" @else value="{{ old('product_discount') }}" @endif>
                                     {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
                                     <label for="product_weight">{{ __('Product Weight') }} (%)</label>
                                     <input type="text" class="form-control" id="product_weight"
-                                        placeholder="Enter Product Weight" name="product_weight"
+                                        placeholder="{{ __('Enter Product Weight') }}" name="product_weight"
                                         @if (!empty($product['product_weight'])) value="{{ $product['product_weight'] }}" @else value="{{ old('product_weight') }}" @endif>
                                     {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
@@ -191,7 +191,7 @@
                                 <div class="form-group">
                                     <label for="group_code">{{ __('Group Code') }}</label>
                                     <input type="text" class="form-control" id="group_code"
-                                        placeholder="Enter Group Code" name="group_code"
+                                        placeholder="{{ __('Enter Group Code') }}" name="group_code"
                                         @if (!empty($product['group_code'])) value="{{ $product['group_code'] }}" @else value="{{ old('group_code') }}" @endif>
                                     {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
@@ -241,21 +241,21 @@
                                 <div class="form-group">
                                     <label for="meta_title">{{ __('Meta Title') }}</label>
                                     <input type="text" class="form-control" id="meta_title"
-                                        placeholder="Enter Meta Title" name="meta_title"
+                                        placeholder="{{ __('Enter Meta Title') }}" name="meta_title"
                                         @if (!empty($product['meta_title'])) value="{{ $product['meta_title'] }}" @else value="{{ old('meta_title') }}" @endif>
                                     {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
                                     <label for="meta_description">{{ __('Meta Description') }}</label>
                                     <input type="text" class="form-control" id="meta_description"
-                                        placeholder="Enter Meta Description" name="meta_description"
+                                        placeholder="{{ __('Enter Meta Description') }}" name="meta_description"
                                         @if (!empty($product['meta_description'])) value="{{ $product['meta_description'] }}" @else value="{{ old('meta_description') }}" @endif>
                                     {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>
                                 <div class="form-group">
                                     <label for="meta_keywords">{{ __('Meta Keywords') }}</label>
                                     <input type="text" class="form-control" id="meta_keywords"
-                                        placeholder="Enter Meta Keywords" name="meta_keywords"
+                                        placeholder="{{ __('Enter Meta Keywords') }}" name="meta_keywords"
                                         @if (!empty($product['meta_keywords'])) value="{{ $product['meta_keywords'] }}" @else value="{{ old('meta_keywords') }}" @endif>
                                     {{-- Repopulating Forms (using old() method): https://laravel.com/docs/9.x/validation#repopulating-forms --}}
                                 </div>

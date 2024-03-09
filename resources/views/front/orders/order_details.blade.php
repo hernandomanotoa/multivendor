@@ -10,14 +10,14 @@
     <div class="page-style-a">
         <div class="container">
             <div class="page-intro">
-                <h2>Order #{{ $orderDetails['id'] }} Details</h2>
+                <h2>{{ __('Order')}} #{{ $orderDetails['id'] }} {{ __('Details')}}</h2>
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">{{ __('Home')}}</a>
                     </li>
                     <li class="is-marked">
-                        <a href="{{ secure_url('user/orders') }}">Orders</a>
+                        <a href="{{ secure_url('user/orders') }}">{{ __('Orders')}}</a>
                     </li>
                 </ul>
             </div>

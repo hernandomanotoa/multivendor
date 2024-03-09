@@ -43,7 +43,7 @@
             {{-- Displaying Success Message --}}
             @if (Session::has('success_message')) <!-- Check vendorRegister() method in Front/VendorController.php -->
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Success:</strong> {{ Session::get('success_message') }}
+                    <strong>{{ __('Success')}}:</strong> {{ Session::get('success_message') }}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>

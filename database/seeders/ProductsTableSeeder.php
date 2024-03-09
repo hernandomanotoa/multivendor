@@ -20,7 +20,6 @@ class ProductsTableSeeder extends Seeder
         // Note: Check DatabaseSeeder.php        
         $productRecords = [
             [
-                'id'               => 1,
                 'section_id'       => 2,
                 'category_id'      => 1,
                 'brand_id'         => 7,
@@ -29,7 +28,7 @@ class ProductsTableSeeder extends Seeder
                 'admin_type'       => 'vendor',
                 'product_name'     => 'Redmi Note 11',
                 'product_code'     => 'RN11',
-                'product_color'    => 'Blue',
+                'product_color'    => 'Azul',
                 'product_price'    => 15000,
                 'product_discount' => 10,
                 'product_weight'   => 500,
@@ -44,16 +43,15 @@ class ProductsTableSeeder extends Seeder
                 'is_bestseller' => 'Yes',
             ],
             [
-                'id'               => 2,
                 'section_id'       => 1,
                 'category_id'      => 2,
                 'brand_id'         => 2,
                 'vendor_id'        => 0, // 0 means not a vendor
                 'admin_id'         => 1,
                 'admin_type'       => 'superadmin',
-                'product_name'     => 'Red Casual T-Shirt',
+                'product_name'     => 'Rojo Casual T-Shirt',
                 'product_code'     => 'RC001',
-                'product_color'    => 'Red',
+                'product_color'    => 'Rojo',
                 'product_price'    => 1000,
                 'product_discount' => 20,
                 'product_weight'   => 200,

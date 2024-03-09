@@ -246,6 +246,8 @@ class ProductsController extends Controller
             $product->meta_description = $data['meta_description'];
             $product->meta_keywords    = $data['meta_keywords'];
 
+            // dd($data);die;
+
 
 
             if (!empty($data['is_featured'])) {

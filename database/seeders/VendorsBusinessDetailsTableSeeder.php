@@ -18,7 +18,6 @@ class VendorsBusinessDetailsTableSeeder extends Seeder
         // Note: Check DatabaseSeeder.php
         $vendorsBusinessDetailsRecords = [
             [
-                'id'                      => 1,
                 'vendor_id'               => 1,
                 'shop_name'               => 'John Electronics Store',
                 'shop_address'            => '12 Mahmoud Saeed St.',

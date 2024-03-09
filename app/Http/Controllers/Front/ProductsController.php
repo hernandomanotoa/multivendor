@@ -561,7 +561,7 @@ class ProductsController extends Controller
             }
 
 
-            return redirect()->back()->with('success_message', 'Product has been added in Cart! <a href="/cart" style="text-decoration: underline !important">'.__('View Cart').'</a>');
+            return redirect()->back()->with('success_message', __('Product has been added in Cart!').' <a href="/cart" style="text-decoration: underline !important">'.__('View Cart').'</a>');
         }
     }
 

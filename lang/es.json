@@ -26,7 +26,7 @@
     "Vendors": "Vendedores",
     "All": "Todo",
     "Ratings Management": "Gestión de Ratings",
-    "Product Ratings & Reviews": "Ratings & Reseñas de productos",
+    "Product Ratings & Reviews": "Ratings & Reseñas",
     "Users Management": "Gestión de usuarios",
     "Users": "Usuarios",
     "Subscribers": "Suscriptores",
@@ -300,7 +300,7 @@
     "My Cart": "Mi carrito",    
     "Checkout": "Pagar la compra",
     "Logout": "Cerrar sesión",
-    "Customer Login": "Inicio de sesión del cliente",
+    "Customer Login": "Inicio de sesión / Registro del cliente",
     "Vendor Login": "Inicio de sesión de vendedor",
     "Search": "Buscar",
     "Search everything": "busca todo",
@@ -434,6 +434,46 @@
     "User's Inquiry on Multi-vendor E-commerce Application Website, Contact Us page. The details are as below": "Consulta del usuario en el sitio web de la aplicación de comercio electrónico de múltiples proveedores, página Contáctenos. Los detalles son los siguientes.",  
     "Thanks & Regards": "Gracias y Saludos",
     "Multi-vendor E-commerce Application": "Aplicación de comercio electrónico de múltiples proveedores",
+    "Select": "Seleccionar",
+    "Select Filter Value": "Seleccionar valor de filtro",
+    "Enter Product Name": "Introduzca el nombre del producto",
+    "Enter Product Color": "Ingrese el color del producto",
+    "Enter Product Price": "Ingrese el precio del producto",
+    "Enter Product Discount": "Ingrese el descuento del producto",
+    "Enter Product Weight": "Introduzca el peso del producto",
+    "Enter Group Code": "Ingrese el código de grupo",
+    "Size": "Tamaño",
+    "SKU": "SKU",
+    "Stock": "Existencias",
+    "Add": "Agregar",    
+    "Product Attributes": "Atributos del producto",
+    "Update Attributes": "Actualizar atributos",
+    "Product Images": "Imágenes del producto",
+    "Add Images": "Añadir imágenes",
+    "Product has been added in Cart!": "¡El producto ha sido agregado al carrito!",
+    "Detail": "Detalle",
+    "Your email already exists for Newsletter Subscription!": "¡Tu correo electrónico ya existe para la suscripción al boletín!",
+    "Thanks for subscribing!": "¡Gracias por suscribirte!", 
+    "Dear": "Estimado",    
+    "Please click on below link to activate your Multi-vendor E-commerce Application account": "Haga clic en el enlace a continuación para activar su cuenta de la aplicación de comercio electrónico de múltiples proveedores",
+    "Confirm Account": "Confirmar cuenta",    
+    "Sort By": "Ordenar por",
+    "Sort By: Best Selling": "Ordenar por: Más vendidos",
+    "Sort By: Latest": "Ordenar por: Último",
+    "Sort By: Lowest Price": "Ordenar por: Precio más bajo",
+    "Sort By: Highest Price": "Ordenar por: Precio más alto",
+    "Sort By: Name A - Z": "Ordenar por: Nombre A - Z",
+    "Sort By: Name Z - A": "Ordenar por: Nombre Z - A",
+
+
+
+
+
+
+
+
+
+
     "SIGN IN": "INICIAR SESIÓN",
 
 
