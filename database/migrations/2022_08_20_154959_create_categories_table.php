@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
 
             $table->integer('parent_id'); // Note: It will have a value of the parent category (from the same table), and will be zero 0 in case there's no parent category (if it's a 'Root' category)
-            $table->integer('section_id');
+            // $table->integer('section_id');
+            $table->unsignedBigInteger('section_id')->index();
             $table->string('category_name');
             $table->string('category_image');
             $table->double('category_discount')->default(0);
@@ -27,8 +28,9 @@ return new class extends Migration
             $table->string('meta_description')->nullable(); // For SEO
             $table->string('meta_keywords')->nullable(); // For SEO
             $table->tinyInteger('status')->default(1); // 0 means inactive, 1 means active
-
             $table->timestamps();
+
+            $table->foreign('section_id')->references('id')->on('sections')->cascadeOnDelete();
         });
     }
 

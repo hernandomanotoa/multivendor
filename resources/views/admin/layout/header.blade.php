@@ -60,3 +60,4 @@
         </button>
     </div>
 </nav>
+<?php echo '<script> var areYouSure = "' . __('Are you sure you want to delete this?') . '";</script>'; ?>

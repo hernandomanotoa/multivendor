@@ -47,7 +47,7 @@ class CategoriesTableSeeder extends Seeder
             ],
             [
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
-                'section_id'        => 1, // 1 is the parent 'Cloting' section
+                'section_id'        => 2, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Kids',
                 'category_image'    => '',
                 'category_discount' => 0,
@@ -60,7 +60,7 @@ class CategoriesTableSeeder extends Seeder
             ],
             [
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
-                'section_id'        => 1, // 1 is the parent 'Cloting' section
+                'section_id'        => 2, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Kid2',
                 'category_image'    => '',
                 'category_discount' => 0,
@@ -73,7 +73,7 @@ class CategoriesTableSeeder extends Seeder
             ],
             [
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
-                'section_id'        => 1, // 1 is the parent 'Cloting' section
+                'section_id'        => 3, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Kids3',
                 'category_image'    => '',
                 'category_discount' => 0,
@@ -86,7 +86,7 @@ class CategoriesTableSeeder extends Seeder
             ],
             [
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
-                'section_id'        => 1, // 1 is the parent 'Cloting' section
+                'section_id'        => 3, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Kids4',
                 'category_image'    => '',
                 'category_discount' => 0,
@@ -112,7 +112,7 @@ class CategoriesTableSeeder extends Seeder
             ],
             [
                 'parent_id'         => 0, // 0 because like Men, Women categories that don't have a prent category
-                'section_id'        => 1, // 1 is the parent 'Cloting' section
+                'section_id'        => 2, // 1 is the parent 'Cloting' section
                 'category_name'     => 'Categoria8',
                 'category_image'    => '',
                 'category_discount' => 0,

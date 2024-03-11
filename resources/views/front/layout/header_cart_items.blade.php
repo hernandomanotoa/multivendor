@@ -53,6 +53,8 @@
 <?php echo '<script> var originalPrice = "' . __('Original Price') . '";</script>'; ?>
 <?php echo '<script> var existsSubscription = "' . __('Your email already exists for Newsletter Subscription!') . '";</script>'; ?>
 <?php echo '<script> var thanksSubscription = "' . __('Thanks for subscribing!') . '";</script>'; ?>
+<?php echo '<script> var areYouSure = "' . __('Are you sure you want to delete this?') . '";</script>'; ?>
+
 
 
 

@@ -12,8 +12,12 @@ class Category extends Model
 
 
     // Every category belongs to a section    // The inverse of the relationship
-    public function section() {
-        return $this->belongsTo('App\Models\Section', 'section_id')->select('id', 'name'); // 'section_id' is the `categories` table foreign key to the `sections` table    // select('id', 'name') means select `id` and `name` coumns ONLY from the `sections` table for a better performance
+    // public function section() {
+    //     return $this->belongsTo('App\Models\Section', 'section_id')->select('id', 'name'); // 'section_id' is the `categories` table foreign key to the `sections` table    // select('id', 'name') means select `id` and `name` coumns ONLY from the `sections` table for a better performance
+    // }
+    public function section()
+    {
+        return $this->belongsTo(Section::class,'section_id')->select('id', 'name');
     }
 
 
