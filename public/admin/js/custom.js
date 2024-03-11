@@ -38,9 +38,9 @@ $(document).ready(function() {
             success: function(resp) {
                 // alert(resp);
                 if (resp == 'false') {
-                    $('#check_password').html('<b style="color: red">Current Password is Incorrect!</b>'); // the <span> element in update_admin_password.blade.php
+                    $('#check_password').html('<b style="color: red">' + passwordIncorrect+ '</b>'); // the <span> element in update_admin_password.blade.php
                 } else if (resp == 'true') {
-                    $('#check_password').html('<b style="color: green">Current Password is Correct!</b>'); // the <span> element in update_admin_password.blade.php
+                    $('#check_password').html('<b style="color: green">' + passwordCorrect+ '</b>'); // the <span> element in update_admin_password.blade.php
                 }
             },
             error  : function() {alert('Error');}

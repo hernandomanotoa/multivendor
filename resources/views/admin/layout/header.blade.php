@@ -61,3 +61,6 @@
     </div>
 </nav>
 <?php echo '<script> var areYouSure = "' . __('Are you sure you want to delete this?') . '";</script>'; ?>
+<?php echo '<script> var passwordIncorrect = "' . __('Current Password is Incorrect!') . '";</script>'; ?>
+<?php echo '<script> var passwordCorrect = "' . __('Current Password is Correct!') . '";</script>'; ?>
+

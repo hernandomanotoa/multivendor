@@ -465,6 +465,17 @@
     "Sort By: Name A - Z": "Ordenar por: Nombre A - Z",
     "Sort By: Name Z - A": "Ordenar por: Nombre Z - A",
     "Section has been deleted successfully!": "¡La sección se ha eliminado correctamente!",
+    "Admin details updated successfully!": "¡Los detalles del administrador se actualizaron exitosamente!",
+    "Current Password is Incorrect!": "¡La contraseña actual es incorrecta!",
+    "Current Password is Correct!": "¡La contraseña actual es correcta!",    
+    "Admin Password has been updated successfully!":"¡La contraseña de administrador se ha actualizado correctamente!",
+    "New Password and Confirm Password does not match!":"¡La nueva contraseña y la confirmación de contraseña no coinciden!",
+    "Your current admin password is Incorrect!":"¡Su contraseña de administrador actual es incorrecta!",
+    "Section added successfully!": "¡Sección agregada exitosamente!",
+    "Edit Section": "Editar sección",    
+    "Section updated successfully!": "¡Sección actualizada exitosamente!",
+
+
 
 
 

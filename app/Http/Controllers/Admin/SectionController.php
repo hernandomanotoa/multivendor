@@ -58,15 +58,15 @@ class SectionController extends Controller
 
 
         if ($id == '') { // if there's no $id is passed in the route/URL parameters, this means Add a new section
-            $title = 'Add Section';
+            $title = __('Add Section');
             $section = new Section();
             // dd($section);
-            $message = 'Section added successfully!';
+            $message = __('Section added successfully!');
         } else { // if the $id is passed in the route/URL parameters, this means Edit the Section
-            $title = 'Edit Section';
+            $title = __('Edit Section');
             $section = Section::find($id);
             // dd($section);
-            $message = 'Section updated successfully!';
+            $message = __('Section updated successfully!');
         }
 
         if ($request->isMethod('post')) { // WHETHER Add or Update <form> submission!!
@@ -92,7 +92,7 @@ class SectionController extends Controller
             $section->save(); // Save all data in the database
 
 
-            return redirect('admin/products')->with('success_message', $message);
+            return redirect('admin/sections')->with('success_message', $message);
         }
 
 

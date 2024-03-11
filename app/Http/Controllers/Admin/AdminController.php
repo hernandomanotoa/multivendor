@@ -109,13 +109,13 @@ class AdminController extends Controller
                         'password' => bcrypt($data['new_password'])
                     ]); // we persist (update) the hashed password (not the password itself)
 
-                    return redirect()->back()->with('success_message', 'Admin Password has been updated successfully!');
+                    return redirect()->back()->with('success_message', __('Admin Password has been updated successfully!'));
 
                 } else { // If new password and confirm password are not matching each other
-                    return redirect()->back()->with('error_message', 'New Password and Confirm Password does not match!');
+                    return redirect()->back()->with('error_message', __('New Password and Confirm Password does not match!'));
                 }
             } else {
-                return redirect()->back()->with('error_message', 'Your current admin password is Incorrect!');
+                return redirect()->back()->with('error_message', __('Your current admin password is Incorrect!'));
             }
         }
 
@@ -199,7 +199,7 @@ class AdminController extends Controller
                 'image'  => $imageName
             ]); // Note that the image name is the random image name that we generated
 
-            return redirect()->back()->with('success_message', 'Admin details updated successfully!');
+            return redirect()->back()->with('success_message', __('Admin details updated successfully!'));
         }
 
 
