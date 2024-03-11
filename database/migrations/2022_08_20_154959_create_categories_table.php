@@ -28,8 +28,8 @@ return new class extends Migration
             $table->string('meta_description')->nullable(); // For SEO
             $table->string('meta_keywords')->nullable(); // For SEO
             $table->tinyInteger('status')->default(1); // 0 means inactive, 1 means active
-            $table->timestamps();
 
+            $table->timestamps();
             $table->foreign('section_id')->references('id')->on('sections')->cascadeOnDelete();
         });
     }
