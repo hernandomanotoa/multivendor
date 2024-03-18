@@ -172,7 +172,7 @@ class CategoryController extends Controller
     public function deleteCategory($id) { 
         Category::where('id', $id)->delete();
         
-        $message = 'Category has been deleted successfully!';
+        $message = __('Category has been deleted successfully!');
         
         return redirect()->back()->with('success_message', $message);
     }
@@ -193,7 +193,7 @@ class CategoryController extends Controller
         // Delete the category image name from the `categories` database table (Note: We won't use delete() method because we're not deleting a complete record (entry) (we're just deleting a one column `category_image` value), we will just use update() method to update the `category_image` name to an empty string value '')
         Category::where('id', $id)->update(['category_image' => '']);
 
-        $message = 'Category Image has been deleted successfully!';
+        $message = __('Category Image has been deleted successfully!');
 
         return redirect()->back()->with('success_message', $message);
     }

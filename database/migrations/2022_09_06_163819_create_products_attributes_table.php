@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('products_attributes', function (Blueprint $table) {
             $table->id();
-
-            $table->integer('product_id');
+            $table->unsignedBigInteger('product_id')->index();
+            // $table->integer('product_id');
             $table->string('size');
             $table->float('price');
             $table->integer('stock');
@@ -24,6 +24,7 @@ return new class extends Migration
             $table->tinyInteger('status'); // 0 means inactive/disabled, 1 means active/enabled
 
             $table->timestamps();
+            $table->foreign('product_id')->references('id')->on('products')->cascadeOnDelete();
         });
     }
 

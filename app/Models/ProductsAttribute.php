@@ -32,5 +32,9 @@ class ProductsAttribute extends Model
 
         return $getAttributeStatus->status;
     }
+    // Every 'productAttribute' belongs to a 'product'
+    public function product() {
+        return $this->belongsTo('App\Models\Product', 'product_id'); // 'section_id' is the foreign key
+    }
 
 }
