@@ -69,7 +69,7 @@
                                     <div class="mt-3">
                                         
                                         {{-- My code: --}}
-                                        <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
+                                        <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"> {{ __('SIGN IN') }}</button>
 
                                     </div>
                                     <div class="my-2 d-flex justify-content-between align-items-center">
