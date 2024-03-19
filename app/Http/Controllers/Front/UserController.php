@@ -248,7 +248,7 @@ class UserController extends Controller
             ], [ // Customizing The Error Messages: https://laravel.com/docs/9.x/validation#manual-customizing-the-error-messages
                 // the 'name' HTML attribute of the request (the array key of the $request array) (ATTRIBUTE) => Custom Messages
                 // 'accept.required' => 'Please accept our Terms & Conditions'
-                'email.exists' => 'Email does not exist'
+                'email.exists' => __('Email does not exist')
             ]);
 
 

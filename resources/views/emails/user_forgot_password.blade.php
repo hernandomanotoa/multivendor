@@ -13,16 +13,16 @@
 
 
         <table>
-            <tr><td>Dear {{ $name }},</td></tr>
+            <tr><td>{{ __('Dear') }} {{ $name }},</td></tr>
             <tr><td>&nbsp;</td></tr>
-            <tr><td>You requested to change your password. New Password is as below:-</td></tr>
+            <tr><td>{{ __('You requested to change your password.') }} {{ __('New Password is as below') }}:</td></tr>
             <tr><td>&nbsp;</td></tr>
-            <tr><td>Email: {{ $email }}</td></tr> {{-- $email is passed in from forgotPassword() method in UserController.php --}}
+            <tr><td>{{ __('Email') }} {{ $email }}</td></tr> {{-- $email is passed in from forgotPassword() method in UserController.php --}}
             <tr><td>&nbsp;</td></tr>
-            <tr><td>Password: {{ $password }}</td></tr> {{-- $password is passed in from forgotPassword() method in UserController.php --}}
+            <tr><td>{{ __('Password') }} {{ $password }}</td></tr> {{-- $password is passed in from forgotPassword() method in UserController.php --}}
             <tr><td>&nbsp;</td></tr>
-            <tr><td>Thanks & Regards,</td></tr>
-            <tr><td>Multi-vendor E-commerce Application</td></tr>
+            <tr><td>{{ __('Thanks & Regards') }}</td></tr>
+            <tr><td>{{ __('Multi-vendor E-commerce Application') }}</td></tr>
         </table>
 
 

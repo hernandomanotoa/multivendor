@@ -685,15 +685,15 @@ $(document).ready(function() {
         var codpincodeCount     = $(this).attr('codpincodeCount');     // using Custom HTML data attributes (data-*)
         var prepaidpincodeCount = $(this).attr('prepaidpincodeCount'); // using Custom HTML data attributes (data-*)
         if (codpincodeCount > 0) {
-            $('.codMethod').show();
+            // $('.codMethod').show();
         } else {
-            $('.codMethod').hide();
+            // $('.codMethod').hide();
         }
 
         if (prepaidpincodeCount > 0) {
-            $('.prepaidMethod').show();
+            // $('.prepaidMethod').show();
         } else {
-            $('.prepaidMethod').hide();
+            // $('.prepaidMethod').hide();
         }
 
         if (coupon_amount == '') {

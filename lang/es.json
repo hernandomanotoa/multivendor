@@ -476,11 +476,27 @@
     "Section updated successfully!": "¡Sección actualizada exitosamente!",
     "Category has been deleted successfully!": "¡La categoría se ha eliminado correctamente!",
     "Category Image has been deleted successfully!": "¡La imagen de categoría se ha eliminado correctamente!",
-
-
-
-
-
+    "Email does not exist": "El correo electrónico no existe",
+    "You requested to change your password.": "Solicitaste cambiar tu contraseña.",    
+    "New Password is as below": "La nueva contraseña es la siguiente",
+    "Order Details": "Detalles del pedido",
+    "Order Total": "Total del pedido",
+    "Coupon Amount": "Monto del cupón",
+    "Product Size": "Tamaño del producto",
+    "Product Qty": "Cantidad de producto",
+    "Courier Name": "Nombre del mensajero",
+    "Tracking Number": "El número de rastreo",
+    "Delivery Address": "Dirección de entrega",
+    "Customer Details": "Detalles del cliente",
+    "Update Order Status": "Actualizar estado del pedido",
+    "Product by": "Producto por",
+    "Commission": "Comisión",
+    "Final Amount": "Cantidad final",
+    "Item Status": "Estado del artículo",
+    "Back to Orders": "Volver a Pedidos",
+    "Code": "Código",
+    "Total Price": "Precio total",
+    "Unit Price": "Precio unitario",
 
 
 
@@ -490,8 +506,6 @@
 
 
     "SIGN IN": "INICIAR SESIÓN",
-
-
     "Link Languaje": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",
     "Welcome": "Bienvenido",
     "All systems are running smoothly!": "¡Todos los sistemas funcionan sin problemas!",

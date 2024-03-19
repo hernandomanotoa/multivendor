@@ -19,24 +19,24 @@ class DeliveryAddressTableSeeder extends Seeder
         $deliveryRecords = [
             [
                 'user_id' => 1,
-                'name'    => 'Ahmed Yahya',
+                'name'    => 'Jenny Samchez',
                 'address' => '37 Salah Salem',
-                'city'    => 'Cairo',
-                'state'   => 'Cairo',
-                'country' => 'Egypt',
-                'pincode' => 10001,
-                'mobile'  => 1255642718,
+                'city'    => 'Guayaquil',
+                'state'   => 'Guayas',
+                'country' => 'Ecuador',
+                'pincode' => 170602,
+                'mobile'  => '0983437777',
                 'status'  => 1
             ],
             [
                 'user_id' => 1, // the same user_id in the previous record which means the the delivery address is for the same person
-                'name'    => 'Ahmed Yahya',
+                'name'    => 'Hernando Manotoa',
                 'address' => '15 Fouaad St.',
-                'city'    => 'Alexandria',
-                'state'   => 'Alexandria',
-                'country' => 'Egypt',
-                'pincode' => 141001,
-                'mobile'  => 1095632526,
+                'city'    => 'Quito',
+                'state'   => 'Pichincha',
+                'country' => 'Ecuador',
+                'pincode' => 170202,
+                'mobile'  => '0998743215',
                 'status'  => 1
             ],
         ];

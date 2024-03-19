@@ -186,7 +186,7 @@
                                             <input type="radio" class="radio-box" name="payment_gateway" id="cash-on-delivery" value="COD">
                                             <label class="label-text" for="cash-on-delivery">{{ __('Cash on Delivery') }}</label>
                                         </div>
-                                        <div class="u-s-m-b-13 prepaidMethod"> {{-- We added the prepaidMethod CSS class to disable that payment method (check front/js/custom.js) if the PIN code of that user's Delivery Address doesn't exist in our `prepaid_pincodes` database table --}}
+                                        <!-- <div class="u-s-m-b-13 prepaidMethod"> {{-- We added the prepaidMethod CSS class to disable that payment method (check front/js/custom.js) if the PIN code of that user's Delivery Address doesn't exist in our `prepaid_pincodes` database table --}}
                                             <input type="radio" class="radio-box" name="payment_gateway" id="paypal" value="Paypal">
                                             <label class="label-text" for="paypal">{{ __('PayPal') }}</label>
                                         </div>
@@ -196,7 +196,7 @@
                                         <div class="u-s-m-b-13 prepaidMethod"> {{-- We added the prepaidMethod CSS class to disable that payment method (check front/js/custom.js) if the PIN code of that user's Delivery Address doesn't exist in our `prepaid_pincodes` database table --}}
                                             <input type="radio" class="radio-box" name="payment_gateway" id="iyzipay" value="iyzipay">
                                             <label class="label-text" for="iyzipay">{{ __('iyzipay') }}</label>
-                                        </div>
+                                        </div> -->
 
 
                                         <div class="u-s-m-b-13">

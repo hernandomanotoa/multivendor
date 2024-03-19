@@ -56,8 +56,8 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row">
                         <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                            <h3 class="font-weight-bold">Order Details</h3>
-                            <h6 class="font-weight-normal mb-0"><a href="{{ secure_url('admin/orders') }}">Back to Orders</a></h6>
+                            <h3 class="font-weight-bold">{{ __('Order Details') }}</h3>
+                            <h6 class="font-weight-normal mb-0"><a href="{{ secure_url('admin/orders') }}">{{ __('Back to Orders')}}</a></h6>
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="justify-content-end d-flex">
@@ -81,45 +81,45 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Order Details</h4>
+                            <h4 class="card-title">{{ __('Order Details') }}</h4>
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Order ID: </label>
+                                <label style="font-weight: 550">{{ __('Order ID') }}: </label>
                                 <label>#{{ $orderDetails['id'] }}</label>
                             </div>
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Order Date: </label>
+                                <label style="font-weight: 550">{{ __('Order Date') }}: </label>
                                 <label>{{ date('Y-m-d h:i:s', strtotime($orderDetails['created_at'])) }}</label>
                             </div>
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Order Status: </label>
+                                <label style="font-weight: 550">{{ __('Order Status') }}: </label>
                                 <label>{{ $orderDetails['order_status'] }}</label>
                             </div>
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Order Total: </label>
+                                <label style="font-weight: 550">{{ __('Order Total') }}: </label>
                                 <label>{{ __("$") }}{{ $orderDetails['grand_total'] }}</label>
                             </div>
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Shipping Charges: </label>
+                                <label style="font-weight: 550">{{ __('Shipping Charges') }}: </label>
                                 <label>{{ __("$") }}{{ $orderDetails['shipping_charges'] }}</label>
                             </div>
 
                             @if (!empty($orderDetails['coupon_code']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">Coupon Code: </label>
+                                    <label style="font-weight: 550">{{ __('Coupon Code') }}: </label>
                                     <label>{{ $orderDetails['coupon_code'] }}</label>
                                 </div>
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">Coupon Amount: </label>
+                                    <label style="font-weight: 550">{{ __('Coupon Amount') }}: </label>
                                     <label>{{ __("$") }}{{ $orderDetails['coupon_amount'] }}</label>
                                 </div>                                
                             @endif
 
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Payment Method: </label>
+                                <label style="font-weight: 550">{{ __('Payment Method') }}: </label>
                                 <label>{{ $orderDetails['payment_method'] }}</label>
                             </div>
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Payment Gateway: </label>
+                                <label style="font-weight: 550">{{ __('Payment Gateway:') }} </label>
                                 <label>{{ $orderDetails['payment_gateway'] }}</label>
                             </div>
                         </div>
@@ -128,53 +128,53 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Customer Details</h4>
+                            <h4 class="card-title">{{ __('Customer Details') }}</h4>
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Name: </label>
+                                <label style="font-weight: 550">{{ __('Name') }}: </label>
                                 <label>{{ $userDetails['name'] }}</label>
                             </div>
 
                             @if (!empty($userDetails['address']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">Address: </label>
+                                    <label style="font-weight: 550">{{ __('Address') }}: </label>
                                     <label>{{ $userDetails['address'] }}</label>
                                 </div>
                             @endif
 
                             @if (!empty($userDetails['city']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">City: </label>
+                                    <label style="font-weight: 550">{{ __('City') }}: </label>
                                     <label>{{ $userDetails['city'] }}</label>
                                 </div>
                             @endif
 
                             @if (!empty($userDetails['state']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">State: </label>
+                                    <label style="font-weight: 550">{{ __('State') }}: </label>
                                     <label>{{ $userDetails['state'] }}</label>
                                 </div>
                             @endif
                             
                             @if (!empty($userDetails['country']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">Country: </label>
+                                    <label style="font-weight: 550">{{ __('Country') }}: </label>
                                     <label>{{ $userDetails['country'] }}</label>
                                 </div>
                             @endif
                             
                             @if (!empty($userDetails['pincode']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">Pincode: </label>
+                                    <label style="font-weight: 550">{{ __('Pincode') }}: </label>
                                     <label>{{ $userDetails['pincode'] }}</label>
                                 </div>
                             @endif
 
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Mobile: </label>
+                                <label style="font-weight: 550">{{ __('Mobile') }}: </label>
                                 <label>{{ $userDetails['mobile'] }}</label>
                             </div>
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Email: </label>
+                                <label style="font-weight: 550">{{ __('Email') }}: </label>
                                 <label>{{ $userDetails['email'] }}</label>
                             </div>
                         </div>
@@ -183,49 +183,49 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Delivery Address</h4>
+                            <h4 class="card-title">{{ __('Delivery Address') }}</h4>
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Name: </label>
+                                <label style="font-weight: 550">{{ __('Name') }}: </label>
                                 <label>{{ $orderDetails['name'] }}</label>
                             </div>
 
                             @if (!empty($orderDetails['address']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">Address: </label>
+                                    <label style="font-weight: 550">{{ __('Address') }}: </label>
                                     <label>{{ $orderDetails['address'] }}</label>
                                 </div>
                             @endif
 
                             @if (!empty($orderDetails['city']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">City: </label>
+                                    <label style="font-weight: 550">{{ __('City') }}: </label>
                                     <label>{{ $orderDetails['city'] }}</label>
                                 </div>
                             @endif
 
                             @if (!empty($orderDetails['state']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">State: </label>
+                                    <label style="font-weight: 550">{{ __('State') }}: </label>
                                     <label>{{ $orderDetails['state'] }}</label>
                                 </div>
                             @endif
                             
                             @if (!empty($orderDetails['country']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">Country: </label>
+                                    <label style="font-weight: 550">{{ __('Country') }}: </label>
                                     <label>{{ $orderDetails['country'] }}</label>
                                 </div>
                             @endif
                             
                             @if (!empty($orderDetails['pincode']))
                                 <div class="form-group" style="height: 15px">
-                                    <label style="font-weight: 550">Pincode: </label>
+                                    <label style="font-weight: 550">{{ __('Pincode') }}: </label>
                                     <label>{{ $orderDetails['pincode'] }}</label>
                                 </div>
                             @endif
 
                             <div class="form-group" style="height: 15px">
-                                <label style="font-weight: 550">Mobile: </label>
+                                <label style="font-weight: 550">{{ __('Mobile') }}: </label>
                                 <label>{{ $orderDetails['mobile'] }}</label>
                             </div>
                         </div>
@@ -234,7 +234,7 @@
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Update Order Status</h4>  {{-- determined by 'admin'-s ONLY, not 'vendor'-s --}}
+                            <h4 class="card-title">{{ __('Update Order Status') }}</h4>  {{-- determined by 'admin'-s ONLY, not 'vendor'-s --}}
 
                             {{-- Allowing the general "Update Order Status" feature for 'admin'-s ONLY, and restricting it from 'vendor'-s ('vendor'-s can update their Ordered Products item statuses ONLY (at this page bottom)) --}} 
                             @if (Auth::guard('admin')->user()->type != 'vendor') {{-- If the authenticated/logged-in user is 'admin', allow "Update Order Status" feature --}} {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}} {{-- Retrieving The Authenticated User: https://laravel.com/docs/9.x/authentication#retrieving-the-authenticated-user --}}
@@ -246,7 +246,7 @@
                                     <input type="hidden" name="order_id" value="{{ $orderDetails['id'] }}">
 
                                     <select name="order_status" id="order_status" required>
-                                        <option value="" selected>Select</option>
+                                        <option value="" selected>{{ __('Select') }}</option>
                                         @foreach ($orderStatuses as $status)
                                             <option value="{{ $status['name'] }}"  @if (!empty($orderDetails['order_status']) && $orderDetails['order_status'] == $status['name']) selected @endif>{{ $status['name'] }}</option>
                                         @endforeach
@@ -256,7 +256,7 @@
                                     <input type="text" name="courier_name"    id="courier_name"    placeholder="Courier Name">    {{-- This input field will only show up when 'Shipped' <option> is selected. Check admin/js/custom.js --}}
                                     <input type="text" name="tracking_number" id="tracking_number" placeholder="Tracking Number"> {{-- This input field will only show up when 'Shipped' <option> is selected. Check admin/js/custom.js --}}
 
-                                    <button type="submit">Update</button>
+                                    <button type="submit">{{ __('Update') }}</button>
                                 </form>
                                 <br>
 
@@ -316,32 +316,32 @@
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Ordered Products</h4>
+                            <h4 class="card-title">{{ __('Ordered Products') }}</h4>
 
                             <div class="table-responsive">
                                 {{-- Order products info table --}}
                                 <table class="table table-striped table-borderless">
                                     <tr class="table-danger">
-                                        <th>Product Image</th>
-                                        <th>Code</th>
-                                        <th>Name</th>
-                                        <th>Size</th>
-                                        <th>Color</th>
-                                        <th>Unit Price</th> 
-                                        <th>Product Qty</th>
-                                        <th>Total Price</th> 
+                                        <th>{{ __('Product Image') }}</th>
+                                        <th>{{ __('Code') }}</th>
+                                        <th>{{ __('Name') }}</th>
+                                        <th>{{ __('Size') }}</th>
+                                        <th>{{ __('Color') }}</th>
+                                        <th>{{ __('Unit Price') }}</th> 
+                                        <th>{{ __('Product Qty') }}</th>
+                                        <th>{{ __('Total Price') }}</th> 
 
                                         
                                         @if (\Illuminate\Support\Facades\Auth::guard('admin')->user()->type != 'vendor') {{-- If the authenticated/logged-in user is an 'admin', 'superadmin' or 'subadmin', NOT 'vendor' --}} {{-- Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances --}}
-                                            <th>Product by</th>
+                                            <th>{{ __('Product by') }}</th>
                                         @endif
 
                                         
                                         
-                                        <th>Commission</th> {{-- Vendor's Commission percentage must be paid on every product sold to the Website Owner --}}
-                                        <th>Final Amount</th> {{-- Vendor's profit after paying (deducting) the Commission percentage --}}
+                                        <th>{{ __('Commission') }}</th> {{-- Vendor's Commission percentage must be paid on every product sold to the Website Owner --}}
+                                        <th>{{ __('Final Amount') }}</th> {{-- Vendor's profit after paying (deducting) the Commission percentage --}}
 
-                                        <th>Item Status</th> {{-- can be updated by both 'vendor'-s and 'admin'-s. This is in contrast to 'Update Order Status' which can be updated by 'admin'-s ONLY --}} 
+                                        <th>{{ __('Item Status') }}</th> {{-- can be updated by both 'vendor'-s and 'admin'-s. This is in contrast to 'Update Order Status' which can be updated by 'admin'-s ONLY --}} 
                                         {{-- Note: The `order_statuses` table contains all kinds of order statuses (that can be updated by 'admin'-s ONLY in `orders` table) like: pending, in progress, shipped, canceled, ...etc. In `order_statuses` table, the `name` column can be: 'New', 'Pending', 'Canceled', 'In Progress', 'Shipped', 'Partially Shipped', 'Delivered', 'Partially Delivered' and 'Paid'. 'Partially Shipped': If one order has products from different vendors, and one vendor has shipped their product to the customer while other vendor (or vendors) didn't!. 'Partially Delivered': if one order has products from different vendors, and one vendor has shipped and DELIVERED their product to the customer while other vendor (or vendors) didn't!    // The `order_item_statuses` table contains all kinds of order statuses (that can be updated by both 'vendor'-s and 'admin'-s in `orders_products` table) like: pending, in progress, shipped, canceled, ...etc. --}}
                                     </tr>
 
@@ -419,7 +419,7 @@
                                                     <input type="hidden" name="order_item_id" value="{{ $product['id'] }}">
 
                                                     <select id="order_item_status" name="order_item_status" required>
-                                                        <option value="">Select</option>
+                                                        <option value="">{{ __('Select') }}</option>
                                                         @foreach ($orderItemStatuses as $status)
                                                             <option value="{{ $status['name'] }}"  @if (!empty($product['item_status']) && $product['item_status'] == $status['name']) selected @endif>{{ $status['name'] }}</option>
                                                         @endforeach
@@ -429,7 +429,7 @@
                                                     <input style="width: 110px" type="text" name="item_courier_name"    id="item_courier_name"    placeholder="Item Courier Name"    @if (!empty($product['courier_name']))    value="{{ $product['courier_name'] }}"    @endif> {{-- This input field will only show up when 'Shipped' <option> is selected. Check admin/js/custom.js --}}
                                                     <input style="width: 110px" type="text" name="item_tracking_number" id="item_tracking_number" placeholder="Item Tracking Number" @if (!empty($product['tracking_number'])) value="{{ $product['tracking_number'] }}" @endif> {{-- This input field will only show up when 'Shipped' <option> is selected. Check admin/js/custom.js --}}
 
-                                                    <button type="submit">Update</button>
+                                                    <button type="submit">{{ __('Update') }}</button>
                                                 </form>
                                             </td>
                                         </tr>         

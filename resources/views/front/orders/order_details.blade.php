@@ -33,33 +33,33 @@
                 <table class="table table-striped table-borderless">
                     <tr class="table-danger">
                         <td colspan="2">
-                            <strong>Order Details</strong>
+                            <strong>{{ __('Order Details') }}</strong>
                         </td>
                     </tr>
                     <tr>
-                        <td>Order Date</td>
+                        <td>{{ __('Order Date') }}</td>
                         <td>{{ date('Y-m-d h:i:s', strtotime($orderDetails['created_at'])) }}</td>
                     </tr>
                     <tr>
-                        <td>Order Status</td>
+                        <td>{{ __('Order Status') }}</td>
                         <td>{{ $orderDetails['order_status'] }}</td>
                     </tr>
                     <tr>
-                        <td>Order Total</td>
+                        <td>{{ __('Order Total') }}</td>
                         <td>{{ __("$") }}{{ $orderDetails['grand_total'] }}</td>
                     </tr>
                     <tr>
-                        <td>Shipping Charges</td>
+                        <td>{{ __('Shipping Charges') }}</td>
                         <td>{{ __("$") }}{{ $orderDetails['shipping_charges'] }}</td>
                     </tr>
 
                     @if ($orderDetails['coupon_code'] != '')
                         <tr>
-                            <td>Coupon Code</td>
+                            <td>{{ __('Coupon Code') }}</td>
                             <td>{{ $orderDetails['coupon_code'] }}</td>
                         </tr>
                         <tr>
-                            <td>Coupon Amount</td>
+                            <td>{{ __('Coupon Amount') }}</td>
                             <td>{{ __("$") }}{{ $orderDetails['coupon_amount'] }}</td>
                         </tr>
                     @endif
@@ -67,17 +67,17 @@
                     
                     @if ($orderDetails['courier_name'] != '')
                         <tr>
-                            <td>Courier Name</td>
+                            <td>{{ __('Courier Name') }}</td>
                             <td>{{ $orderDetails['courier_name'] }}</td>
                         </tr>
                         <tr>
-                            <td>Tracking Number</td>
+                            <td>{{ __('Tracking Number') }}</td>
                             <td>{{ $orderDetails['tracking_number'] }}</td>
                         </tr>
                     @endif
 
                     <tr>
-                        <td>Payment Method</td>
+                        <td>{{ __('Payment Method') }}</td>
                         <td>{{ $orderDetails['payment_method'] }}</td>
                     </tr>
                 </table>
@@ -85,12 +85,12 @@
                 {{-- Order products info table --}}
                 <table class="table table-striped table-borderless">
                     <tr class="table-danger">
-                        <th>Product Image</th>
-                        <th>Product Code</th>
-                        <th>Product Name</th>
-                        <th>Product Size</th>
-                        <th>Product Color</th>
-                        <th>Product Qty</th>
+                        <th>{{ __('Product Image') }}</th>
+                        <th>{{ __('Product Code') }}</th>
+                        <th>{{ __('Product Name') }}</th>
+                        <th>{{ __('Product Size') }}</th>
+                        <th>{{ __('Product Color') }}</th>
+                        <th>{{ __('Product Qty') }}</th>
                     </tr>
 
                     @foreach ($orderDetails['orders_products'] as $product)
@@ -113,7 +113,7 @@
                         
                         @if ($product['courier_name'] != '')
                             <tr>
-                                <td colspan="6">Courier Name: {{ $product['courier_name'] }}, Tracking Number: {{ $product['tracking_number'] }}</td>
+                                <td colspan="6">{{ __('Courier Name') }}: {{ $product['courier_name'] }}, {{ __('Tracking Number') }}: {{ $product['tracking_number'] }}</td>
                             </tr>
                         @endif
 
@@ -124,35 +124,35 @@
                 <table class="table table-striped table-borderless">
                     <tr class="table-danger">
                         <td colspan="2">
-                            <strong>Delivery Address</strong>
+                            <strong>{{ __('Delivery Address') }}</strong>
                         </td>
                     </tr>
                     <tr>
-                        <td>Name</td>
+                        <td>{{ __('Name') }}</td>
                         <td>{{ $orderDetails['name'] }}</td>
                     </tr>
                     <tr>
-                        <td>Address</td>
+                        <td>{{ __('Address') }}</td>
                         <td>{{ $orderDetails['address'] }}</td>
                     </tr>
                     <tr>
-                        <td>City</td>
+                        <td>{{ __('City') }}</td>
                         <td>{{ $orderDetails['city'] }}</td>
                     </tr>
                     <tr>
-                        <td>State</td>
+                        <td>{{ __('State') }}</td>
                         <td>{{ $orderDetails['state'] }}</td>
                     </tr>
                     <tr>
-                        <td>Country</td>
+                        <td>{{ __('Country') }}</td>
                         <td>{{ $orderDetails['country'] }}</td>
                     </tr>
                     <tr>
-                        <td>Pincode</td>
+                        <td>{{ __('Pincode') }}</td>
                         <td>{{ $orderDetails['pincode'] }}</td>
                     </tr>
                     <tr>
-                        <td>Mobile</td>
+                        <td>{{ __('Mobile') }}</td>
                         <td>{{ $orderDetails['mobile'] }}</td>
                     </tr>
                 </table>
