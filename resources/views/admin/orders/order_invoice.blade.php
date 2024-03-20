@@ -11,9 +11,9 @@
     <div class="row">
         <div class="col-xs-12">
     		<div class="invoice-title">
-    			<h2>Invoice</h2>
+    			<h2>{{ __('Invoice') }}</h2>
                 <h3 class="pull-right">
-                    Order # {{ $orderDetails['id'] }}
+                    {{ __('Order') }} # {{ $orderDetails['id'] }}
 
                     {{-- Laravel barcode/QR code generation package (to show barcodes/QR codes for both Product ID and Product Code): https://github.com/milon/barcode --}} 
                     @php
@@ -26,7 +26,7 @@
     		<div class="row">
     			<div class="col-xs-6">
     				<address>
-    				    <strong>Billed To:</strong><br>
+    				    <strong>{{ __('Billed To') }}:</strong><br>
     					{{ $userDetails['name'] }}<br>
 
                         @if (!empty($userDetails['address']))
@@ -50,7 +50,7 @@
     			</div>
     			<div class="col-xs-6 text-right">
     				<address>
-        			    <strong>Shipped To:</strong><br>
+        			    <strong>{{ __('Shipped To') }}:</strong><br>
                         {{ $orderDetails['name'] }}<br>
                         {{ $orderDetails['address'] }}<br>
                         {{ $orderDetails['city'] }}, {{ $orderDetails['state'] }}<br>
@@ -62,13 +62,13 @@
     		<div class="row">
     			<div class="col-xs-6">
     				<address>
-    					<strong>Payment Method:</strong><br>
+    					<strong>{{ __('Payment Method') }}:</strong><br>
                         {{ $orderDetails['payment_method'] }}
     				</address>
     			</div>
     			<div class="col-xs-6 text-right">
     				<address>
-    					<strong>Order Date:</strong><br>
+    					<strong>{{ __('Order Date') }}:</strong><br>
     					{{ date('Y-m-d h:i:s', strtotime($orderDetails['created_at'])) }}<br><br>
     				</address>
     			</div>
@@ -80,19 +80,19 @@
     	<div class="col-md-12">
     		<div class="panel panel-default">
     			<div class="panel-heading">
-    				<h3 class="panel-title"><strong>Order summary</strong></h3>
+    				<h3 class="panel-title"><strong>{{ __('Order summary') }}</strong></h3>
     			</div>
     			<div class="panel-body">
     				<div class="table-responsive">
     					<table class="table table-condensed">
     						<thead>
                                 <tr>
-        							<td><strong>Product Code</strong></td>
-        							<td class="text-center"><strong>Size</strong></td>
-        							<td class="text-center"><strong>Color</strong></td>
-        							<td class="text-center"><strong>Price</strong></td>
-        							<td class="text-center"><strong>Quantity</strong></td>
-        							<td class="text-right"><strong>Totals</strong></td>
+        							<td><strong>{{ __('Product Code') }}</strong></td>
+        							<td class="text-center"><strong>{{ __('Size') }}</strong></td>
+        							<td class="text-center"><strong>{{ __('Color') }}</strong></td>
+        							<td class="text-center"><strong>{{ __('Price') }}</strong></td>
+        							<td class="text-center"><strong>{{ __('Quantity') }}</strong></td>
+        							<td class="text-right"><strong>{{ __('Totals') }}</strong></td>
                                 </tr>
     						</thead>
     						<tbody>
@@ -116,9 +116,9 @@
                                         </td>
                                         <td class="text-center">{{ $product['product_size'] }}</td>
                                         <td class="text-center">{{ $product['product_color'] }}</td>
-                                        <td class="text-center">INR {{ $product['product_price'] }}</td>
+                                        <td class="text-center">{{ __('$') }} {{ $product['product_price'] }}</td>
                                         <td class="text-center">{{ $product['product_qty'] }}</td>
-                                        <td class="text-right">INR {{ $product['product_price'] * $product['product_qty'] }}</td>
+                                        <td class="text-right">{{ __('$') }} {{ $product['product_price'] * $product['product_qty'] }}</td>
                                     </tr>
 
                                     {{-- Continue: Calculate the Subtotal --}}
@@ -132,29 +132,29 @@
                                     <td class="thick-line"></td>
                                     <td class="thick-line"></td>
                                     <td class="thick-line"></td>
-                                    <td class="thick-line text-right"><strong>Subtotal</strong></td>
-                                    <td class="thick-line text-right">INR {{ $subTotal }}</td>
+                                    <td class="thick-line text-right"><strong>{{ __('Subtotal') }}</strong></td>
+                                    <td class="thick-line text-right">{{ __('$') }} {{ $subTotal }}</td>
                                 </tr>
                                 <tr>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
-                                    <td class="no-line text-right"><strong>Shipping Charges</strong></td>
-                                    <td class="no-line text-right">INR 0</td>
+                                    <td class="no-line text-right"><strong>{{ __('Shipping Charges') }}</strong></td>
+                                    <td class="no-line text-right">{{ __('$') }} 0</td>
                                 </tr>
                                 <tr>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
-                                    <td class="no-line text-right"><strong>Grand Total</strong></td>
+                                    <td class="no-line text-right"><strong>{{ __('Grand Total') }}</strong></td>
                                     <td class="no-line text-right">
-                                        <strong>INR {{ $orderDetails['grand_total'] }}</strong>
+                                        <strong>{{ __('$') }} {{ $orderDetails['grand_total'] }}</strong>
                                         <br>
 
                                         @if ($orderDetails['payment_method'] == 'COD')
-                                            <font color=red>(Already Paid)</font>
+                                            <font color=red>({{ __('Already Paid') }})</font>
                                         @endif
                                     </td>
                                 </tr>
