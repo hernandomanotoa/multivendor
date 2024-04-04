@@ -100,5 +100,5 @@
     </div>
     <div>
         <label for="order-notes">{{ __('Order Notes') }}</label>
-        <textarea class="text-area" id="order-notes" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+        <textarea class="text-area" id="order-notes" placeholder="{{ __('Notes about your order, e.g. special notes for delivery.') }}"></textarea>
     </div>

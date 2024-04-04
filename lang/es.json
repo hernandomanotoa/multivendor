@@ -339,7 +339,7 @@
     "Ship to a different address?": "¿Envia a una direccion diferente?",
     "Check to add Delivery Address": "Marque para agregar la dirección de entrega",
     "Select Country": "Seleccionar país",
-    "Save": "Ahorrar",
+    "Save": "Guardar Dirección",
     "Order Notes": "pedidos",
     "Delivery Addresses": "Direcciones de entrega",
     "Your Order": "Su pedido",
@@ -516,5 +516,7 @@
     "Total Orders": "Órdenes totales",
     "Total Coupons": "Cupones totales",
     "Total Users": "Usuarios totales",
-    "Total Subscribers": "Suscriptores totales"
+    "Total Subscribers": "Suscriptores totales",
+    "Notes about your order, e.g. special notes for delivery.": "Notas sobre su pedido, p.e. Notas especiales para la entrega."
+
 }
